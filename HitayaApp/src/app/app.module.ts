@@ -5,11 +5,15 @@ import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { CommonLayoutComponent } from './common-layout/common-layout.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    CommonLayoutComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

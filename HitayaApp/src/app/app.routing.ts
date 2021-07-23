@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 import { RegistrationComponent } from './registration/registration.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -11,7 +12,7 @@ import { RegistrationComponent } from './registration/registration.component';
 
 
 const routes: Routes = [
-  /*{ path: '', component: LandingPageComponent },*/
+  { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
 ];
 

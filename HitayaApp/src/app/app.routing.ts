@@ -15,6 +15,6 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
 ];
 
-export const routing: ModuleWithProviders<T> = RouterModule.forRoot(routes);
-/*export const routing: ModuleWithProviders<unknown> = RouterModule.forRoot(routes);*/
+/*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/
+export const routing: ModuleWithProviders<unknown> = RouterModule.forRoot(routes);
 

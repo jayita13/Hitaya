@@ -7,7 +7,7 @@ import { IUser } from '../hitaya-interfaces/IUser';
 
 
 
-import { UserValidationService } from '../hitaya-services/user-validation.service';
+import { UserValidationService } from '../hitaya-services/user-validation/user-validation.service';
 
 @Component({
   selector: 'app-registration',

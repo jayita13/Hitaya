@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitaya.DAL", "Hitaya.DAL\Hitaya.DAL.csproj", "{F9271FAD-D5C0-4323-90E7-2095141C169D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9271FAD-D5C0-4323-90E7-2095141C169D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9271FAD-D5C0-4323-90E7-2095141C169D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9271FAD-D5C0-4323-90E7-2095141C169D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9271FAD-D5C0-4323-90E7-2095141C169D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB6C7D3D-50C1-4587-9FE9-3D605B659190}
+	EndGlobalSection
+EndGlobal

@@ -42,49 +42,28 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-    submitLoginForm(form: NgForm) {
+  submitLoginForm(form: NgForm) {
 
-      console.log("hello");
+    console.log("hello");
 
-      this.credentials = { FIRSTNAME: null, LASTNAME: null, EMAILID: form.value.email, PASSWORD: form.value.password };
+    this.credentials = { FIRSTNAME: null, LASTNAME: null, EMAILID: form.value.email, PASSWORD: form.value.password };
 
-      console.log(this.credentials);
+    console.log(this.credentials);
 
-      this.login.validateCredentials(this.credentials).subscribe(
-        responseLoginStatus => {
-          this.status = responseLoginStatus;
-          if (this.status == 1) {
-            sessionStorage.setItem('userName', form.value.email);
-            sessionStorage.setItem('userRole', 'User');
-
-
-            this.FinanceService.GetUserFinance(form.value.email).subscribe(
-              responseProductData => {
-
-                this.FinaceData = responseProductData[0];
-
-                console.log(this.FinaceData);
-                sessionStorage.setItem('RecommendedSavings', String(this.FinaceData["yearlySavingsRequired"]));
-                console.log("OK");
-
-
-              },
-              responseProductError => {
-                this.errMsg = responseProductError;
-                sessionStorage.setItem('RecommendedSavings', String(0));
-                console.log(this.errMsg);
-              }
-            );
-
-            this.router.navigate(['/']);
-          }
-          else {
-            this.msg = this.status + ". Try again with valid credentials.";
-            alert("invalid");
-          }
-        },
-        () => console.log("SubmitLoginForm method executed successfully")
-      );
+    this.login.validateCredentials(this.credentials).subscribe(
+      responseLoginStatus => {
+        this.status = responseLoginStatus;
+        if (this.status == 1) {
+          sessionStorage.setItem('userName', form.value.email);
+          this.router.navigate(['/']);
+        }
+        else {
+          this.msg = this.status + ". Try again with valid credentials.";
+          alert("invalid");
+        }
+      },
+      () => console.log("SubmitLoginForm method executed successfully")
+    );
 
   }
 }

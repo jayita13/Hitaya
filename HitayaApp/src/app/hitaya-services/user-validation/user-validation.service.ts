@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 
 
 
-import { IUser } from '../../hitaya-interfaces/IUser';
+import { IAdminLogin, IUser } from '../../hitaya-interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,11 @@ export class UserValidationService {
   validateCredentials(obj: IUser): Observable<number> {
 
     return this.http.post<number>('https://localhost:44331/api/Hitaya/LoginValidation', obj).pipe(catchError(this.errorHandler));
+  }
+
+  AdminLoginValidation(obj: IAdminLogin): Observable<number> {
+
+    return this.http.post<number>('https://localhost:44331/api/Hitaya/AdminLoginValidation', obj).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

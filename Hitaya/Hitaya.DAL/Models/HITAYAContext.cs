@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-using System.Linq;
 
 #nullable disable
 
@@ -21,30 +17,58 @@ namespace Hitaya.DAL.Models
         {
         }
 
+        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<Userdetail> Userdetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder()
-                      .SetBasePath(Directory.GetCurrentDirectory())
-                      .AddJsonFile("appsettings.json");
-            var config = builder.Build();
-
-            var connectionString = config.GetConnectionString("HitayaDBConnectionString");
-
-
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer(connectionString);
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=HITAYA;Trusted_Connection=true;Integrated Security=true");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<Admin>(entity =>
+            {
+                entity.HasKey(e => e.Emailid)
+                    .HasName("pk_EmailId_Admin");
+
+                entity.ToTable("ADMIN");
+
+                entity.Property(e => e.Emailid)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("EMAILID");
+
+                entity.Property(e => e.Adminid)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("ADMINID");
+
+                entity.Property(e => e.CryptoId)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("CRYPTO_ID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("NAME");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("PASSWORD");
+            });
 
             modelBuilder.Entity<Employee>(entity =>
             {

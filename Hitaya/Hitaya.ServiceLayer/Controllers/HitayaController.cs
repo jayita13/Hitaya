@@ -7,11 +7,11 @@ using Hitaya.DAL;
 using Hitaya.DAL.Models;
 using Hitaya.ServiceLayer;
 using Hitaya.ServiceLayer.Models;
-using Microsoft.AspNetCore.Authorization;
+//using Microsoft.AspNetCore.Authorization;
 
 namespace Hitaya.ServiceLayer.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]/[action]")]
     public class HitayaController : Controller
@@ -24,7 +24,7 @@ namespace Hitaya.ServiceLayer.Controllers
         }
 
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPost]
         public int LoginValidation(registerUser obj)
         {

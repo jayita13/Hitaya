@@ -42,22 +42,5 @@ namespace Hitaya.ServiceLayer.Controllers
             }
             return result;
         }
-
-        [HttpPost]
-        public int AdminLoginValidation(registerUser obj)
-        {
-            int result;
-            try
-            {
-                result = Invest.AdminLogin(obj.EMAILID, obj.PASSWORD);
-
-            }
-            catch (Exception)
-            {
-
-                result = -98;
-            }
-            return result;
-        }
     }
 }

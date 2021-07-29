@@ -10,17 +10,13 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CommonLayoutComponent } from './common-layout/common-layout.component';
 import { LoadingComponent } from './loading/loading.component';
-import { NavBarComponent } from './Admin/nav-bar/nav-bar.component';
-import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     CommonLayoutComponent,
-    LoadingComponent,
-    NavBarComponent,
-    AdminLoginComponent
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -3,16 +3,26 @@
   <div class="forms-container">
     <div class="signin-signup">
 
+      
+
       <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)" class="sign-in-form">
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" #emaiRef name="email" ngModel required/>
+          <input type="text" #emaiRef name="email" ngModel required />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" #passwordRef name="password"  ngModel required/>
+          <input type="password" #passwordRef name="password" ngModel required />
         </div>
+
+        <div [formGroup]="aFormGroup">
+          <ngx-recaptcha2 #captchaElem
+                          [siteKey]="siteKey"
+                          formControlName="recaptcha">
+          </ngx-recaptcha2>
+        </div>
+
         <input type="submit" [disabled]="!loginForm.form.valid" value="Login" class="btn solid" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">

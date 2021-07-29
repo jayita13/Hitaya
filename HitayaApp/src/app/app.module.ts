@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -22,7 +23,8 @@ import { LoadingComponent } from './loading/loading.component';
     routing,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

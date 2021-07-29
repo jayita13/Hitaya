@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 import { IUser } from '../hitaya-interfaces/IUser';
 
@@ -16,17 +16,21 @@ import { UserValidationService } from '../hitaya-services/user-validation/user-v
 })
 export class RegistrationComponent implements OnInit {
 
-
+  protected aFormGroup: FormGroup;
   status: number;
   errMsg: string;
   msg: string;
   credentials: IUser;
 
 
-  constructor(private login: UserValidationService, private router: Router) { }
+  constructor(private login: UserValidationService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
+
+    this.aFormGroup = this.formBuilder.group({
+      recaptcha: ['', Validators.required]
+    });
 
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -66,4 +70,6 @@ export class RegistrationComponent implements OnInit {
     );
 
   }
+
+  siteKey: string = "6LeeHskbAAAAALwLAGmFIyNfqezbScX1L7T8jYmQ";
 }

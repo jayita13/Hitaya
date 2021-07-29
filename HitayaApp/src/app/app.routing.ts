@@ -3,6 +3,7 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { LoadingComponent } from './loading/loading.component';
+import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 
 
 
@@ -14,6 +15,7 @@ import { LoadingComponent } from './loading/loading.component';
 const routes: Routes = [
   { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
+  { path: 'alogin', component: AdminLoginComponent },
 ];
 
 /*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/

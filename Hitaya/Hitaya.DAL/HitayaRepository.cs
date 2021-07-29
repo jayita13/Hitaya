@@ -49,5 +49,32 @@ namespace Hitaya.DAL
             }
             return returnResult;
         }
+        
+        public int AdminLogin(string EmailId,string Password)
+        {
+            
+            int result = -1;
+            try
+            {
+                 var admin = context.Admins.Where(x => x.Emailid == EmailId && x.Password == Password).FirstOrDefault();
+                
+                if (admin.Name.Length>0)
+                {
+                    return 1;
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                return -99;
+            }
+            return result;
+
+
+
+
+
+        }
     }
 }

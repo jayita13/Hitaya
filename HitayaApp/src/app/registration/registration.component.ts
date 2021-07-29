@@ -71,5 +71,5 @@ export class RegistrationComponent implements OnInit {
 
   }
 
-  siteKey: string = "6LeeHskbAAAAALwLAGmFIyNfqezbScX1L7T8jYmQ";
+  siteKey: string = "6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx";
 }

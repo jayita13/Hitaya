@@ -1,9 +1,9 @@
 
-<div class="container"> 
+<div class="container">
   <div class="forms-container">
     <div class="signin-signup">
 
-      
+
 
       <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)" class="sign-in-form">
         <h2 class="title">Sign in</h2>
@@ -16,7 +16,7 @@
           <input type="password" #passwordRef name="password" ngModel required />
         </div>
 
-        <div [formGroup]="aFormGroup">
+        <div>
           <ngx-recaptcha2 #captchaElem
                           [siteKey]="siteKey"
                           formControlName="recaptcha">

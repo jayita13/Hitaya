@@ -11,6 +11,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hitaya.ServiceLayer
 {
@@ -26,6 +31,19 @@ namespace Hitaya.ServiceLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //})
+            //    .AddCookie(options =>
+            //    {
+            //        options.LoginPath = "/account/google-login";
+            //    })
+            //    .AddGoogle(options =>
+            //    {
+            //        options.ClientId = "593652668765-oqeanqbeu7tu4toak2u28dl4ih65ck35.apps.googleusercontent.com";
+            //        options.ClientSecret = "Jy6thiiko7MIik0UH5fHr9Zj";
+            //    });
 
             services.AddControllers();
             services.AddCors(options =>
@@ -51,6 +69,8 @@ namespace Hitaya.ServiceLayer
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //app.UseAuthentication();
 
             app.UseAuthorization();
 

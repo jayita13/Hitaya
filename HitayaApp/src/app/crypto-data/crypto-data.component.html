@@ -1,0 +1,52 @@
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+<div class="container mt-4 mb-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="row">
+        <div class="col-md-8"><h3>Cryptocurrency</h3></div>
+        <div class="col-md-4">
+          <div class="form-group row px-3 mt-1">
+            <h5 class="col-md-5 text-left text-sm-left text-md-right text-lg-right pl-0 mt-2">Select Crypto:</h5>
+            <select id="inputState" class="form-control custom-select col-md-7" [(ngModel)]="chosencrypto" (ngModelChange)="getcryptokdata()">
+              <option selected>ETH</option>
+              <option>BTC</option>
+              <option>BNB</option>
+              <option>XRP</option>
+              <option>USDT</option>
+              <option>DOGE</option>
+              <option>ADA</option>
+              <option>DOT</option>
+              <option>UNI</option>
+              <option>BCH</option>
+              <option>LTC</option>
+              <option>LINK</option>
+              <option>USDC</option>
+              <option>VET</option>
+              <option>SOL</option>
+              <option>XLM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-md-12">
+          <!--
+            <ejs-chart [primaryXAxis]='xAxis'>
+              <e-series-collection>
+                <e-series type='Hilo' name='Apple Inc' [dataSource]='data_refined' xName='date' high='high' low='low'></e-series>
+              </e-series-collection>
+            </ejs-chart>
+          -->
+          <igx-financial-chart class="crypto-chart" [dataSource]="data_refined"></igx-financial-chart>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

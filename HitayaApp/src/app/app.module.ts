@@ -6,12 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
+import { IgxFinancialChartModule } from "igniteui-angular-charts";
+
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CommonLayoutComponent } from './common-layout/common-layout.component';
 import { LoadingComponent } from './loading/loading.component';
 import { NavBarComponent } from './Admin/nav-bar/nav-bar.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
+import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
     CommonLayoutComponent,
     LoadingComponent,
     NavBarComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    UserLayoutComponent,
+    CryptoDataComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,9 @@ import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    IgxFinancialChartModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

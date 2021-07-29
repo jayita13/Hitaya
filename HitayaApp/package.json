@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "igniteui-angular-charts": "^11.2.1",
+    "igniteui-angular-core": "^11.2.1",
     "ngx-captcha": "^9.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

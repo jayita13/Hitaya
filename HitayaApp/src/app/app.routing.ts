@@ -4,6 +4,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoadingComponent } from './loading/loading.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+import { CryptoDataComponent } from './crypto-data/crypto-data.component';
+
+
+
+import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.service';
 
 
 
@@ -16,6 +21,7 @@ const routes: Routes = [
   { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'alogin', component: AdminLoginComponent },
+  { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
 ];
 
 /*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/

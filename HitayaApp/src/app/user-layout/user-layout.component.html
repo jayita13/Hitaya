@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-effects sticky-top">
+  <a class="navbar-brand super-bold" routerLink="/">INVESTOPIA .</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars fa-fw"></i>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" href="#">Admin-Dasboard</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" href="#">Dasboard</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" href="#">Savings Analysis<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" href="#">Stock Market<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/crypto" class="nav-link" href="#">Cryptocurrencies<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" href="#">About Us<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <button class="nav-btn btn btn-secondary btn-sm btn-block">{{userName}}</button>
+      </li>
+      <li class="nav-item nav-item-btn mb-2">
+        <button (click)="logOut()" class="nav-btn btn btn-danger btn-sm btn-block"><i class="fa fa-power-off fa-fw"></i> LogOut</button>
+      </li>
+    </ul>
+  </div>
+</nav>

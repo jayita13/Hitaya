@@ -74,7 +74,7 @@ export class RegistrationComponent implements OnInit {
         this.status = responseLoginStatus;
         if (this.status == 1) {
           sessionStorage.setItem('userName', form.value.email);
-          this.router.navigate(['/']);
+          this.router.navigate(['/crypto']);
         }
         else {
           this.msg = this.status + ". Try again with valid credentials.";

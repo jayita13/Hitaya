@@ -70,11 +70,41 @@ namespace Hitaya.DAL
                 return -99;
             }
             return result;
-
-
-
-
-
         }
+
+
+
+        public int SignUpValidation(string EMAILID, string PASSWORD, string CRYPTOID, decimal LIMIT)
+        {
+
+            int result = -1;
+            int returnResult = 0;
+            try
+            {
+
+                SqlParameter prmEMAILID = new SqlParameter("@EMAILID", EMAILID);
+                SqlParameter prmPASSWORD = new SqlParameter("@PASSWORD", PASSWORD);
+                SqlParameter prmCRYPTOID = new SqlParameter("@CRYPTOID", CRYPTOID);
+                SqlParameter prmLIMIT = new SqlParameter("@LIMIT", LIMIT);
+
+
+
+                SqlParameter prmReturnResult = new SqlParameter("@ReturnResult", System.Data.SqlDbType.Int);
+                prmReturnResult.Direction = System.Data.ParameterDirection.Output;
+
+                result = context.Database.ExecuteSqlRaw("EXEC @ReturnResult = USP_INSERT_USER_DETAILS @EMAILID, @PASSWORD, @CRYPTOID, @LIMIT", new[] { prmReturnResult, prmEMAILID, prmPASSWORD, prmCRYPTOID, prmLIMIT });
+                returnResult = Convert.ToInt32(prmReturnResult.Value);
+
+                Console.WriteLine(Convert.ToInt32(result));
+                Console.WriteLine(returnResult);
+
+            }
+            catch (Exception)
+            {
+                returnResult = -99;
+            }
+            return returnResult;
+        }
+
     }
 }

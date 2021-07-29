@@ -21,6 +21,8 @@ export class RegistrationComponent implements OnInit {
   errMsg: string;
   msg: string;
   credentials: IUser;
+  url: any;
+  
 
 
   constructor(private login: UserValidationService, private router: Router, private formBuilder: FormBuilder) { }
@@ -43,6 +45,19 @@ export class RegistrationComponent implements OnInit {
     sign_in_btn.addEventListener("click", () => {
       container.classList.remove("sign-up-mode");
     });
+  }
+
+
+  onSelectFile(event) { // called each time file input changes
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = event.target.result;
+      }
+    }
   }
 
 

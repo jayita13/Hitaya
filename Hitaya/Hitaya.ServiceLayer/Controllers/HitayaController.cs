@@ -59,5 +59,23 @@ namespace Hitaya.ServiceLayer.Controllers
             }
             return result;
         }
+
+
+        public int SignUpValidation(SignUp obj)
+        {
+            int result;
+            try
+            {
+
+                result = Invest.SignUpValidation(obj.EMAILID, obj.PASSWORD, obj.CRYTOID, obj.LIMIT);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                result = -99;
+            }
+            return result;
+        }
     }
 }

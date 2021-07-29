@@ -60,6 +60,18 @@
           <i class="fas fa-key"></i>
           <input type="text" placeholder="Crypto Public Key" />
         </div>
+
+        
+        <div>
+          <img [src]="url" height="200"> <br />
+        </div>
+        <div>
+          <input type="file" id="file" accept="image/*" (change)=" onSelectFile($event)">
+        </div>
+
+
+        
+
         <input type="submit" class="btn" value="Sign up" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">

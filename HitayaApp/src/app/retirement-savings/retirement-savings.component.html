@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+<div class="container mt-4 mb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-9">
+          <h3>Realtime Savings Analysis</h3>
+          <br />
+          <div id="analysis-display-line-chart">
+            <canvas id="analysis-chart-line-display"></canvas>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="row mt-5 mb-3">
+            <div class="col-md-12 text-center">
+              <div class="card border-2x">
+                <div class="card-body">
+                  <h4>Retired Amount</h4>
+                  <h4 class="text-blue">{{display_retiredAmount}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="card border-2x">
+                <div class="card-body">
+                  <h4>End Amount</h4>
+                  <h4 class="text-blue">{{display_accumulatedSavings}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+
+          <div class="row mt-5">
+            <div class="col-md-4">
+              <p class="type-6">Age: <span class="text-blue">{{age}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="120" name="age" [(ngModel)]="age" (ngModelChange)="getage(age)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Salary: <span class="text-blue">{{salary}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="10000" max="1000000" name="salary" [(ngModel)]="salary" (ngModelChange)="getsalary(salary)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Investment Return: <span class="text-blue">{{investment}}</span>%</p>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" name="investment" [(ngModel)]="investment" (ngModelChange)="getinvestment(investment)" class="slider" id="myRange">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-4">
+              <p class="type-6">Retirement Age: <span class="text-blue">{{retirementage}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="50" max="100" name="retirementage" [(ngModel)]="retirementage" (ngModelChange)="getretirementage(retirementage)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Salary Increase / Year: <span class="text-blue">{{salary_increse}}</span>%</p>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" name="salary_increse" [(ngModel)]="salary_increse" (ngModelChange)="getsalary_increse(salary_increse)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Savings Rate: <span class="text-blue">{{savings_rate}}</span>%</p>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="200" name="savings_rate" [(ngModel)]="savings_rate" (ngModelChange)="getsavings_rate(savings_rate)" class="slider" id="myRange">
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-4">
+              <p class="type-6">Lifespan Age: <span class="text-blue">{{life_span}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="120" name="life_span" [(ngModel)]="life_span" (ngModelChange)="getlife_span(life_span)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Retirement Spending: <span class="text-blue">{{retirement_spending}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="10000" max="1000000" name="retirement_spending" [(ngModel)]="retirement_spending" (ngModelChange)="getretirement_spending(retirement_spending)" class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="type-6">Current Savings: <span class="text-blue">{{current_savings}}</span></p>
+              <div class="slidecontainer">
+                <input type="range" min="10000" max="1000000" name="current_savings" [(ngModel)]="current_savings" (ngModelChange)="getcurrent_savings(current_savings)" class="slider" id="myRange">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
+import { RetirementSavingsComponent } from './retirement-savings/retirement-savings.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent },
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'stocks', component: StockMarketComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'analysis', component: RetirementSavingsComponent, /* canActivate: [RegisterDoneService] */ },
 ];
 
 /*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/

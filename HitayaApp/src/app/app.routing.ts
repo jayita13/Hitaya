@@ -6,6 +6,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { StockMarketComponent } from './stock-market/stock-market.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'ahome', component: AdminHomeComponent },
   { path: 'wallet', component: WalletComponent },
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'stocks', component: StockMarketComponent, /* canActivate: [RegisterDoneService] */ },
 ];
 
 /*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/

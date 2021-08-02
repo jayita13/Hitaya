@@ -19,6 +19,7 @@ import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { UserDetailsComponent } from './Admin/user-details/user-details.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { StockMarketComponent } from './stock-market/stock-market.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { WalletComponent } from './wallet/wallet.component';
     CryptoDataComponent,
     AdminHomeComponent,
     UserDetailsComponent,
-    WalletComponent
+    WalletComponent,
+    StockMarketComponent
   ],
   imports: [
     BrowserModule,

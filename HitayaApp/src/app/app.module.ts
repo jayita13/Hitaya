@@ -18,6 +18,7 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { UserDetailsComponent } from './Admin/user-details/user-details.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserDetailsComponent } from './Admin/user-details/user-details.componen
     UserLayoutComponent,
     CryptoDataComponent,
     AdminHomeComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,

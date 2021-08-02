@@ -5,6 +5,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoadingComponent } from './loading/loading.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'alogin', component: AdminLoginComponent },
   { path: 'ahome', component: AdminHomeComponent },
+  { path: 'wallet', component: WalletComponent },
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
 ];
 

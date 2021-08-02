@@ -22,10 +22,13 @@ export class RegistrationComponent implements OnInit {
   msg: string;
   credentials: IUser;
   url: any;
+  siteKey: string;
   
 
 
-  constructor(private login: UserValidationService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private login: UserValidationService, private router: Router, private formBuilder: FormBuilder) {
+    this.siteKey = '6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx';
+  }
 
   ngOnInit(): void {
 
@@ -74,7 +77,7 @@ export class RegistrationComponent implements OnInit {
         this.status = responseLoginStatus;
         if (this.status == 1) {
           sessionStorage.setItem('userName', form.value.email);
-          this.router.navigate(['/crypto']);
+          this.router.navigate(['/wallet']);
         }
         else {
           this.msg = this.status + ". Try again with valid credentials.";
@@ -86,5 +89,5 @@ export class RegistrationComponent implements OnInit {
 
   }
 
-  siteKey: string = "6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx";
+
 }

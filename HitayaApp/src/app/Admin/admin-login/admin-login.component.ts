@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IAdminLogin } from '../../hitaya-interfaces/IUser';
 import { UserValidationService } from '../../hitaya-services/user-validation/user-validation.service';
 
@@ -12,7 +13,7 @@ export class AdminLoginComponent implements OnInit {
   Admin: IAdminLogin;
     result: number;
 
-  constructor(private userService: UserValidationService) { }
+  constructor(private userService: UserValidationService, private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,10 +24,10 @@ export class AdminLoginComponent implements OnInit {
       responseFromAdminLogin => {
         this.result = responseFromAdminLogin;
         if (this.result == 1) {
-          alert("Welcome")
+          this.route.navigate(['/ahome'])
         }
         else {
-          alert("Invalid Credentials")
+          alert("Invalid Credentials, Please Try Again")
         }
       },
       responseError => {

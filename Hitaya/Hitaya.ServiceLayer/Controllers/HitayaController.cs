@@ -17,10 +17,12 @@ namespace Hitaya.ServiceLayer.Controllers
     public class HitayaController : Controller
     {
         public HitayaRepository Invest;
+        private HITAYAContext _HContext;
 
         public HitayaController()
         {
             Invest = new HitayaRepository();
+            _HContext = new HITAYAContext();
         }
 
 
@@ -76,6 +78,43 @@ namespace Hitaya.ServiceLayer.Controllers
                 result = -99;
             }
             return result;
+        }
+
+        [HttpGet]
+        public JsonResult AdminInfo(string emailId)
+        {
+
+            var k =0 ;
+            try
+            {
+                var j = _HContext.Admins.Where(x => x.Emailid == emailId).Select(x => new UserInfo { Name = x.Name, EmailId = x.Emailid, CryptoId = x.CryptoId }).ToList();
+                return Json(j);
+            }
+            catch (Exception)
+            {
+
+                return Json(k);
+            }
+            
+        }
+
+
+        [HttpGet]
+        public JsonResult EmployeesInfo()
+        {
+
+            var k = 0;
+            try
+            {
+                var j = _HContext.Userdetails.Select(x => new UserInfo { Name = x.Name, EmailId = x.Emailid, CryptoId = x.CryptoId }).ToList();
+                return Json(j);
+            }
+            catch (Exception)
+            {
+
+                return Json(k);
+            }
+
         }
     }
 }

@@ -9,6 +9,7 @@ import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 
 
 import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.service';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'alogin', component: AdminLoginComponent },
+  { path: 'ahome', component: AdminHomeComponent },
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
 ];
 

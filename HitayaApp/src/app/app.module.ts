@@ -16,6 +16,8 @@ import { NavBarComponent } from './Admin/nav-bar/nav-bar.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+import { UserDetailsComponent } from './Admin/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CryptoDataComponent } from './crypto-data/crypto-data.component';
     NavBarComponent,
     AdminLoginComponent,
     UserLayoutComponent,
-    CryptoDataComponent
+    CryptoDataComponent,
+    AdminHomeComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

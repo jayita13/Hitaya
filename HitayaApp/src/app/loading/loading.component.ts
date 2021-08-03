@@ -8,13 +8,35 @@ import { Router } from '@angular/router';
 })
 export class LoadingComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  userName: string;
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
+
+
+  constructor(private router: Router) {
+    this.userName = sessionStorage.getItem('userName');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      this.commonLayout = true;
+    }
+  }
 
   ngOnInit(): void {
 
-    setTimeout(() => {
-      this.router.navigate(['register']);
-    }, 3000);  //3s
+    this.userName = sessionStorage.getItem('userName');
+    if (this.userName != null) {
+      setTimeout(() => {
+        this.router.navigate(['wallet']);
+      }, 3000);  //3s
+    }
+    else {
+      setTimeout(() => {
+        this.router.navigate(['register']);
+      }, 3000);  //3s
+    }
   }
 
 }

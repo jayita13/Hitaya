@@ -21,6 +21,7 @@ import { UserDetailsComponent } from './Admin/user-details/user-details.componen
 import { WalletComponent } from './wallet/wallet.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { RetirementSavingsComponent } from './retirement-savings/retirement-savings.component';
+import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RetirementSavingsComponent } from './retirement-savings/retirement-savi
     UserDetailsComponent,
     WalletComponent,
     StockMarketComponent,
-    RetirementSavingsComponent
+    RetirementSavingsComponent,
+    PageNotFoundComponentComponent
   ],
   imports: [
     BrowserModule,

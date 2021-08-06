@@ -8,6 +8,7 @@ import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { RetirementSavingsComponent } from './retirement-savings/retirement-savings.component';
+import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'stocks', component: StockMarketComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'analysis', component: RetirementSavingsComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: '**', component: PageNotFoundComponentComponent }
 ];
 
 /*export const routing: ModuleWithProviders = RouterModule.forRoot(routes);*/

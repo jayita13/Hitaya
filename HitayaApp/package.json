@@ -25,6 +25,8 @@
     "ngx-captcha": "^9.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "web3": "^1.5.1",
+    "web3modal": "^1.9.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

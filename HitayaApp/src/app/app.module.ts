@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
+
+
 import { IgxFinancialChartModule } from "igniteui-angular-charts";
 
 import { AppComponent } from './app.component';

@@ -98,6 +98,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   $ npm install ngx-captcha
   $ npm install --save igniteui-angular-core
   $ npm install --save igniteui-angular-charts
+  $ npm install web3 --save
+  $ npm install @truffle/contract@4.1.0
 ```
 
 <p>Run the App</p>

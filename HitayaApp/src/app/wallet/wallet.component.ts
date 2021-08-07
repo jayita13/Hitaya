@@ -57,7 +57,7 @@ export class WalletComponent implements OnInit {
 
     this.formSubmitted = false;
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
-    /*this.getAccountAndBalance();*/
+    this.getAccountAndBalance();
     this.createForms();
 
   }
@@ -80,31 +80,31 @@ export class WalletComponent implements OnInit {
     });
   }
 
-  //getAccountAndBalance = () => {
-  //  const that = this;
-  //  this.transferService.getUserBalance().
-  //    then(function (retAccount: any) {
-  //      that.user.address = retAccount.account;
-  //      that.user.balance = retAccount.balance;
-  //      console.log('transfer.components :: getAccountAndBalance :: that.user');
-  //      console.log(that.user);
-  //    }).catch(function (error) {
-  //      console.log(error);
-  //    });
-  //}
+  getAccountAndBalance = () => {
+    const that = this;
+    this.transferService.getUserBalance().
+      then(function (retAccount: any) {
+        that.user.address = retAccount.account;
+        that.user.balance = retAccount.balance;
+        console.log('transfer.components :: getAccountAndBalance :: that.user');
+        console.log(that.user);
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
 
-  //submitForm() {
-  //  if (this.userForm.invalid) {
-  //    alert('transfer.components :: submitForm :: Form invalid');
-  //    return;
-  //  } else {
-  //    console.log('transfer.components :: submitForm :: this.userForm.value');
-  //    console.log(this.userForm.value);
-  //    // TODO: service call
-  //    this.transferService.transferEther(this.userForm.value).
-  //      then(function () { }).catch(function (error) {
-  //        console.log(error);
-  //      });
-  //  }
-  //}
+  submitForm() {
+    if (this.userForm.invalid) {
+      alert('transfer.components :: submitForm :: Form invalid');
+      return;
+    } else {
+      console.log('transfer.components :: submitForm :: this.userForm.value');
+      console.log(this.userForm.value);
+      // TODO: service call
+      this.transferService.transferEther(this.userForm.value).
+        then(function () { }).catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
 }

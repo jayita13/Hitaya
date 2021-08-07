@@ -28,11 +28,11 @@
 
 ## Running ASP .NEW CORE WEB API APPLICATION
 	
-	Run Hitaya_TSQL.sql script present in the project root directory
+	Run HITAYA_TSQL.sql script present in the project root directory
 
 ## Running ASP .NEW CORE WEB API APPLICATION
 	
-
+	From Folder Hitaya.ServiceLayer
 
 
 ## Installing Python ML Module

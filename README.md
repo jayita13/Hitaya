@@ -89,7 +89,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 	Go insisde HitayaApp folder and run `ng serve -o`
 
 ```
-  Angular Installation Commands
+  Angular Packages used :
  
   $ npm install chart.js
   $ npm install jquery
@@ -98,6 +98,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   $ npm install ngx-captcha
   $ npm install --save igniteui-angular-core
   $ npm install --save igniteui-angular-charts
+  $ npm install web3 --save
+  $ npm install @truffle/contract@4.1.0
 ```
 
 <p>Run the App</p>

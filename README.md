@@ -89,7 +89,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 	Go insisde HitayaApp folder and run `ng serve -o`
 
 ```
-  Angular Installation Commands
+  Angular Packages used :
  
   $ npm install chart.js
   $ npm install jquery

@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { ContractService } from '../hitaya-services/blockchain-service/contract.service';
+
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
-  styleUrls: ['./wallet.component.css']
+  styleUrls: ['./wallet.component.css'],
+  providers: [ContractService]
 })
 
 export class WalletComponent implements OnInit {
@@ -37,7 +40,7 @@ export class WalletComponent implements OnInit {
     ]
   };
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private transferService: ContractService, private router: Router) {
 
     this.userName = sessionStorage.getItem('userName');
     console.log(this.userName);
@@ -54,7 +57,7 @@ export class WalletComponent implements OnInit {
 
     this.formSubmitted = false;
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
-    this.getAccountAndBalance();
+    /*this.getAccountAndBalance();*/
     this.createForms();
 
   }
@@ -76,20 +79,32 @@ export class WalletComponent implements OnInit {
       ]))
     });
   }
-  getAccountAndBalance = () => {
-    const that = this;
-    that.user.address = '0xd8d0101f83e79fb4e8d21134f5325e64816bd6a0';
-    that.user.balance = 0;
-    // TODO: fetch data
-  }
-  submitForm() {
-    if (this.userForm.invalid) {
-      alert('transfer.components :: submitForm :: Form invalid');
-      return;
-    } else {
-      console.log('transfer.components :: submitForm :: this.userForm.value');
-      console.log(this.userForm.value);
-      // TODO: service call
-    }
-  }
+
+  //getAccountAndBalance = () => {
+  //  const that = this;
+  //  this.transferService.getUserBalance().
+  //    then(function (retAccount: any) {
+  //      that.user.address = retAccount.account;
+  //      that.user.balance = retAccount.balance;
+  //      console.log('transfer.components :: getAccountAndBalance :: that.user');
+  //      console.log(that.user);
+  //    }).catch(function (error) {
+  //      console.log(error);
+  //    });
+  //}
+
+  //submitForm() {
+  //  if (this.userForm.invalid) {
+  //    alert('transfer.components :: submitForm :: Form invalid');
+  //    return;
+  //  } else {
+  //    console.log('transfer.components :: submitForm :: this.userForm.value');
+  //    console.log(this.userForm.value);
+  //    // TODO: service call
+  //    this.transferService.transferEther(this.userForm.value).
+  //      then(function () { }).catch(function (error) {
+  //        console.log(error);
+  //      });
+  //  }
+  //}
 }

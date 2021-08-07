@@ -85,7 +85,7 @@ export class WalletComponent implements OnInit {
     this.transferService.getUserBalance().
       then(function (retAccount: any) {
         that.user.address = retAccount.account;
-        that.user.balance = retAccount.balance;
+        that.user.balance = retAccount.balance/(10**18);
         console.log('transfer.components :: getAccountAndBalance :: that.user');
         console.log(that.user);
       }).catch(function (error) {

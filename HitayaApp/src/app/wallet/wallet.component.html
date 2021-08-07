@@ -235,14 +235,14 @@
               <img src="assets/profile-pic.png" class="img-fluid" />
             </div>
             <div class="col-md-8 text-center">
-              <h2 class="mt-3 text-dark-grey">$20</h2>
+              <h2 class="mt-3 text-dark-grey">{{user.balance}} Eth</h2>
             </div>
           </div>
 
           <div class="row mt-2 text-center text-sm-left">
             <div class="col-md-12">
               <h3 class="mb-0">{{userName}}</h3>
-              <p class="mt-0 text-dark-grey">0x536493hfknjsnfh3832733</p>
+              <p class="mt-0 text-dark-grey">{{user.address}}</p>
 
               <div class="row mt-4 text-center">
                 <div class="col-md-3 col-sm-3 col-3">
@@ -304,7 +304,7 @@
                       <img src="assets/profile-pic.png" class="img-fluid" />
                     </div>
                     <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">0 ETH</h4>
+                      <h4 class="mb-0 bold">10 ETH</h4>
                       <p class="mt-0 no-td-space text-muted type-6">$0</p>
                     </div>
                   </div>
@@ -346,5 +346,40 @@
     </div>
   </div>
 </div>
+
+<form [formGroup]="userForm" (ngSubmit)="submitForm()"
+      novalidate autocomplete="off">
+  <div class="container">
+    <div class="transfer-container">
+      <div>
+        Address: {{user.address}} <br />
+        Balance: {{user.balance}} Eth
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Transfer Address" name="transferAddress" formControlName="transferAddress"
+               maxlength="42" minlength="42" required>
+        <mat-error *ngFor="let validation of accountValidationMessages.transferAddress">
+          <mat-error *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Amount" name="amount" formControlName="amount" required>
+        <mat-error *ngFor="let validation of accountValidationMessages.amount">
+          <mat-error *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Remarks" name="remarks" formControlName="remarks"
+               maxlength="42" required>
+        <mat-error *ngFor="let validation of accountValidationMessages.remarks">
+          <mat-error *ngIf="userForm.get('remarks').hasError(validation.type) && (userForm.get('remarks').dirty || userForm.get('remarks').touched)">{{validation.message}}</mat-error>
+        </mat-error>
+      </mat-form-field>
+      <div style="width: 100px">
+        <button type="submit">Transfer Ether</button>
+      </div>
+    </div>
+  </div>
+</form>
 
 

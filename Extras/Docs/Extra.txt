@@ -1,0 +1,532 @@
+Microsoft Windows [Version 10.0.18363.1556]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\ZEUS\Desktop\Hitaya\truffle>truffle compile
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\Transfer.sol
+> Artifacts written to C:\Users\ZEUS\Desktop\Hitaya\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+
+C:\Users\ZEUS\Desktop\Hitaya\truffle>truffle migrate - network development
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\Transfer.sol
+> Artifacts written to C:\Users\ZEUS\Desktop\Hitaya\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      1628326400351
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x35be1a6403ff9ab6dc10d7239ae116aa3ad999607b5f5745ba438195d9135bad
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xb7C6c4D218ed25710Ed3833b95Fc01591BEf6A37
+   > block number:        1
+   > block timestamp:     1628326505
+   > account:             0x5D74201137689D1dA9652Ad01dcB40cb39c7c443
+   > balance:             99.9808057
+   > gas used:            191943 (0x2edc7)
+   > gas price:           100 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0191943 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0191943 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'Transfer'
+   --------------------
+   > transaction hash:    0xf4a9cb3a58194f9694fc9e26487aad2e8f99b9b9dccf054bc7acb785769e4095
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xf0de49c80c7a8F1ef4F49a19910e86F87C501A22
+   > block number:        3
+   > block timestamp:     1628326505
+   > account:             0x5D74201137689D1dA9652Ad01dcB40cb39c7c443
+   > balance:             99.956372
+   > gas used:            201999 (0x3150f)
+   > gas price:           100 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0201999 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0201999 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0393942 ETH
+
+
+
+C:\Users\ZEUS\Desktop\Hitaya\truffle>truffle migrate - network development
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\Transfer.sol
+> Artifacts written to C:\Users\ZEUS\Desktop\Hitaya\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+Network up to date.
+
+C:\Users\ZEUS\Desktop\Hitaya\truffle>truffle console --network development
+truffle(development)> web3.eth.getAccounts()
+[
+  '0x5D74201137689D1dA9652Ad01dcB40cb39c7c443',
+  '0x1e03a75Bf2a15De0b8911F6e4417DdaA4Ba28859',
+  '0x1eDE477bd10394676C5AaD312d21dd4ee4D26583',
+  '0xd1D1C20F26ba8a4e38a353e4085A6ACc317367d9',
+  '0x5172155bCD23E34d2bee0A2D8dF7b4D0311C8Af5',
+  '0xEb66f8Fb31ab738ceff8bCA6ed9E0f2C0161934A',
+  '0xF95aC5Cc69dd336a194268e0E729876e7556bE22',
+  '0x1DcbabF7bD39047C62c71B2848A0313E9d1aE962',
+  '0x5D1492AaA618516d8B721bF25fb7fbC7d958a8C4',
+  '0x33cCD53FD96899009dEB7855Cfc44ee16138143c'
+]
+truffle(development)> truffle(development)> web3.eth.getAccounts().then( function(a) {address1=a[0]})
+evalmachine.<anonymous>:0
+truffle(development)> web3.eth.getAccounts().then( function(a) {address1=a[0]})
+^
+
+Uncaught ReferenceError: truffle is not defined
+    at evalmachine.<anonymous>:0:1
+    at sigintHandlersWrap (vm.js:273:12)
+    at Script.runInContext (vm.js:140:14)
+    at runScript (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:360:1)
+    at Console.interpret (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:375:1)
+    at bound (domain.js:413:15)
+    at REPLServer.runBound [as eval] (domain.js:424:12)
+    at REPLServer.onLine (repl.js:817:10)
+    at REPLServer.emit (events.js:315:20)
+    at REPLServer.EventEmitter.emit (domain.js:467:12)
+truffle(development)> web3.eth.getAccounts().then( function(a) {address1=a[0]})
+undefined
+truffle(development)> web3.eth.getAccounts().then( function(a)
+evalmachine.<anonymous>:0
+web3.eth.getAccounts().then( function(a)
+
+
+Uncaught SyntaxError: Unexpected end of input
+truffle(development)> {address2=a[1]})
+evalmachine.<anonymous>:0
+{address2=a[1]})
+               ^
+
+Uncaught SyntaxError: Unexpected token ')'
+truffle(development)> web3.eth.getAccounts().then( function(a)
+evalmachine.<anonymous>:0
+web3.eth.getAccounts().then( function(a)
+
+
+Uncaught SyntaxError: Unexpected end of input
+truffle(development)> {address2=a[1]})
+evalmachine.<anonymous>:0
+{address2=a[1]})
+               ^
+
+Uncaught SyntaxError: Unexpected token ')'
+truffle(development)>
+undefined
+truffle(development)> web3.eth.getAccounts().then( function(a) {address1=a[1]})
+undefined
+truffle(development)> address1
+'0x1e03a75Bf2a15De0b8911F6e4417DdaA4Ba28859'
+truffle(development)> address2
+evalmachine.<anonymous>:0
+address2
+^
+
+Uncaught ReferenceError: address2 is not defined
+    at evalmachine.<anonymous>:0:1
+    at sigintHandlersWrap (vm.js:273:12)
+    at Script.runInContext (vm.js:140:14)
+    at runScript (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:360:1)
+    at Console.interpret (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:375:1)
+    at bound (domain.js:413:15)
+    at REPLServer.runBound [as eval] (domain.js:424:12)
+    at REPLServer.onLine (repl.js:817:10)
+    at REPLServer.emit (events.js:315:20)
+    at REPLServer.EventEmitter.emit (domain.js:467:12)
+truffle(development)> web3.eth.getAccounts().then( function(a) {address2=a[1]})
+undefined
+truffle(development)> address2
+'0x1e03a75Bf2a15De0b8911F6e4417DdaA4Ba28859'
+truffle(development)> web3.eth.getAccounts().then( function(a) {address1=a[0]})
+undefined
+truffle(development)> address1
+'0x5D74201137689D1dA9652Ad01dcB40cb39c7c443'
+truffle(development)> web3.eth.getBalance(address1)
+‘99942134400000000000’'99953638200000000000'
+truffle(development)> ‘99942134400000000000’
+evalmachine.<anonymous>:0
+‘99942134400000000000’
+
+
+Uncaught SyntaxError: Invalid or unexpected token
+truffle(development)> web3.eth.getBalance(address1)
+'99953638200000000000'
+truffle(development)> web3.eth.getBalance(address2)
+'100000000000000000000'
+truffle(development)> Transfer.deployed().
+evalmachine.<anonymous>:0
+Transfer.deployed().
+
+
+Uncaught SyntaxError: Unexpected end of input
+truffle(development)> then(function(instance){transferSmartContract = instance;})
+evalmachine.<anonymous>:0
+then(function(instance){transferSmartContract = instance;})
+^
+
+Uncaught ReferenceError: then is not defined
+    at evalmachine.<anonymous>:0:1
+    at sigintHandlersWrap (vm.js:273:12)
+    at Script.runInContext (vm.js:140:14)
+    at runScript (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:360:1)
+    at Console.interpret (C:\Users\ZEUS\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\core\lib\console.js:375:1)
+    at bound (domain.js:413:15)
+    at REPLServer.runBound [as eval] (domain.js:424:12)
+    at REPLServer.onLine (repl.js:817:10)
+    at REPLServer.emit (events.js:315:20)
+    at REPLServer.EventEmitter.emit (domain.js:467:12)
+truffle(development)> Transfer.deployed().then(function(instance){transferSmartContract = instance;})
+undefined
+truffle(development)> transferSmartContract
+TruffleContract {
+  constructor: [Function: TruffleContract] {
+    _constructorMethods: {
+      configureNetwork: [Function: configureNetwork],
+      setProvider: [Function: setProvider],
+      new: [Function: new],
+      at: [AsyncFunction: at],
+      deployed: [AsyncFunction: deployed],
+      defaults: [Function: defaults],
+      hasNetwork: [Function: hasNetwork],
+      isDeployed: [Function: isDeployed],
+      detectNetwork: [AsyncFunction: detectNetwork],
+      setNetwork: [Function: setNetwork],
+      setNetworkType: [Function: setNetworkType],
+      setWallet: [Function: setWallet],
+      resetAddress: [Function: resetAddress],
+      link: [Function: link],
+      clone: [Function: clone],
+      addProp: [Function: addProp],
+      toJSON: [Function: toJSON],
+      decodeLogs: [Function: decodeLogs]
+    },
+    _properties: {
+      contract_name: [Object],
+      contractName: [Object],
+      gasMultiplier: [Object],
+      timeoutBlocks: [Object],
+      autoGas: [Object],
+      numberFormat: [Object],
+      abi: [Object],
+      metadata: [Function: metadata],
+      network: [Function: network],
+      networks: [Function: networks],
+      address: [Object],
+      transactionHash: [Object],
+      links: [Function: links],
+      events: [Function: events],
+      binary: [Function: binary],
+      deployedBinary: [Function: deployedBinary],
+      unlinked_binary: [Object],
+      bytecode: [Object],
+      deployedBytecode: [Object],
+      sourceMap: [Object],
+      deployedSourceMap: [Object],
+      source: [Object],
+      sourcePath: [Object],
+      legacyAST: [Object],
+      ast: [Object],
+      compiler: [Object],
+      schema_version: [Function: schema_version],
+      schemaVersion: [Function: schemaVersion],
+      updated_at: [Function: updated_at],
+      updatedAt: [Function: updatedAt],
+      userdoc: [Function: userdoc],
+      devdoc: [Function: devdoc],
+      networkType: [Object],
+      immutableReferences: [Object],
+      generatedSources: [Object],
+      deployedGeneratedSources: [Object],
+      db: [Object]
+    },
+    _property_values: {},
+    _json: {
+      contractName: 'Transfer',
+      abi: [Array],
+      metadata: '{"compiler":{"version":"0.5.16+commit.9c3226ce"},"language":"Solidity","output":{"abi":[{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_to","type":"address"},{"indexed":false,"internalType":"address","name":"_from","type":"address"},{"indexed":false,"internalType":"uint256","name":"amt","type":"uint256"}],"name":"Pay","type":"event"},{"constant":false,"inputs":[{"internalType":"address payable","name":"_to","type":"address"}],"name":"pay","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"}],"devdoc":{"methods":{}},"userdoc":{"methods":{}}},"settings":{"compilationTarget":{"project:/contracts/Transfer.sol":"Transfer"},"evmVersion":"istanbul","libraries":{},"optimizer":{"enabled":false,"runs":200},"remappings":[]},"sources":{"project:/contracts/Transfer.sol":{"keccak256":"0x4a8e3ee3ec308983bf45442b041811383d6eaed7560e47e248564521c6c1522d","urls":["bzz-raw://49ee76e5dc603bc42f41a96780ff5153b0482b0addb1d284d0abc8cc51cae286","dweb:/ipfs/QmbTdUqB2X3AaJrgWftx2x1fDKHumkF6Xe4WZuW7wMiDz6"]}},"version":1}',
+      bytecode: '0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061024b806100606000396000f3fe60806040526004361061001e5760003560e01c80630c11dedd14610023575b600080fd5b6100656004803603602081101561003957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061007f565b604051808215151515815260200191505060405180910390f35b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801561012a573d6000803e3d6000fd5b507f288d9a5737d39d766acb848da277a970d9ee31f9115e17490b9393e282fa7b4d600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a16001905091905056fea265627a7a723158202a60014b08e365635a1947e0085186f82446e51f400d003736da3ea671aa44b364736f6c63430005100032',
+      deployedBytecode: '0x60806040526004361061001e5760003560e01c80630c11dedd14610023575b600080fd5b6100656004803603602081101561003957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061007f565b604051808215151515815260200191505060405180910390f35b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801561012a573d6000803e3d6000fd5b507f288d9a5737d39d766acb848da277a970d9ee31f9115e17490b9393e282fa7b4d600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a16001905091905056fea265627a7a723158202a60014b08e365635a1947e0085186f82446e51f400d003736da3ea671aa44b364736f6c63430005100032',
+      immutableReferences: undefined,
+      generatedSources: undefined,
+      deployedGeneratedSources: undefined,
+      sourceMap: '25:354:1:-;;;96:51;8:9:-1;5:2;;;30:1;27;20:12;5:2;96:51:1;131:10;124:4;;:17;;;;;;;;;;;;;;;;;;25:354;;;;;;',
+      deployedSourceMap: '25:354:1:-;;;;;;;;;;;;;;;;;;;;;203:173;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;203:173:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;266:4;284:3;279:2;;:8;;;;;;;;;;;;;;;;;;294:2;;;;;;;;;;;:11;;:22;306:9;294:22;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;294:22:1;328:24;332:2;;;;;;;;;;;336:4;;;;;;;;;;;342:9;328:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;366:4;359:11;;203:173;;;:::o',
+      source: 'pragma solidity ^0.5.0;\r\n' +
+        'contract Transfer {\r\n' +
+        '  address payable from;\r\n' +
+        '  address payable to;\r\n' +
+        '  constructor() public {\r\n' +
+        '    from = msg.sender;\r\n' +
+        '  }\r\n' +
+        '  event Pay(address _to, address _from, uint amt);\r\n' +
+        '  function pay( address payable _to ) public payable returns\r\n' +
+        '  (bool) {\r\n' +
+        '    to = _to;\r\n' +
+        '    to.transfer(msg.value);\r\n' +
+        '    emit Pay(to, from, msg.value);\r\n' +
+        '    return true;\r\n' +
+        '  }\r\n' +
+        '}',
+      sourcePath: 'C:\\Users\\ZEUS\\Desktop\\Hitaya\\truffle\\contracts\\Transfer.sol',
+      ast: [Object],
+      legacyAST: [Object],
+      compiler: [Object],
+      networks: [Object],
+      schemaVersion: '3.4.2',
+      updatedAt: '2021-08-07T08:55:27.843Z',
+      networkType: 'ethereum',
+      devdoc: [Object],
+      userdoc: [Object],
+      db: undefined
+    },
+    configureNetwork: [Function: bound configureNetwork],
+    setProvider: [Function: bound setProvider],
+    new: [Function: bound new] {
+      estimateGas: [Function: bound estimateDeployment],
+      request: [Function: bound requestDeployment]
+    },
+    at: [Function: bound at] AsyncFunction,
+    deployed: [Function: bound deployed] AsyncFunction,
+    defaults: [Function: bound defaults],
+    hasNetwork: [Function: bound hasNetwork],
+    isDeployed: [Function: bound isDeployed],
+    detectNetwork: [Function: bound detectNetwork] AsyncFunction,
+    setNetwork: [Function: bound setNetwork],
+    setNetworkType: [Function: bound setNetworkType],
+    setWallet: [Function: bound setWallet],
+    resetAddress: [Function: bound resetAddress],
+    link: [Function: bound link],
+    clone: [Function: bound clone],
+    addProp: [Function: bound addProp],
+    toJSON: [Function: bound toJSON],
+    decodeLogs: [Function: bound decodeLogs],
+    enums: {},
+    class_defaults: {
+      from: '0x5D74201137689D1dA9652Ad01dcB40cb39c7c443',
+      gas: 5000000,
+      gasPrice: 100000000000
+    },
+    interfaceAdapter: Web3InterfaceAdapter { web3: [Web3Shim] },
+    web3: Web3Shim {
+      currentProvider: [Getter/Setter],
+      _requestManager: [RequestManager],
+      givenProvider: null,
+      providers: [Object],
+      _provider: [HttpProvider],
+      setProvider: [Function (anonymous)],
+      setRequestManager: [Function (anonymous)],
+      BatchRequest: [Function: bound Batch],
+      extend: [Function],
+      version: '1.5.1',
+      utils: [Object],
+      eth: [Eth],
+      shh: [Shh],
+      bzz: [Bzz],
+      networkType: 'ethereum'
+    },
+    currentProvider: HttpProvider {
+      withCredentials: false,
+      timeout: 0,
+      headers: undefined,
+      agent: undefined,
+      connected: true,
+      host: 'http://127.0.0.1:8545',
+      httpAgent: [Agent],
+      send: [Function (anonymous)],
+      _alreadyWrapped: true
+    },
+    network_id: '1628326400351',
+    disableConfirmationListener: undefined,
+    ens: { enabled: false, registryAddress: null }
+  },
+  methods: {
+    'pay(address)': [Function (anonymous)] {
+      call: [Function (anonymous)],
+      sendTransaction: [Function (anonymous)],
+      estimateGas: [Function (anonymous)],
+      request: [Function (anonymous)]
+    }
+  },
+  abi: [
+    {
+      inputs: [],
+      payable: false,
+      stateMutability: 'nonpayable',
+      type: 'constructor',
+      constant: undefined
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'Pay',
+      type: 'event',
+      constant: undefined,
+      payable: undefined,
+      signature: '0x288d9a5737d39d766acb848da277a970d9ee31f9115e17490b9393e282fa7b4d'
+    },
+    {
+      constant: false,
+      inputs: [Array],
+      name: 'pay',
+      outputs: [Array],
+      payable: true,
+      stateMutability: 'payable',
+      type: 'function',
+      signature: '0x0c11dedd'
+    }
+  ],
+  address: '0xf0de49c80c7a8F1ef4F49a19910e86F87C501A22',
+  transactionHash: undefined,
+  contract: Contract {
+    setProvider: [Function (anonymous)],
+    currentProvider: [Getter/Setter],
+    _requestManager: RequestManager {
+      provider: [HttpProvider],
+      providers: [Object],
+      subscriptions: Map(0) {}
+    },
+    givenProvider: null,
+    providers: {
+      WebsocketProvider: [Function: WebsocketProvider],
+      HttpProvider: [Function: HttpProvider],
+      IpcProvider: [Function: IpcProvider]
+    },
+    _provider: HttpProvider {
+      withCredentials: false,
+      timeout: 0,
+      headers: undefined,
+      agent: undefined,
+      connected: true,
+      host: 'http://127.0.0.1:8545',
+      httpAgent: [Agent],
+      send: [Function (anonymous)],
+      _alreadyWrapped: true
+    },
+    setRequestManager: [Function (anonymous)],
+    BatchRequest: [Function: bound Batch],
+    extend: [Function: ex] {
+      formatters: [Object],
+      utils: [Object],
+      Method: [Function: Method]
+    },
+    clearSubscriptions: [Function (anonymous)],
+    options: { address: [Getter/Setter], jsonInterface: [Getter/Setter] },
+    handleRevert: [Getter/Setter],
+    defaultCommon: [Getter/Setter],
+    defaultHardfork: [Getter/Setter],
+    defaultChain: [Getter/Setter],
+    transactionPollingTimeout: [Getter/Setter],
+    transactionConfirmationBlocks: [Getter/Setter],
+    transactionBlockTimeout: [Getter/Setter],
+    defaultAccount: [Getter/Setter],
+    defaultBlock: [Getter/Setter],
+    methods: {
+      pay: [Function: bound _createTxObject],
+      '0x0c11dedd': [Function: bound _createTxObject],
+      'pay(address)': [Function: bound _createTxObject]
+    },
+    events: {
+      Pay: [Function: bound ],
+      '0x288d9a5737d39d766acb848da277a970d9ee31f9115e17490b9393e282fa7b4d': [Function: bound ],
+      'Pay(address,address,uint256)': [Function: bound ],
+      allEvents: [Function: bound ]
+    },
+    _address: '0xf0de49c80c7a8F1ef4F49a19910e86F87C501A22',
+    _jsonInterface: [ [Object], [Object], [Object] ]
+  },
+  Pay: [Function (anonymous)],
+  pay: [Function (anonymous)] {
+    call: [Function (anonymous)],
+    sendTransaction: [Function (anonymous)],
+    estimateGas: [Function (anonymous)],
+    request: [Function (anonymous)]
+  },
+  sendTransaction: [Function (anonymous)],
+  send: [Function (anonymous)],
+  allEvents: [Function (anonymous)],
+  getPastEvents: [Function (anonymous)]
+}
+truffle(development)> transferSmartContract.pay(address2, {from: address1, value:5});
+{
+  tx: '0xff8f9097a042063e4fdffa5315493a2710a83be8b47632c3278c543985a5fcc4',
+  receipt: {
+    transactionHash: '0xff8f9097a042063e4fdffa5315493a2710a83be8b47632c3278c543985a5fcc4',
+    transactionIndex: 0,
+    blockHash: '0xf8a4a4ea50d5aabb3b44512fed91fd24abf8fcf173fc058efb157110619a26ab',
+    blockNumber: 5,
+    from: '0x5d74201137689d1da9652ad01dcb40cb39c7c443',
+    to: '0xf0de49c80c7a8f1ef4f49a19910e86f87c501a22',
+    gasUsed: 54224,
+    cumulativeGasUsed: 54224,
+    contractAddress: null,
+    logs: [ [Object] ],
+    status: true,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000004000000000000000000000000000200000000000000000000000000000000000000000000000',
+    rawLogs: [ [Object] ]
+  },
+  logs: [
+    {
+      logIndex: 0,
+      transactionIndex: 0,
+      transactionHash: '0xff8f9097a042063e4fdffa5315493a2710a83be8b47632c3278c543985a5fcc4',
+      blockHash: '0xf8a4a4ea50d5aabb3b44512fed91fd24abf8fcf173fc058efb157110619a26ab',
+      blockNumber: 5,
+      address: '0xf0de49c80c7a8F1ef4F49a19910e86F87C501A22',
+      type: 'mined',
+      removed: false,
+      id: 'log_3551b5d9',
+      event: 'Pay',
+      args: [Result]
+    }
+  ]
+}
+truffle(development)> address1
+'0x5D74201137689D1dA9652Ad01dcB40cb39c7c443'
+truffle(development)> web3.eth.getBalance(address1);
+'99948215799999999995'
+truffle(development)> web3.eth.getBalance(address2);
+'100000000000000000005'
+truffle(development)>    

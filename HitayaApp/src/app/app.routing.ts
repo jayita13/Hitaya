@@ -10,6 +10,9 @@ import { StockMarketComponent } from './stock-market/stock-market.component';
 import { RetirementSavingsComponent } from './retirement-savings/retirement-savings.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 import { AboutComponent } from './about/about.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 
@@ -32,7 +35,10 @@ const routes: Routes = [
   { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'stocks', component: StockMarketComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'analysis', component: RetirementSavingsComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'edit-user', component: EditUserDetailsComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'user-dashboard', component: UserDashboardComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'about', component: AboutComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, /* canActivate: [RegisterDoneService] */ },
   { path: '**', component: PageNotFoundComponentComponent }
 ];
 

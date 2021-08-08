@@ -20,8 +20,10 @@
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
     "@truffle/contract": "^4.1.0",
+    "bootstrap": "^5.0.0-beta3",
     "chart.js": "^3.5.0",
     "core-js": "^2.5.7",
+    "font-awesome": "^4.7.0",
     "igniteui-angular-charts": "^11.2.1",
     "igniteui-angular-core": "^11.2.1",
     "ngx-captcha": "^9.0.1",
@@ -56,5 +58,4 @@
     "os": false,
     "child_process": false
   }
-
 }

@@ -25,6 +25,10 @@ import { StockMarketComponent } from './stock-market/stock-market.component';
 import { RetirementSavingsComponent } from './retirement-savings/retirement-savings.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 import { AboutComponent } from './about/about.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { AboutComponent } from './about/about.component';
     StockMarketComponent,
     RetirementSavingsComponent,
     PageNotFoundComponentComponent,
-    AboutComponent
+    AboutComponent,
+    AdminDashboardComponent,
+    AdminLayoutComponent,
+    EditUserDetailsComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

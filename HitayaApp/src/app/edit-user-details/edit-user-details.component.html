@@ -1,1 +1,105 @@
-<p>edit-user-details works!</p>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+<!--<app-admin-layout *ngIf="adminLayout"></app-admin-layout>-->
+
+
+
+<section class="d-flex flex-column">
+  <form #signupForm="ngForm" (ngSubmit)="SignUp(signupForm)">
+    <div class="container mt-4 mb-4">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-5 d-sm-none d-none d-md-block">
+                <div class="card-body sidebar-image-card-body">
+                  <img src="assets/sidebar-image.png" class="img-fluid sidebar-image" />
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-12">
+                <div class="card-body form-contents">
+                  <h3 class="no-td-space">Create an Account</h3>
+                  <p class="type-7-2 text-muted">
+                    If you already have an Account, then <a href="javascript:;">Sign In</a>.
+                  </p>
+
+                  <br />
+                  <br />
+
+                  <div class="row pt-2">
+                    <div class="col-md-6 col-sm-6 col-6">
+                      <div class="form-group">
+                        <h6>First Name:</h6>
+                        <input type="text" class="form-control" #FirstRef name="FirstName" ngModel required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6">
+                      <div class="form-group">
+                        <h6>Last Name:</h6>
+                        <input type="text" class="form-control" #LastRef name="LastName" ngModel required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <h6>Email:</h6>
+                    <input type="email" class="form-control" #EmailRef name="Email" ngModel required>
+                  </div>
+                  <div class="form-group">
+                    <h6>Password:<span class="float-right"><i id="password-visibility" class="far fa-fw fa-eye-slash"></i></span></h6>
+                    <input type="password" class="form-control" #PsswordRef name="Password" ngModel required>
+                  </div>
+
+                  <!--<div class="row text-center">
+                  <div class="col-md-6">
+                    <h6>Enter the Captcha below:</h6>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-3"></div>
+                      <div class="col-md-12 col-6">
+                        <div class="form-group mt-4">
+                          <input class="form-control" name="lemail" id="lemail" placeholder="Captcha" />
+                        </div>
+                      </div>
+                      <div class="col-3">-->
+                  <!--<ngx-recaptcha2 #captchaElem [siteKey]="siteKey"></ngx-recaptcha2>-->
+                  <!--</div>
+                      </div>
+                    </div>
+                  </div>-->
+
+                  <hr />
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="type-7">
+                        By clicking on the 'Create Account' button below, you agree that you have
+                        read, understand, and accepted our <a href="">TERMS OF SERVICE</a>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div class="col-md-12">
+                      <button type="submit" [disabled]="!signupForm.form.valid" class="btn btn-primary btn-block">
+                        <i class="fa fa-user-plus fa-fw"></i>
+                        Create Account
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </form>
+</section>

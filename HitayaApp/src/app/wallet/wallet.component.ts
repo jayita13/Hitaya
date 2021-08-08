@@ -74,9 +74,9 @@ export class WalletComponent implements OnInit {
         Validators.required,
         Validators.pattern('^[+]?([.]\\d+|\\d+[.]?\\d*)$')
       ])),
-      remarks: new FormControl(this.user.remarks, Validators.compose([
-        Validators.required
-      ]))
+      //remarks: new FormControl(this.user.remarks, Validators.compose([
+      //  Validators.required
+      //]))
     });
   }
 

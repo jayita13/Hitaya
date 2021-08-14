@@ -1,28 +1,22 @@
-
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
 
-      <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)" class="sign-in-form">
+      <form [formGrooup]="loginForm" (ngSubmit)="submitLoginForm()" class="sign-in-form">
         <h2 class="title">Sign in</h2>
-
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" #emaiRef name="email" ngModel required />
+          <input type="text" formControlName="email" />
         </div>
 
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" #passwordRef name="password" ngModel required />
+          <input type="password" formControlName="password" />
         </div>
 
-        <ngx-recaptcha2 #captchaElem
-                        [siteKey]="siteKey"
-                        formControlName="recaptcha">
-        </ngx-recaptcha2>
+        <ngx-recaptcha2 [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
 
-
-        <input type="submit" [disabled]="!loginForm.form.valid" value="Login" class="btn solid" />
+        <input type="submit" [disabled]="!loginForm.valid" value="Login" class="btn solid" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">
           <a href="https://www.facebook.com" class="social-icon">
@@ -60,7 +54,7 @@
           <input type="text" placeholder="Crypto Public Key" />
         </div>
 
-        
+
         <div>
           <img [src]="url" height="200"> <br />
         </div>
@@ -69,7 +63,7 @@
         </div>
 
 
-        
+
 
         <input type="submit" class="btn" value="Sign up" />
         <p class="social-text">Follow us on social media platforms</p>

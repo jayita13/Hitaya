@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../hitaya-interfaces/IUser';
-
-
-
 import { UserValidationService } from '../hitaya-services/user-validation/user-validation.service';
 
 @Component({
@@ -16,25 +11,24 @@ import { UserValidationService } from '../hitaya-services/user-validation/user-v
 })
 export class RegistrationComponent implements OnInit {
 
-  protected aFormGroup: FormGroup;
+  loginForm: FormGroup;
   status: number;
   errMsg: string;
   msg: string;
   credentials: IUser;
   url: any;
   siteKey: string;
-  
 
 
-  constructor(private login: UserValidationService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private login: UserValidationService, private router: Router, private fb: FormBuilder) {
     this.siteKey = '6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx';
   }
 
   ngOnInit(): void {
-
-
-    this.aFormGroup = this.formBuilder.group({
-      recaptcha: ['', Validators.required]
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      recaptcha: ['', Validators.required],
     });
 
     const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -63,20 +57,13 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-
-  submitLoginForm(form: NgForm) {
-
-    console.log("hello");
-
-    this.credentials = { FIRSTNAME: null, LASTNAME: null, EMAILID: form.value.email, PASSWORD: form.value.password };
-
-    console.log(this.credentials);
-
+  submitLoginForm() {
+    this.credentials = this.loginForm.value;
     this.login.validateCredentials(this.credentials).subscribe(
       responseLoginStatus => {
         this.status = responseLoginStatus;
         if (this.status == 1) {
-          sessionStorage.setItem('userName', form.value.email);
+          sessionStorage.setItem('userName', this.loginForm.value.email);
           this.router.navigate(['/wallet']);
         }
         else {

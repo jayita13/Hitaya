@@ -1,8 +1,9 @@
 export interface IUser {
   FIRSTNAME: string,
   LASTNAME: string,
-  EMAILID: string,
-  PASSWORD: string
+  email: string,
+  password: string,
+  recaptcha: string
 }
 
 export interface IAdminLogin {

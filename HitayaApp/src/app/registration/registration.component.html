@@ -41,17 +41,17 @@
           <i class="fas fa-user"></i>
           <input type="text" placeholder="Username" />
         </div>
-        <div class="input-field">
+        <!--<div class="input-field">
           <i class="fas fa-envelope"></i>
           <input type="email" value={{user.address}} placeholder="Email" disabled />
-        </div>
+        </div>-->
         <div class="input-field">
           <i class="fas fa-lock"></i>
           <input type="password" placeholder="Password" />
         </div>
         <div class="input-field">
           <i class="fas fa-key"></i>
-          <input type="text" placeholder="Crypto Public Key" />
+          <input type="text" value={{user.address}} placeholder="Crypto Public Key" disabled />
         </div>
 
 
@@ -59,7 +59,29 @@
           <img [src]="url" height="200"> <br />
         </div>
         <div>
-          <input type="file" id="file" accept="image/*" (change)=" onSelectFile($event)">
+          <input #imageInput type="file" id="file" accept="image/*" (change)=" onSelectFile($event,imageInput)">
+          <!--<label class="image-upload-container btn btn-bwm">
+            <span>Select Image</span>
+            <input #imageInput
+                   type="file"
+                   accept="image/*"
+                   (change)="processFile(imageInput)">
+          </label>
+
+
+          <div *ngIf="selectedFile" class="img-preview-container">
+
+            <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+                 [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+            </div>
+
+            <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+              <div class="img-spinning-circle"></div>
+            </div>
+
+            <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+            <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+          </div>-->
         </div>
 
 

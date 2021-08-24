@@ -4,6 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../hitaya-interfaces/IUser';
 import { UserValidationService } from '../hitaya-services/user-validation/user-validation.service';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
+import { UserRegistrationService } from '../hitaya-services/user_registration/user-registration.service';
+
+class ImageSnippet {
+  pending: boolean = false;
+  status: string = 'init';
+
+  constructor(public src: string, public file: File) { }
+}
 
 @Component({
   selector: 'app-registration',
@@ -21,9 +29,12 @@ export class RegistrationComponent implements OnInit {
   siteKey: string;
 
   user: any;
+  username: any;
+
+  selectedFile: ImageSnippet;
 
 
-  constructor(private login: UserValidationService, private hat_token_servie : HatTokenService, private router: Router, private fb: FormBuilder) {
+  constructor(private login: UserValidationService, private hat_token_servie: HatTokenService, private router: Router, private fb: FormBuilder, private imageService: UserRegistrationService) {
     this.siteKey = '6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx';
   }
 
@@ -52,17 +63,66 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  onSelectFile(event) { // called each time file input changes
+  onSelectFile(event, imageInput: any) { // called each time file input changes
     if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+      var readerx = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+      readerx.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (event) => { // called once readAsDataURL is completed
+      const file: File = event.target.files[0];
+      //const reader = new FileReader();
+
+      readerx.addEventListener('load', (event: any) => {
+
+        this.selectedFile = new ImageSnippet(event.target.result, file);
+
+        this.selectedFile.pending = true;
+        this.imageService.uploadImage(this.selectedFile.file).subscribe(
+          (res) => {
+            console.log(res);
+          },
+          (err) => {
+            console.log(err);
+          })
+      });
+
+      readerx.onload = (event) => { // called once readAsDataURL is completed
         this.url = event.target.result;
       }
     }
   }
+
+  //private onSuccess() {
+  //  this.selectedFile.pending = false;
+  //  this.selectedFile.status = 'ok';
+  //}
+
+  //private onError() {
+  //  this.selectedFile.pending = false;
+  //  this.selectedFile.status = 'fail';
+  //  this.selectedFile.src = '';
+  //}
+
+  //processFile(imageInput: any) {
+  //  const file: File = imageInput.files[0];
+  //  const reader = new FileReader();
+
+  //  reader.addEventListener('load', (event: any) => {
+
+  //    this.selectedFile = new ImageSnippet(event.target.result, file);
+
+  //    this.selectedFile.pending = true;
+  //    this.imageService.uploadImage(this.selectedFile.file).subscribe(
+  //      (res) => {
+  //        this.onSuccess();
+  //      },
+  //      (err) => {
+  //        this.onError();
+  //      })
+  //  });
+
+  //  reader.readAsDataURL(file);
+  //}
 
   getAccountAndBalance = () => {
     const that = this;

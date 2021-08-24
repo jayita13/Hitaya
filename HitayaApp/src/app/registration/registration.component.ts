@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../hitaya-interfaces/IUser';
 import { UserValidationService } from '../hitaya-services/user-validation/user-validation.service';
+import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 @Component({
   selector: 'app-registration',
@@ -19,12 +20,18 @@ export class RegistrationComponent implements OnInit {
   url: any;
   siteKey: string;
 
+  user: any;
 
-  constructor(private login: UserValidationService, private router: Router, private fb: FormBuilder) {
+
+  constructor(private login: UserValidationService, private hat_token_servie : HatTokenService, private router: Router, private fb: FormBuilder) {
     this.siteKey = '6Lfma8kbAAAAADgvC6Pgq8g9q5NJ2No80hxtgoLx';
   }
 
   ngOnInit(): void {
+
+    this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
+    this.getAccountAndBalance();
+
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -55,6 +62,19 @@ export class RegistrationComponent implements OnInit {
         this.url = event.target.result;
       }
     }
+  }
+
+  getAccountAndBalance = () => {
+    const that = this;
+    this.hat_token_servie.getUserBalance().
+      then(function (retAccount: any) {
+        that.user.address = retAccount.account;
+        that.user.balance = retAccount.balance / (10 ** 18);
+        console.log('transfer.components :: getAccountAndBalance :: that.user');
+        console.log(that.user);
+      }).catch(function (error) {
+        console.log(error);
+      });
   }
 
   submitLoginForm() {

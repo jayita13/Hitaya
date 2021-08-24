@@ -6,7 +6,7 @@
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" formControlName="email" />
+          <input type="text" value={{user.address}} formControlName="email" disabled/>
         </div>
 
         <div class="input-field">
@@ -43,7 +43,7 @@
         </div>
         <div class="input-field">
           <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Email" />
+          <input type="email" value={{user.address}} placeholder="Email" disabled />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>

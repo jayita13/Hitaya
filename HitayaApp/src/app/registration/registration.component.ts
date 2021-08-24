@@ -59,6 +59,7 @@ export class RegistrationComponent implements OnInit {
 
   submitLoginForm() {
     this.credentials = this.loginForm.value;
+    console.log(this.credentials);
     this.login.validateCredentials(this.credentials).subscribe(
       responseLoginStatus => {
         this.status = responseLoginStatus;

@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.5;
 
-import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol';
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 
 contract HAT_TOKEN is ERC20 {

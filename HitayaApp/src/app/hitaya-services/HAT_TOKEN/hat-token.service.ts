@@ -89,4 +89,36 @@ export class HatTokenService {
   }
 
 
+
+  Create_New_User(value) {
+    const that = this;
+    console.log('User Name : ' +
+      value.name + ' User Password : ' + value.password + ' Public Crypto Id : ' + value.cryptoid);
+    return new Promise((resolve, reject) => {
+      console.log('transfer.service :: transferEther :: tokenAbi');
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const transferContract = contract(tokenAbi);
+      transferContract.setProvider(that.web3);
+      console.log('transfer.service :: transferEther :: transferContract');
+      console.log(transferContract);
+      transferContract.deployed().then(function (instance) {
+        return instance._create_New_User(
+          {
+            _name: value.name,
+            _user_crypto_id: value.cryptoid,
+            _password: value.password
+          });
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('transfer.service error');
+      });
+    });
+  }
+
+
 }

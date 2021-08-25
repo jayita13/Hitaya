@@ -35,11 +35,11 @@
       </form>
 
 
-      <form action="#" class="sign-up-form">
+      <form class="sign-up-form" #signupForm="ngForm" (ngSubmit)="SubmitSignUpForm(signupForm)">
         <h2 class="title">Sign up</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input type="text" #NameRef name="name" ngModel placeholder="Username" required />
         </div>
         <!--<div class="input-field">
           <i class="fas fa-envelope"></i>
@@ -47,11 +47,11 @@
         </div>-->
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" required  />
         </div>
         <div class="input-field">
           <i class="fas fa-key"></i>
-          <input type="text" value={{user.address}} placeholder="Crypto Public Key" disabled />
+          <input type="text" value={{user.address}} #CryptoRef name="crypto" ngModel placeholder="Public Crypto Key" required disabled />
         </div>
 
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { IUser } from '../hitaya-interfaces/IUser';
+import { ISignUp } from '../hitaya-interfaces/ISignUp';
 import { UserValidationService } from '../hitaya-services/user-validation/user-validation.service';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 import { UserRegistrationService } from '../hitaya-services/user_registration/user-registration.service';
@@ -30,6 +31,8 @@ export class RegistrationComponent implements OnInit {
 
   user: any;
   username: any;
+
+  signup: ISignUp;
 
   selectedFile: ImageSnippet;
 
@@ -137,25 +140,40 @@ export class RegistrationComponent implements OnInit {
       });
   }
 
-  submitLoginForm() {
-    this.credentials = this.loginForm.value;
-    console.log(this.credentials);
-    this.login.validateCredentials(this.credentials).subscribe(
-      responseLoginStatus => {
-        this.status = responseLoginStatus;
-        if (this.status == 1) {
-          sessionStorage.setItem('userName', this.loginForm.value.email);
-          this.router.navigate(['/wallet']);
-        }
-        else {
-          this.msg = this.status + ". Try again with valid credentials.";
-          alert("invalid");
-        }
-      },
-      () => console.log("SubmitLoginForm method executed successfully")
-    );
 
+  SubmitSignUpForm(form: NgForm) {
+
+    console.log("Sign Up Fuction Started");
+    this.signup = { name: form.value.name, password: form.value.password, cryptoid: this.user.address };
+    console.log(this.signup);
+    this.hat_token_servie.Create_New_User(this.signup).
+        then(function () { }).catch(function (error) {
+          console.log(error);
+        });
+    
   }
+
+
+
+  //submitLoginForm() {
+  //  this.credentials = this.loginForm.value;
+  //  console.log(this.credentials);
+  //  this.login.validateCredentials(this.credentials).subscribe(
+  //    responseLoginStatus => {
+  //      this.status = responseLoginStatus;
+  //      if (this.status == 1) {
+  //        sessionStorage.setItem('userName', this.loginForm.value.email);
+  //        this.router.navigate(['/wallet']);
+  //      }
+  //      else {
+  //        this.msg = this.status + ". Try again with valid credentials.";
+  //        alert("invalid");
+  //      }
+  //    },
+  //    () => console.log("SubmitLoginForm method executed successfully")
+  //  );
+
+  //}
 
 
 }

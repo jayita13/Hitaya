@@ -2,21 +2,21 @@
   <div class="forms-container">
     <div class="signin-signup">
 
-      <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="sign-in-form">
+      <form #signinForm="ngForm" (ngSubmit)="submitLoginForm(signinForm)" class="sign-in-form">
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" value={{user.address}} formControlName="email" disabled/>
+          <input type="text" value={{user.address}} name="crypto_id" disabled/>
         </div>
 
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" formControlName="password" />
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" />
         </div>
 
-        <ngx-recaptcha2 [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+        <ngx-recaptcha2 [siteKey]="siteKey"></ngx-recaptcha2>
 
-        <input type="submit" [disabled]="!loginForm.valid" value="Login" class="btn solid" />
+        <input type="submit"  value="Login" class="btn solid" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">
           <a href="https://www.facebook.com" class="social-icon">

@@ -21,8 +21,8 @@ class ImageSnippet {
 })
 export class RegistrationComponent implements OnInit {
 
-  loginForm: FormGroup;
-  status: number;
+
+  status: true;
   errMsg: string;
   msg: string;
   credentials: IUser;
@@ -154,26 +154,53 @@ export class RegistrationComponent implements OnInit {
   }
 
 
+  submitLoginForm(form: NgForm) {
 
-  submitLoginForm() {
-    this.credentials = this.loginForm.value;
+    this.credentials = { crypto_id: this.user.address, password: form.value.password };
     console.log(this.credentials);
-    this.login.validateCredentials(this.credentials).subscribe(
-      responseLoginStatus => {
-        this.status = responseLoginStatus;
-        if (this.status == 1) {
-          sessionStorage.setItem('userName', this.loginForm.value.email);
+    console.log("Login Fuction Started");
+    this.hat_token_servie.login(this.credentials).
+      then(function (status: any) {
+        console.log(status);
+        if (status.status == true) {
+          sessionStorage.setItem('userName', form.value.crypto_id);
           this.router.navigate(['/wallet']);
         }
         else {
           this.msg = this.status + ". Try again with valid credentials.";
           alert("invalid");
         }
-      },
-      () => console.log("SubmitLoginForm method executed successfully")
-    );
+        console.log("hhhhghhg");
+        console.log(status);
+        this.status = status;
+        }).catch(function (error) {
+        console.log(error);
+        });
+    console.log(status);
 
   }
+
+
+
+  //submitLoginForm() {
+  //  this.credentials = this.loginForm.value;
+  //  console.log(this.credentials);
+  //  this.login.validateCredentials(this.credentials).subscribe(
+  //    responseLoginStatus => {
+  //      this.status = responseLoginStatus;
+  //      if (this.status == 1) {
+  //        sessionStorage.setItem('userName', this.loginForm.value.email);
+  //        this.router.navigate(['/wallet']);
+  //      }
+  //      else {
+  //        this.msg = this.status + ". Try again with valid credentials.";
+  //        alert("invalid");
+  //      }
+  //    },
+  //    () => console.log("SubmitLoginForm method executed successfully")
+  //  );
+
+  //}
 
 
 }

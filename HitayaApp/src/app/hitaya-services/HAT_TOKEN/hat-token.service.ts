@@ -19,7 +19,7 @@ export class HatTokenService {
       alert('Non-Ethereum browser detected. Install MetaMask');
     } else {
       if (typeof window.web3 !== 'undefined') {
-        this.web3 = window.web3.currentProvider;
+        this.web3 = window.ethereum;
       } else {
         this.web3 = new Web3.providers.HttpProvider('http://localhost:8545');
       }
@@ -34,7 +34,7 @@ export class HatTokenService {
   private async enableMetaMaskAccount(): Promise<any> {
     let enable = false;
     await new Promise((resolve, reject) => {
-      enable = window.ethereum.enable();
+      enable = window.eth_requestAccounts;
     });
     return Promise.resolve(enable);
   }
@@ -121,6 +121,39 @@ export class HatTokenService {
       });
     });
   }
+
+  login(value) {
+    const that = this;
+    console.log(' User Password : ' + value.password + ' Public Crypto Id : ' + value.crypto_id);
+    return new Promise((resolve, reject) => {
+      console.log('transfer.service :: transferEther :: tokenAbi');
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log('transfer.service :: transferEther :: transferContract');
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.login(
+          value.password,
+          {
+            from: value.crypto_id
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+        else {
+          return resolve({ status: false });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('transfer.service error');
+      });
+    });
+  }
+
 
 
 }

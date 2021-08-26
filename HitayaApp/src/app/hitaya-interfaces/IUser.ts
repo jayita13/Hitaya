@@ -1,9 +1,6 @@
 export interface IUser {
-  FIRSTNAME: string,
-  LASTNAME: string,
-  email: string,
-  password: string,
-  recaptcha: string
+  crypto_id: string,
+  password: string
 }
 
 export interface IAdminLogin {

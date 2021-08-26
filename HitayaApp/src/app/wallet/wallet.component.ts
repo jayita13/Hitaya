@@ -18,6 +18,12 @@ export class WalletComponent implements OnInit {
   userName: string;
   userLayout: boolean = false;
   commonLayout: boolean = false;
+
+  recive: boolean = false;
+  send: boolean = false;
+  buy: boolean = false;
+  swap: boolean = false;
+
   public myAngularxQrCode: string = null;
 
 
@@ -64,6 +70,59 @@ export class WalletComponent implements OnInit {
 
 
   }
+
+  ReciveQr() {
+    if (this.recive == true) {
+      this.recive = false;
+    }
+    else {
+      this.recive = true;
+      this.send = false;
+      this.buy = false;
+      this.swap = false;
+    }
+  }
+
+  sendtoken() {
+    if (this.send == true) {
+      this.send = false;
+    }
+    else {
+      this.send = true;
+      this.recive = false;
+      this.buy = false;
+      this.swap = false;
+    }
+
+  }
+
+  buytoken() {
+    if (this.buy == true) {
+      this.buy = false;
+    }
+    else {
+      this.buy = true;
+      this.send = false;
+      this.recive = false;
+      this.swap = false;
+    }
+
+  }
+
+  swaptoken() {
+    if (this.swap == true) {
+      this.swap = false;
+    }
+    else {
+      this.swap = true;
+      this.send = false;
+      this.buy = false;
+      this.recive = false;
+    }
+
+  }
+
+
 
 
   createForms() {

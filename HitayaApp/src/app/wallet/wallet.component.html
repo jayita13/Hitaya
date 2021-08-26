@@ -251,25 +251,25 @@
 
               <div class="row mt-4 text-center">
                 <div class="col-md-3 col-sm-3 col-3">
-                  <button class="btn btn-primary btn-sm">
+                  <button class="btn btn-primary btn-sm" (click)="ReciveQr()">
                     <i class="fa fa-arrow-down fa-fw"></i>
                   </button>
                   <p class="small text-primary">Receive</p>
                 </div>
                 <div class="col-md-3 col-sm-3 col-3">
-                  <button class="btn btn-primary btn-sm">
+                  <button class="btn btn-primary btn-sm" (click)="sendtoken()">
                     <i class="fa fa-arrow-up fa-fw"></i>
                   </button>
                   <p class="small text-primary">Send</p>
                 </div>
                 <div class="col-md-3 col-sm-3 col-3">
-                  <button class="btn btn-primary btn-sm">
+                  <button class="btn btn-primary btn-sm" (click)="buytoken()">
                     <i class="fa fa-credit-card fa-fw"></i>
                   </button>
                   <p class="small text-primary">Buy</p>
                 </div>
                 <div class="col-md-3 col-sm-3 col-3">
-                  <button class="btn btn-primary btn-sm">
+                  <button class="btn btn-primary btn-sm" (click)="swaptoken()">
                     <i class="fa fa-exchange-alt fa-fw"></i>
                   </button>
                   <p class="small text-primary">Swap</p>
@@ -280,7 +280,7 @@
             <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
           </div>
 
-          <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+          <form *ngIf="send" [formGroup]="userForm" (ngSubmit)="submitForm()">
 
 
             <div class="form-group row">
@@ -315,7 +315,10 @@
           
 
         </div>
-        <qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>
+        <div  *ngIf="recive">
+          <qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+        
       </div>
 
     </div>

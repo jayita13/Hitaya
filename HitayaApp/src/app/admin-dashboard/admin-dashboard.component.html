@@ -96,107 +96,208 @@
     </div>
   </div>-->
 
-    <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
 
+        <div class="card border-2x mb-3" id="basic-details-2">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img src="assets/hat.jpeg" class="img-fluid" />
+              </div>
+              <div class="col-md-8 text-center">
+                <h2 class="mt-3 text-dark-grey">HAT TOKEN (HAT)</h2>
+                <h5 class="mt-3 text-muted">{{userName}}</h5>
+                <br />
+              </div>
+            </div>
 
+            <div class="row mt-2 text-center text-sm-left">
+              <div class="col-md-12">
+                <h3 class="mb-0">HAT</h3>
+                <br />
+                <p class="text-muted type-7 mt-0">XXX</p>
 
-      <div class="card border-2x" id="basic-details-2">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
-                     aria-controls="home" aria-selected="true">
-                    <strong>TRANSACTIONS</strong>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
-                     aria-selected="true">
-                    <strong>CONTACTS</strong>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
-                     aria-selected="false">
-                    <strong>NFTs</strong>
-                  </a>
-                </li>
-              </ul>
-
-              <div class="tab-content mx-4" id="myTabContent">
-                <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
-                  <div class="row">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
-                    </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">10 ETH</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                    </div>
+                <div class="row mt-4 text-center">
+                  <div class="col-md-3 col-sm-3 col-3">
+                    <button class="btn btn-primary btn-sm" (click)="ReciveQr()">
+                      <i class="fa fa-arrow-down fa-fw"></i>
+                    </button>
+                    <p class="small text-primary">Receive</p>
                   </div>
-
-                  <hr />
-
-                  <div class="row mt-4">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
-                    </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">0 ETH</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                    </div>
+                  <div class="col-md-3 col-sm-3 col-3">
+                    <button class="btn btn-primary btn-sm" (click)="sendtoken()">
+                      <i class="fa fa-arrow-up fa-fw"></i>
+                    </button>
+                    <p class="small text-primary">Send</p>
                   </div>
-
-                  <hr />
+                  <div class="col-md-3 col-sm-3 col-3">
+                    <button class="btn btn-primary btn-sm" (click)="buytoken()">
+                      <i class="fa fa-credit-card fa-fw"></i>
+                    </button>
+                    <p class="small text-primary">Buy</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-3">
+                    <button class="btn btn-primary btn-sm" (click)="swaptoken()">
+                      <i class="fa fa-exchange-alt fa-fw"></i>
+                    </button>
+                    <p class="small text-primary">Swap</p>
+                  </div>
                 </div>
-                <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
+
+              </div>
+              <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
+            </div>
+
+            <div *ngIf="swap">
+
+            </div>
+
+            <form *ngIf="send" [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+
+              <div class="form-group row">
+                <h5 class="col-md-4 mt-1">ADDRESS:</h5>
+                <input class="form-control form-control-sm col-md-8" placeholder="Transfer Address" name="transferAddress"
+                       formControlName="transferAddress" maxlength="42" minlength="42" required>
+                <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
+              <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
+            </div>-->
+              </div>
+
+
+
+
+              <div class="form-group row">
+                <h5 class="col-md-4 mt-1">ETHE WEI:</h5>
+                <input class="form-control form-control-sm col-md-8" placeholder="Amount" name="amount"
+                       formControlName="amount" required>
+                <!--<div *ngFor="let validation of accountValidationMessages.amount">
+              <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+            </div>-->
+              </div>
+
+
+              <div class="mb-4">
+                <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
+              </div>
+
+
+            </form>
+
+
+
+          </div>
+          <div *ngIf="recive">
+            <qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+
+
+        <div class="card border-2x" id="basic-details-2">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
+                       aria-controls="home" aria-selected="true">
+                      <strong>TRANSACTIONS</strong>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
+                       aria-selected="true">
+                      <strong>CONTACTS</strong>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
+                       aria-selected="false">
+                      <strong>NFTs</strong>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="tab-content mx-4" id="myTabContent">
+                  <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
+                    <div class="row">
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <img src="assets/profile-pic.png" class="img-fluid" />
+                      </div>
+                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                        <h4 class="mb-0 bold">10 ETH</h4>
+                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
+                      </div>
                     </div>
+
+                    <hr />
+
+                    <div class="row mt-4">
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <img src="assets/profile-pic.png" class="img-fluid" />
+                      </div>
+                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                        <h4 class="mb-0 bold">0 ETH</h4>
+                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
+                      </div>
+                    </div>
+
+                    <hr />
                   </div>
-
-                  <hr />
-
-                  <div class="row">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
+                  <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
+                      </div>
                     </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">StarBucks</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
-                      <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+
+                    <hr />
+
+                    <div class="row">
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <img src="assets/profile-pic.png" class="img-fluid" />
+                      </div>
+                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                        <h4 class="mb-0 bold">StarBucks</h4>
+                        <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
+                        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                      </div>
                     </div>
+
+                    <hr />
+
+                    <div class="row mt-4">
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <img src="assets/profile-pic.png" class="img-fluid" />
+                      </div>
+                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                        <h4 class="mb-0 bold">Veggie Grill</h4>
+                        <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
+                        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                      </div>
+                    </div>
+
+                    <hr />
                   </div>
-
-                  <hr />
-
-                  <div class="row mt-4">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
+                  <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
+                    <div class="text-center text-dark-grey">
+                      <i class="fa fa-circle-notch fa-3x fa-fw"></i>
+                      <h3 class="mt-2 mb-0">No NFTs yet</h3>
+                      <a href="#">Learn More</a>
                     </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">Veggie Grill</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
-                      <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                    </div>
-                  </div>
 
-                  <hr />
-                </div>
-                <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
-                  <div class="text-center text-dark-grey">
-                    <i class="fa fa-circle-notch fa-3x fa-fw"></i>
-                    <h3 class="mt-2 mb-0">No NFTs yet</h3>
-                    <a href="#">Learn More</a>
-                  </div>
-
-                  <div class="row text-center text-muted mt-4">
-                    <div class="col-md-12">
-                      <p class="type-6 mb-0">Don't see your NFT?</p>
-                      <a class="type-6 mt-0" href="#">+ ADD NFTs</a>
+                    <div class="row text-center text-muted mt-4">
+                      <div class="col-md-12">
+                        <p class="type-6 mb-0">Don't see your NFT?</p>
+                        <a class="type-6 mt-0" href="#">+ ADD NFTs</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -204,8 +305,8 @@
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
 
     <br />

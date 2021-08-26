@@ -98,20 +98,19 @@ export class HatTokenService {
       console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
-      const transferContract = contract(tokenAbi);
-      transferContract.setProvider(that.web3);
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
       console.log('transfer.service :: transferEther :: transferContract');
-      console.log(transferContract);
-      transferContract.deployed().then(function (instance) {
-        return instance.NewUser(
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance._create_New_User(
           value.name,
           value.cryptoid,
           value.password,
           {
-            name: value.name,
-            user_crypto_id: value.cryptoid,
-            password: value.password
-          });
+            from: value.cryptoid
+          }
+          );
       }).then(function (status) {
         if (status) {
           return resolve({ status: true });

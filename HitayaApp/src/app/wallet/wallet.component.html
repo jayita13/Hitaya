@@ -125,7 +125,9 @@
 
   /* Another Custom Checkboxes
     ----------------------------------------- */
-  .span_pseudo, .chiller_cb span:before, .chiller_cb span:after {
+  .span_pseudo,
+  .chiller_cb span:before,
+  .chiller_cb span:after {
     content: "";
     display: inline-block;
     background: #fff;
@@ -217,7 +219,6 @@
 </style>
 
 
-
 <div class="container mt-4 mb-4">
   <div class="row">
     <div class="col-md-12">
@@ -279,10 +280,10 @@
           <form [formGroup]="userForm" (ngSubmit)="submitForm()">
 
 
-            <div class="input-group mb-3">
-              <span class="input-group-text">ADDRESS</span>
-              <input placeholder="Transfer Address" name="transferAddress" formControlName="transferAddress"
-                     maxlength="42" minlength="42" required>
+            <div class="form-group row">
+              <h5 class="col-md-4 mt-1">ADDRESS:</h5>
+              <input class="form-control form-control-sm col-md-8" placeholder="Transfer Address" name="transferAddress"
+                     formControlName="transferAddress" maxlength="42" minlength="42" required>
               <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
                 <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
               </div>-->
@@ -291,17 +292,18 @@
 
 
 
-            <div class="input-group mb-3">
-              <span class="input-group-text">ETHE  WEI</span>
-              <input placeholder="Amount" name="amount" formControlName="amount" required>
+            <div class="form-group row">
+              <h5 class="col-md-4 mt-1">ETHE WEI:</h5>
+              <input class="form-control form-control-sm col-md-8" placeholder="Amount" name="amount"
+                     formControlName="amount" required>
               <!--<div *ngFor="let validation of accountValidationMessages.amount">
                 <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
               </div>-->
             </div>
 
- 
+
             <div class="mb-4">
-              <button class="btn btn-success" type="submit">Transfer Ether</button>
+              <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
             </div>
 
 
@@ -320,19 +322,27 @@
             <div class="col-md-12">
               <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tokens" role="tab" aria-controls="home" aria-selected="true">
-                    <strong>TOKENS</strong>
+                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
+                     aria-controls="home" aria-selected="true">
+                    <strong>TRANSACTIONS</strong>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile" aria-selected="false">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
+                     aria-selected="true">
+                    <strong>CONTACTS</strong>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
+                     aria-selected="false">
                     <strong>NFTs</strong>
                   </a>
                 </li>
               </ul>
 
               <div class="tab-content mx-4" id="myTabContent">
-                <div class="tab-pane fade show active" id="tokens" role="tabpanel" aria-labelledby="tokens-tab">
+                <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
                   <div class="row">
                     <div class="col-3 col-sm-2 col-md-2">
                       <img src="assets/profile-pic.png" class="img-fluid" />
@@ -352,6 +362,41 @@
                     <div class="col-9 col-sm-10 col-md-10 mt-md-2">
                       <h4 class="mb-0 bold">0 ETH</h4>
                       <p class="mt-0 no-td-space text-muted type-6">$0</p>
+                    </div>
+                  </div>
+
+                  <hr />
+                </div>
+                <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
+                    </div>
+                  </div>
+
+                  <hr />
+
+                  <div class="row">
+                    <div class="col-3 col-sm-2 col-md-2">
+                      <img src="assets/profile-pic.png" class="img-fluid" />
+                    </div>
+                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                      <h4 class="mb-0 bold">StarBucks</h4>
+                      <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
+                      <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                    </div>
+                  </div>
+
+                  <hr />
+
+                  <div class="row mt-4">
+                    <div class="col-3 col-sm-2 col-md-2">
+                      <img src="assets/profile-pic.png" class="img-fluid" />
+                    </div>
+                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                      <h4 class="mb-0 bold">Veggie Grill</h4>
+                      <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
+                      <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
                     </div>
                   </div>
 
@@ -389,31 +434,29 @@
         Address: {{user.address}} <br />
         Balance: {{user.balance}} Eth
       </div>
-      
+
         <input matInput placeholder="Transfer Address" name="transferAddress" formControlName="transferAddress"
                maxlength="42" minlength="42" required>
         <mat-error *ngFor="let validation of accountValidationMessages.transferAddress">
           <mat-error *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</mat-error>
         </mat-error>
-      
-      
+
+
         <input matInput placeholder="Amount" name="amount" formControlName="amount" required>
         <mat-error *ngFor="let validation of accountValidationMessages.amount">
           <mat-error *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</mat-error>
         </mat-error>
-      
-      
+
+
         <input matInput placeholder="Remarks" name="remarks" formControlName="remarks"
                maxlength="42" required>
         <mat-error *ngFor="let validation of accountValidationMessages.remarks">
           <mat-error *ngIf="userForm.get('remarks').hasError(validation.type) && (userForm.get('remarks').dirty || userForm.get('remarks').touched)">{{validation.message}}</mat-error>
         </mat-error>
-      
+
       <div style="width: 100px">
         <button type="submit">Transfer Ether</button>
       </div>
     </div>
   </div>
 </form>-->
-
-

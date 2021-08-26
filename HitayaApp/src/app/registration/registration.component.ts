@@ -155,25 +155,25 @@ export class RegistrationComponent implements OnInit {
 
 
 
-  //submitLoginForm() {
-  //  this.credentials = this.loginForm.value;
-  //  console.log(this.credentials);
-  //  this.login.validateCredentials(this.credentials).subscribe(
-  //    responseLoginStatus => {
-  //      this.status = responseLoginStatus;
-  //      if (this.status == 1) {
-  //        sessionStorage.setItem('userName', this.loginForm.value.email);
-  //        this.router.navigate(['/wallet']);
-  //      }
-  //      else {
-  //        this.msg = this.status + ". Try again with valid credentials.";
-  //        alert("invalid");
-  //      }
-  //    },
-  //    () => console.log("SubmitLoginForm method executed successfully")
-  //  );
+  submitLoginForm() {
+    this.credentials = this.loginForm.value;
+    console.log(this.credentials);
+    this.login.validateCredentials(this.credentials).subscribe(
+      responseLoginStatus => {
+        this.status = responseLoginStatus;
+        if (this.status == 1) {
+          sessionStorage.setItem('userName', this.loginForm.value.email);
+          this.router.navigate(['/wallet']);
+        }
+        else {
+          this.msg = this.status + ". Try again with valid credentials.";
+          alert("invalid");
+        }
+      },
+      () => console.log("SubmitLoginForm method executed successfully")
+    );
 
-  //}
+  }
 
 
 }

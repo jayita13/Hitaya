@@ -24,6 +24,8 @@ contract HAT_TOKEN is ERC20 {
         address contact_name;
         string name;
     }
+
+    //event NewUser( string name, address user_crypto_id, string password);
     
     User[] public Users;
     Contact[] public Contacts;
@@ -60,6 +62,7 @@ contract HAT_TOKEN is ERC20 {
     
     function _create_New_User(string memory _name, address _user_crypto_id, string memory _password) public {
         Users.push(User( _name, _user_crypto_id, _password));
+	//emit NewUser(_name, _user_crypto_id, _password);
        
     }
     
@@ -89,7 +92,14 @@ contract HAT_TOKEN is ERC20 {
         }
         return false;
     }
-        
+    
+    
+    function user_view(uint id) public view returns (string memory ,address , string memory)
+    {
+        User memory p = Users[id];
+        return (p.name,p.user_crypto_id,p.password); // return multiple values like this
+    }
+    
     
     // function get_transaction_details() public view returns (Transactions[] memory){
     //     Transactions[] memory Transactions_Detail= new Transactions[](Transactions.length);

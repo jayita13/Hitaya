@@ -103,11 +103,14 @@ export class HatTokenService {
       console.log('transfer.service :: transferEther :: transferContract');
       console.log(transferContract);
       transferContract.deployed().then(function (instance) {
-        return instance._create_New_User(
+        return instance.NewUser(
+          value.name,
+          value.cryptoid,
+          value.password,
           {
-            _name: value.name,
-            _user_crypto_id: value.cryptoid,
-            _password: value.password
+            name: value.name,
+            user_crypto_id: value.cryptoid,
+            password: value.password
           });
       }).then(function (status) {
         if (status) {

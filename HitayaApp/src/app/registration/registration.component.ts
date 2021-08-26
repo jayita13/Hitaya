@@ -46,11 +46,11 @@ export class RegistrationComponent implements OnInit {
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
     this.getAccountAndBalance();
 
-    this.loginForm = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      recaptcha: ['', Validators.required],
-    });
+    //this.loginForm = this.fb.group({
+    //  email: ['', Validators.required],
+    //  password: ['', Validators.required],
+    //  recaptcha: ['', Validators.required],
+    //});
 
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -155,7 +155,7 @@ export class RegistrationComponent implements OnInit {
 
 
   submitLoginForm(form: NgForm) {
-
+    const that = this;
     this.credentials = { crypto_id: this.user.address, password: form.value.password };
     console.log(this.credentials);
     console.log("Login Fuction Started");
@@ -163,21 +163,17 @@ export class RegistrationComponent implements OnInit {
       then(function (status: any) {
         console.log(status);
         if (status.status == true) {
-          sessionStorage.setItem('userName', form.value.crypto_id);
-          this.router.navigate(['/wallet']);
+          sessionStorage.setItem('userName', that.user.address);
+          that.router.navigate(['/wallet']);
         }
         else {
-          this.msg = this.status + ". Try again with valid credentials.";
-          alert("invalid");
+          that.msg = "Try again with valid credentials.";
+          alert("Incorrect User Crypto Id or Password");
+          console.log(that.msg);
         }
-        console.log("hhhhghhg");
-        console.log(status);
-        this.status = status;
         }).catch(function (error) {
         console.log(error);
         });
-    console.log(status);
-
   }
 
 

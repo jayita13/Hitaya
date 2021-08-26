@@ -8,7 +8,10 @@
 <!--<app-admin-layout *ngIf="adminLayout"></app-admin-layout>-->
 
 
-
+<br />
+<br />
+<br />
+<br />
 <section class="d-flex flex-column">
   <form #signupForm="ngForm" (ngSubmit)="SignUp(signupForm)">
     <div class="container mt-4 mb-4">
@@ -24,62 +27,51 @@
               </div>
               <div class="col-md-7 col-sm-12 col-12">
                 <div class="card-body form-contents">
-                  <h3 class="no-td-space">Create an Account</h3>
+                  <h3 class="no-td-space">Update the Account</h3>
                   <p class="type-7-2 text-muted">
-                    If you already have an Account, then <a href="javascript:;">Sign In</a>.
+                    If You Don't have a account then <a routerLink="/register">Register.</a>
                   </p>
 
                   <br />
                   <br />
-
-                  <div class="row pt-2">
-                    <div class="col-md-6 col-sm-6 col-6">
-                      <div class="form-group">
-                        <h6>First Name:</h6>
-                        <input type="text" class="form-control" #FirstRef name="FirstName" ngModel required>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-6">
-                      <div class="form-group">
-                        <h6>Last Name:</h6>
-                        <input type="text" class="form-control" #LastRef name="LastName" ngModel required>
-                      </div>
-                    </div>
+                  <div class="form-group">
+                    <h6>Public Crypto Id :</h6>
+                    <input type="text" class="form-control"  value={{userName}}  required disabled>
                   </div>
                   <div class="form-group">
-                    <h6>Email:</h6>
-                    <input type="email" class="form-control" #EmailRef name="Email" ngModel required>
+                    <h6>Old Password:</h6>
+                    <input type="password" class="form-control" #EmailRef name="old_password" ngModel required>
                   </div>
                   <div class="form-group">
-                    <h6>Password:<span class="float-right"><i id="password-visibility" class="far fa-fw fa-eye-slash"></i></span></h6>
-                    <input type="password" class="form-control" #PsswordRef name="Password" ngModel required>
+                    <h6> New Password:<span class="float-right"><i id="password-visibility" class="far fa-fw fa-eye-slash"></i></span></h6>
+                    <input type="password" class="form-control" #PsswordRef name="new_password" ngModel required>
                   </div>
 
                   <!--<div class="row text-center">
-                  <div class="col-md-6">
-                    <h6>Enter the Captcha below:</h6>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-3"></div>
-                      <div class="col-md-12 col-6">
-                        <div class="form-group mt-4">
-                          <input class="form-control" name="lemail" id="lemail" placeholder="Captcha" />
-                        </div>
-                      </div>
-                      <div class="col-3">-->
+  <div class="col-md-6">
+    <h6>Enter the Captcha below:</h6>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-md-12 col-6">
+        <div class="form-group mt-4">
+          <input class="form-control" name="lemail" id="lemail" placeholder="Captcha" />
+        </div>
+      </div>
+      <div class="col-3">-->
                   <!--<ngx-recaptcha2 #captchaElem [siteKey]="siteKey"></ngx-recaptcha2>-->
                   <!--</div>
-                      </div>
-                    </div>
-                  </div>-->
+      </div>
+    </div>
+  </div>-->
 
                   <hr />
 
                   <div class="row">
                     <div class="col-md-12">
                       <p class="type-7">
-                        By clicking on the 'Create Account' button below, you agree that you have
+                        By clicking on the 'Update Account' button below, you agree that you have
                         read, understand, and accepted our <a href="">TERMS OF SERVICE</a>.
                       </p>
                     </div>

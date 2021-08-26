@@ -18,6 +18,7 @@ export class WalletComponent implements OnInit {
   userName: string;
   userLayout: boolean = false;
   commonLayout: boolean = false;
+  public myAngularxQrCode: string = null;
 
 
   formSubmitted = false;
@@ -43,6 +44,7 @@ export class WalletComponent implements OnInit {
   constructor(private fb: FormBuilder, private transferService: ContractService, private router: Router) {
 
     this.userName = sessionStorage.getItem('userName');
+    this.myAngularxQrCode = this.userName;
     console.log(this.userName);
     if (this.userName != null) {
       this.userLayout = true;
@@ -59,6 +61,7 @@ export class WalletComponent implements OnInit {
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
     this.getAccountAndBalance();
     this.createForms();
+
 
   }
 

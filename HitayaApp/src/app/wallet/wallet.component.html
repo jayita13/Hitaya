@@ -277,6 +277,7 @@
               </div>
 
             </div>
+            <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
           </div>
 
           <form [formGroup]="userForm" (ngSubmit)="submitForm()">
@@ -287,8 +288,8 @@
               <input class="form-control form-control-sm col-md-8" placeholder="Transfer Address" name="transferAddress"
                      formControlName="transferAddress" maxlength="42" minlength="42" required>
               <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
-                <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
-              </div>-->
+        <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
+      </div>-->
             </div>
 
 
@@ -299,8 +300,8 @@
               <input class="form-control form-control-sm col-md-8" placeholder="Amount" name="amount"
                      formControlName="amount" required>
               <!--<div *ngFor="let validation of accountValidationMessages.amount">
-                <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
-              </div>-->
+        <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+      </div>-->
             </div>
 
 
@@ -311,7 +312,10 @@
 
           </form>
 
+          
+
         </div>
+        <qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>
       </div>
 
     </div>

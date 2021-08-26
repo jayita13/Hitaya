@@ -9,6 +9,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 import { IgxFinancialChartModule } from "igniteui-angular-charts";
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -59,7 +60,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     ReactiveFormsModule,
     HttpClientModule,
     NgxCaptchaModule,
-    IgxFinancialChartModule
+    IgxFinancialChartModule,
+    QRCodeModule
 
   ],
   providers: [],

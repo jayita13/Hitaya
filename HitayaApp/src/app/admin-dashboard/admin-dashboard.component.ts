@@ -28,7 +28,7 @@ export class AdminDashboardComponent implements OnInit {
   userRole: string;
   userLayout: boolean = false;
   commonLayout: boolean = false;
-  adminLayout: boolean = false;
+  adminLayout: boolean = true;
 
   constructor(private router: Router) {
     this.userName = sessionStorage.getItem('userName');

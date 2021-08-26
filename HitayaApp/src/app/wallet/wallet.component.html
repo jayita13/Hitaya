@@ -280,6 +280,10 @@
             <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
           </div>
 
+          <div *ngIf="swap">
+
+          </div>
+
           <form *ngIf="send" [formGroup]="userForm" (ngSubmit)="submitForm()">
 
 

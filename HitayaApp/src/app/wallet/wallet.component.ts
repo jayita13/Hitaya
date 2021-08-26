@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { QrScannerComponent } from 'angular2-qrscanner';
 
 import { ContractService } from '../hitaya-services/blockchain-service/contract.service';
 
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
   styleUrls: ['./wallet.component.css'],
-  providers: [ContractService]
+  providers: [ContractService],
 })
 
 export class WalletComponent implements OnInit {

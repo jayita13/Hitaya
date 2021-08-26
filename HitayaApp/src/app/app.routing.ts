@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
 
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'user-dashboard', component: UserDashboardComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'about', component: AboutComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'admin-dashboard', component: AdminDashboardComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'employee-admin-dashboard', component: EmployeeAdminComponent, /* canActivate: [RegisterDoneService] */ },
   { path: '**', component: PageNotFoundComponentComponent }
 ];
 

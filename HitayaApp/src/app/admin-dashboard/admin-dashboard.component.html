@@ -174,98 +174,51 @@
                   <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
                        aria-controls="home" aria-selected="true">
-                      <strong>TRANSACTIONS</strong>
+                      <strong>MINT</strong>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
                        aria-selected="true">
-                      <strong>CONTACTS</strong>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
-                       aria-selected="false">
-                      <strong>NFTs</strong>
+                      <strong>AIR DROP / TRANSFER</strong>
                     </a>
                   </li>
                 </ul>
 
                 <div class="tab-content mx-4" id="myTabContent">
                   <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
-                    <div class="row">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">10 ETH</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                      </div>
-                    </div>
 
-                    <hr />
+                      <form>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Amount</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
 
-                    <div class="row mt-4">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">0 ETH</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                      </div>
-                    </div>
 
                     <hr />
                   </div>
                   <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
-                      </div>
-                    </div>
 
-                    <hr />
 
-                    <div class="row">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
+                    <form>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">StarBucks</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
-                        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1">
                       </div>
-                    </div>
-
-                    <hr />
-
-                    <div class="row mt-4">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">Veggie Grill</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
-                        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                      </div>
-                    </div>
-
-                    <hr />
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                   </div>
-                  <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
-                    <div class="text-center text-dark-grey">
-                      <i class="fa fa-circle-notch fa-3x fa-fw"></i>
-                      <h3 class="mt-2 mb-0">No NFTs yet</h3>
-                      <a href="#">Learn More</a>
-                    </div>
 
-                    <div class="row text-center text-muted mt-4">
-                      <div class="col-md-12">
-                        <p class="type-6 mb-0">Don't see your NFT?</p>
-                        <a class="type-6 mt-0" href="#">+ ADD NFTs</a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -366,10 +319,10 @@
             <table class="table">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col">User Name</th>
-                  <th scope="col">Employee Id</th>
-                  <th scope="col">Public Crypto Id</th>
-                  <th scope="col">Password</th>
+                  <th scope="col">Sender Id</th>
+                  <th scope="col">Receiver Id</th>
+                  <th scope="col">Amount Crypto Id</th>
+                  <th scope="col">Time</th>
                 </tr>
               </thead>
               <tbody>

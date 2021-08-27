@@ -29,8 +29,12 @@ export class RegistrationComponent implements OnInit {
   url: any;
   siteKey: string;
 
+  name: string = "";
+  id: string = "";
+
   user: any;
   username: any;
+  file: File = null;
 
   signup: ISignUp;
 
@@ -66,7 +70,8 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  onSelectFile(event, imageInput: any) { // called each time file input changes
+  onSelectFile(event) { // called each time file input changes
+    this.file = event.target.files[0];
     if (event.target.files && event.target.files[0]) {
       var readerx = new FileReader();
 
@@ -75,19 +80,41 @@ export class RegistrationComponent implements OnInit {
       const file: File = event.target.files[0];
       //const reader = new FileReader();
 
-      readerx.addEventListener('load', (event: any) => {
+      //readerx.addEventListener('load', (event: any) => {
 
-        this.selectedFile = new ImageSnippet(event.target.result, file);
+      //  this.selectedFile = new ImageSnippet(event.target.result, file);
 
-        this.selectedFile.pending = true;
-        this.imageService.uploadImage(this.selectedFile.file).subscribe(
-          (res) => {
-            console.log(res);
-          },
-          (err) => {
-            console.log(err);
-          })
-      });
+      //  this.selectedFile.pending = true;
+      //  this.imageService.uploadImage(form.value.image).subscribe(
+      //    (res) => {
+      //      console.log(res);
+      //    },
+      //    (err) => {
+      //      console.log(err);
+      //    })
+      //});
+
+      this.imageService.uploadImage(this.file).subscribe(
+        (event: any) => {
+          if (typeof (event) === 'object') {
+
+            console.log(event);
+            this.name = event[1];
+            this.id = event[2];
+
+            console.log(this.name, this.id);
+
+            // Short link via api response
+            //this.shortLink = event.link;
+
+            //this.loading = false; // Flag variable 
+          }
+        }
+      );
+    
+    
+
+
 
       readerx.onload = (event) => { // called once readAsDataURL is completed
         this.url = event.target.result;

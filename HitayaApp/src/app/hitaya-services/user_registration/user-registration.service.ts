@@ -16,10 +16,13 @@ export class UserRegistrationService {
   //  return this.http.get<any[]>('https://localhost:44314/api/Investopia/GetAllUserInformations').pipe(catchError(this.errorHandler));
   //}
 
-  public uploadImage(image: File): Observable<any[]> {
+  uploadImage(file): Observable<any>{
+
+    console.log(file);
     const formData = new FormData();
 
-    formData.append('image', image);
+    formData.append('file', file, file.name);
+    console.log(formData);
 
     return this.http.post<any[]>('http://127.0.0.1:8000/predict', formData).pipe(catchError(this.errorHandler));
   }

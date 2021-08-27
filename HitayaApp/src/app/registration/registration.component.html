@@ -6,17 +6,17 @@
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" value={{user.address}} name="crypto_id" disabled/>
+          <input type="text" value={{user.address}} name="crypto_id" disabled required/>
         </div>
 
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" #PassRef name="password" ngModel placeholder="Password" />
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
         </div>
 
         <ngx-recaptcha2 [siteKey]="siteKey"></ngx-recaptcha2>
 
-        <input type="submit"  value="Login" class="btn solid" />
+        <input type="submit" [disabled]="!signinForm.form.valid" value="Login" class="btn solid" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">
           <a href="https://www.facebook.com" class="social-icon">
@@ -39,15 +39,19 @@
         <h2 class="title">Sign up</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" #NameRef name="name" ngModel placeholder="Username" required />
+          <input type="text" #NameRef value="{{name}}" name="name" ngModel placeholder="Username" required disabled />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-id-card"></i>
+          <input type="text" #idRef value="{{id}}" name="id" ngModel placeholder="Employee Id" required disabled />
         </div>
         <!--<div class="input-field">
-          <i class="fas fa-envelope"></i>
-          <input type="email" value={{user.address}} placeholder="Email" disabled />
-        </div>-->
+    <i class="fas fa-envelope"></i>
+    <input type="email" value={{user.address}} placeholder="Email" disabled />
+  </div>-->
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" #PassRef name="password" ngModel placeholder="Password" required  />
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
         </div>
         <div class="input-field">
           <i class="fas fa-key"></i>
@@ -59,35 +63,35 @@
           <img [src]="url" height="200"> <br />
         </div>
         <div>
-          <input #imageInput type="file" id="file" accept="image/*" (change)=" onSelectFile($event,imageInput)">
+          <input #imageInput type="file" id="file" accept="image/*" (change)="onSelectFile($event)">
           <!--<label class="image-upload-container btn btn-bwm">
-            <span>Select Image</span>
-            <input #imageInput
-                   type="file"
-                   accept="image/*"
-                   (change)="processFile(imageInput)">
-          </label>
+      <span>Select Image</span>
+      <input #imageInput
+             type="file"
+             accept="image/*"
+             (change)="processFile(imageInput)">
+    </label>
 
 
-          <div *ngIf="selectedFile" class="img-preview-container">
+    <div *ngIf="selectedFile" class="img-preview-container">
 
-            <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
-                 [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
-            </div>
+      <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+           [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+      </div>
 
-            <div *ngIf="selectedFile.pending" class="img-loading-overlay">
-              <div class="img-spinning-circle"></div>
-            </div>
+      <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+        <div class="img-spinning-circle"></div>
+      </div>
 
-            <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
-            <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
-          </div>-->
+      <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+      <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+    </div>-->
         </div>
 
 
 
 
-        <input type="submit" class="btn" value="Sign up" />
+        <input type="submit" class="btn" [disabled]="!signupForm.form.valid" value="Sign up" />
         <p class="social-text">Follow us on social media platforms</p>
         <div class="social-media">
           <a href="https://www.facebook.com" class="social-icon">

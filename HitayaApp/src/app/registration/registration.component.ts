@@ -17,7 +17,8 @@ class ImageSnippet {
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  providers: [HatTokenService]
 })
 export class RegistrationComponent implements OnInit {
 
@@ -28,6 +29,8 @@ export class RegistrationComponent implements OnInit {
   credentials: IUser;
   url: any;
   siteKey: string;
+
+  formSubmitted = false;
 
   name: string = "";
   id: string = "";
@@ -47,6 +50,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.formSubmitted = false;
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
     this.getAccountAndBalance();
 
@@ -166,6 +170,11 @@ export class RegistrationComponent implements OnInit {
         console.log(error);
       });
   }
+
+
+  //enablemetamask() {
+  //  this.hat_token_servie.enableMetaMaskAccount();
+  //}
 
 
   SubmitSignUpForm(form: NgForm) {

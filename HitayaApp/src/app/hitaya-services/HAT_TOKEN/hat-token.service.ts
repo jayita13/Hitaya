@@ -16,17 +16,18 @@ export class HatTokenService {
   private enable: any;
 
   constructor() {
+
     if (window.ethereum === undefined) {
       alert('Non-Ethereum browser detected. Install MetaMask');
     } else {
       if (typeof window.web3 !== 'undefined') {
-        this.web3 = window.ethereum;
+        this.web3 = window.web3.currentProvider;
       } else {
         this.web3 = new Web3.providers.HttpProvider('http://localhost:8545');
       }
-      console.log('hat_token.service :: constructor :: window.ethereum');
+      console.log('transfer.service :: constructor :: window.ethereum');
       window.web3 = new Web3(window.ethereum);
-      console.log('hat_token.service :: constructor :: this.web3');
+      console.log('transfer.service :: constructor :: this.web3');
       console.log(this.web3);
       this.enable = this.enableMetaMaskAccount();
     }
@@ -35,7 +36,7 @@ export class HatTokenService {
   private async enableMetaMaskAccount(): Promise<any> {
     let enable = false;
     await new Promise((resolve, reject) => {
-      enable = window.eth_requestAccounts;
+      enable = window.ethereum.enable();
     });
     return Promise.resolve(enable);
   }
@@ -190,6 +191,37 @@ export class HatTokenService {
   }
 
 
+  add_contact(value) {
+    const that = this;
+    console.log(value);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance._create_New_Contact(
+          value.owner,
+          value.contactid,
+          value.name,
+          value.type,
+          {
+            from: value.owner
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Create New Contact Error.service error');
+      });
+    });
+  }
+
+
 
 
   change_employee_Admin(value) {
@@ -278,6 +310,38 @@ export class HatTokenService {
       });
     });
   }
+
+
+  view_contacts() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log('transfer.service :: transferEther :: tokenAbi');
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log('transfer.service :: transferEther :: transferContract');
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.contacts_view(
+          //{
+          //  from: value.crypto_id
+          //}
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve(status);
+        }
+        else {
+          return resolve({ status });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Contact View service error');
+      });
+    });
+  }
+
 
   transfer(value) {
     const that = this;

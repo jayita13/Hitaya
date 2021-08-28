@@ -35,7 +35,7 @@ export class LoadingComponent implements OnInit {
     else {
       setTimeout(() => {
         this.router.navigate(['register']);
-      }, 10000);  //3s
+      }, 3000);  //3s
     }
   }
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { QrScannerComponent } from 'angular2-qrscanner';
 
 import { ITransfer } from '../hitaya-interfaces/ITransfer';
+import { IContact } from '../hitaya-interfaces/IContact';
 import { ITransaction } from '../hitaya-interfaces/ITransaction';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
@@ -25,6 +26,7 @@ export class WalletComponent implements OnInit {
   send: boolean = false;
   buy: boolean = false;
   swap: boolean = false;
+  add_contacts: boolean = false;
 
   hat_balance: any;
 
@@ -36,6 +38,8 @@ export class WalletComponent implements OnInit {
   user: any;
 
   transfer: ITransaction;
+  contact: IContact;
+  contact_list: any;
 
 
   accountValidationMessages = {
@@ -74,7 +78,18 @@ export class WalletComponent implements OnInit {
     this.getAccountAndBalance();
     this.createForms();
     this.getHatBalance();
+    this.getContacts();
 
+
+  }
+
+  addcontact() {
+    if (this.add_contacts == false) {
+      this.add_contacts = true;
+    }
+    else {
+      this.add_contacts = false;
+    }
 
   }
 
@@ -176,11 +191,34 @@ export class WalletComponent implements OnInit {
       });
   }
 
+  getContacts = () => {
+    const that = this;
+    this.hat_token_servie.view_contacts().
+      then(function (employee_data: any) {
+        that.contact_list = employee_data;
+        console.log(that.contact_list[0]);
+        console.log("IT Worked LA LA");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
   submitTransferForm(form: NgForm) {
     console.log('transfer.components :: submitForm :: this.userForm.value');
     this.transfer = { sender: this.user.address, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
     this.hat_token_servie.transfer(this.transfer).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  SubmitAddContact(form: NgForm) {
+    console.log("Add Contact Fuction Started");
+    this.contact = { owner: this.user.address, contactid: form.value.crypto, name: form.value.name, type: form.value.type };
+    console.log(this.contact);
+    this.hat_token_servie.add_contact(this.contact).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

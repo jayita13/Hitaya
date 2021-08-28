@@ -2,10 +2,20 @@
 
 pragma solidity ^0.8.5;
 
+
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 
 contract HAT_TOKEN is ERC20 {
+    
+    
+    struct Employee{
+        string name;
+        string employeeid;
+        string employeerank;
+        string employeegroup;
+    }
+    
     
     struct User{
         string name;
@@ -13,11 +23,13 @@ contract HAT_TOKEN is ERC20 {
         string password;
     }
     
+    
     struct Transaction{
         address sender;
         address reciver;
         uint256 amount;
     }
+    
     
     struct Contact{
         address owner;
@@ -30,9 +42,11 @@ contract HAT_TOKEN is ERC20 {
     User[] public Users;
     Contact[] public Contacts;
     Transaction[] public Transactions;
+    Employee[] public Employees;
 
     
     address public admin;
+    address public employeeadmin;
     
     constructor() ERC20('Hitaya Token', 'HAT'){
         _mint(msg.sender, 1000000000 * 10 ** 18);
@@ -50,6 +64,16 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
+    function change_admin(address _address) public{
+        admin=_address;
+    }
+    
+    
+    function change_employeeadmin(address _address) public{
+        employeeadmin=_address;
+    }
+    
+    
     function login(string memory _password) public view returns (bool){
         for (uint i=0;i<Users.length;i++){
             if (Users[i].user_crypto_id==msg.sender && keccak256(abi.encodePacked(Users[i].password))==keccak256(abi.encodePacked(_password))){
@@ -64,6 +88,23 @@ contract HAT_TOKEN is ERC20 {
         Users.push(User( _name, _user_crypto_id, _password));
 	//emit NewUser(_name, _user_crypto_id, _password);
        
+    }
+    
+    
+    function _create_New_Employee(string memory _name, string memory _employeeid, string memory _employeerank, string memory _emplyeegroup) public returns(bool){
+        require(employeeadmin==msg.sender);
+        Employees.push(Employee( _name, _employeeid, _employeerank, _emplyeegroup));
+        return true;
+    }
+    
+    
+    function _create_New_Contact(address _owner, address _contact_name, string memory _name) public {
+        Contacts.push(Contact( _owner, _contact_name, _name));
+    }
+    
+    
+    function _Transaction_details(address _sender, address _reciver, uint32 _amount) public {
+        Transactions.push(Transaction( _sender, _reciver, _amount));
     }
     
     
@@ -98,6 +139,13 @@ contract HAT_TOKEN is ERC20 {
     {
         User memory p = Users[id];
         return (p.name,p.user_crypto_id,p.password); // return multiple values like this
+    }
+    
+    
+    function employees_view() public view returns (Employee[] memory)
+    {
+
+        return (Employees); // return multiple values like this
     }
     
     

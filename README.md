@@ -3,17 +3,20 @@
 	
 Dapp Admin can change the Employee Administrator, Mint Token, Burn Tokens, Transfer Tokens or can view Transaction Details , or User Details.
 
-Employee Admin Can add new employee to the blockchain via samrtContract and view all Employee details stored in blockchain.</p> 
+Employee Admin Can add new employee to the blockchain via samrtContract and view all Employee details stored in blockchain.
+
+Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens among Employees. </p> 
 
 <img src="DATA/screenshot/05a.png" align="right" width="350" height="350" />
 <h3>Key Features</h3>
 <ul>
-  <li>Introduced Machine Learning for Life Expectancy and Wealth Analysis.</li>
-  <li>Proper Financila Planning for Retirement and Old Age.</li>
-  <li>Visual and Detailed Displays with Analysis.</li>
-  <li>Charts and Graphs for enhanced calculations</li>
-  <li>Management Flow.</li>
-  <li>Realtime Cash Flows, Statements, Investments and Retirement monetary values</li>
+  <li>Mint Tokens</li>
+  <li>Transfer Tokens</li>
+  <li>Burn Tokens</li>
+  <li>View Transaction Details and Dashboard</li>
+  <li>View Employee Details</li>
+  <li>View Stock Market details</li>
+  <li>View Crypto Market details</li>
 </ul>
 
 After it receives certain necessary inputs from user (i.e. current age, salary, health related info, etc), it will show all the required information including graphs and charts for better view and financial controls. It also uses Machine Learning to improve for more better investments.
@@ -21,7 +24,7 @@ After it receives certain necessary inputs from user (i.e. current age, salary, 
 <br />
 <br />
 
-<h1>THEME: Banking, Finance and Investment</h1>
+<h1>THEME: DApp Employee Welfare</h1>
 <p><strong>Including solutions that support retirement planning for longer lives or protect against financial abuse.</strong></p>
 
 ```

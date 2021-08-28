@@ -279,7 +279,7 @@ export class HatTokenService {
 
   view_HAT_balance(value) {
     const that = this;
-    console.log(' Public Crypto Id : ' + value.cryptoid);
+    console.log(value);
     return new Promise((resolve, reject) => {
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
@@ -294,6 +294,7 @@ export class HatTokenService {
           }
         );
       }).then(function (status) {
+        console.log(status);
         if (status) {
           return resolve(status);
         }

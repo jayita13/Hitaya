@@ -72,6 +72,7 @@ export class WalletComponent implements OnInit {
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
     this.getAccountAndBalance();
     this.createForms();
+    this.getHatBalance();
 
 
   }
@@ -155,6 +156,20 @@ export class WalletComponent implements OnInit {
         that.user.balance = retAccount.balance/(10**18);
         console.log('transfer.components :: getAccountAndBalance :: that.user');
         console.log(that.user);
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  getHatBalance = () => {
+    const that = this;
+    console.log(this.user.address);
+    console.log("LOL");
+    this.hat_token_servie.view_HAT_balance(this.userName).
+      then(function (balance: any) {
+        that.hat_balance = balance;
+        console.log(that.hat_balance);
+        console.log("IT Worked HAT BALANCE");
       }).catch(function (error) {
         console.log(error);
       });

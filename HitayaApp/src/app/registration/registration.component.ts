@@ -171,7 +171,7 @@ export class RegistrationComponent implements OnInit {
   SubmitSignUpForm(form: NgForm) {
 
     console.log("Sign Up Fuction Started");
-    this.signup = { name: form.value.name, password: form.value.password, cryptoid: this.user.address };
+    this.signup = { name: this.name, password: form.value.password, cryptoid: this.user.address };
     console.log(this.signup);
     this.hat_token_servie.Create_New_User(this.signup).
         then(function () { }).catch(function (error) {

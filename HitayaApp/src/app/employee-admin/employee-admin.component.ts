@@ -53,6 +53,7 @@ export class EmployeeAdminComponent implements OnInit {
   ngOnInit(): void {
 
     this.getAccountAndBalance();
+    this.getEmployee();
 
     this.miniChart_1 = new Chart("mini-chart-1", {
       type: 'line',
@@ -224,6 +225,19 @@ export class EmployeeAdminComponent implements OnInit {
         that.adminid = retAccount.account;
         console.log('transfer.components :: getAccountAndBalance :: that.user');
         console.log(that.adminid);
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  getEmployee = () => {
+    const that = this;
+    this.hat_token_servie.view_employee().
+      then(function (employee_data: any) {
+        that.employees = employee_data;
+        console.log(that.employees[0]);
+        console.log("IT Worked LA LA");
       }).catch(function (error) {
         console.log(error);
       });

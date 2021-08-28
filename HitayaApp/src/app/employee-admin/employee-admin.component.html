@@ -88,15 +88,17 @@
 <div>
   <div class="pl-4 pr-3 pt-3">
     <!-- Demo content -->
-    <h3>Employee Administrator Dashboard</h3>
+    <!--<h3>Employee Administrator Dashboard</h3>-->
+    <h1 class="display-4 super-bold big-text-shadow">Employee Administrator Dashboard</h1>
+    <hr />
 
     <!--<div class="row">
-      <div class="col-md-12">
-        <div class="display-chart-1">
-          <canvas id="dashboard-chart"></canvas>
-        </div>
+    <div class="col-md-12">
+      <div class="display-chart-1">
+        <canvas id="dashboard-chart"></canvas>
       </div>
-    </div>-->
+    </div>
+  </div>-->
 
     <div class="row">
       <div class="col-md-4">
@@ -116,51 +118,51 @@
             </div>
           </div>
           <!--<div class="card-body">
-    <div class="row">
-      <div class="col-md-4 text-center">
-        <img src="assets/hat.jpeg" class="img-fluid" />
-      </div>
-      <div class="col-md-8 text-center">
-        <h2 class="mt-3 text-dark-grey">HAT TOKEN (HAT)</h2>
-        <h5 class="mt-3 text-muted">{{userName}}</h5>
-        <br />
-      </div>
-    </div>
-
-    <div class="row mt-2 text-center text-sm-left">
-      <div class="col-md-12">
-        <h3 class="mb-0">HAT</h3>
-        <br />
-        <p class="text-muted type-7 mt-0">XXX</p>
-
-        <div class="row mt-4 text-center">
-          <div class="col-md-3 col-sm-3 col-3">
-            <button class="btn btn-primary btn-sm">
-              <i class="fa fa-arrow-down fa-fw"></i>
-            </button>
-            <p class="small text-primary">Receive</p>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img src="assets/hat.jpeg" class="img-fluid" />
           </div>
-          <div class="col-md-3 col-sm-3 col-3">
-            <button class="btn btn-primary btn-sm">
-              <i class="fa fa-arrow-up fa-fw"></i>
-            </button>
-            <p class="small text-primary">Send</p>
-          </div>
-          <div class="col-md-3 col-sm-3 col-3">
-            <button class="btn btn-primary btn-sm">
-              <i class="fa fa-credit-card fa-fw"></i>
-            </button>
-            <p class="small text-primary">Buy</p>
-          </div>
-          <div class="col-md-3 col-sm-3 col-3">
-            <button class="btn btn-primary btn-sm">
-              <i class="fa fa-exchange-alt fa-fw"></i>
-            </button>
-            <p class="small text-primary">Swap</p>
+          <div class="col-md-8 text-center">
+            <h2 class="mt-3 text-dark-grey">HAT TOKEN (HAT)</h2>
+            <h5 class="mt-3 text-muted">{{userName}}</h5>
+            <br />
           </div>
         </div>
 
-      </div>-->
+        <div class="row mt-2 text-center text-sm-left">
+          <div class="col-md-12">
+            <h3 class="mb-0">HAT</h3>
+            <br />
+            <p class="text-muted type-7 mt-0">XXX</p>
+
+            <div class="row mt-4 text-center">
+              <div class="col-md-3 col-sm-3 col-3">
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-arrow-down fa-fw"></i>
+                </button>
+                <p class="small text-primary">Receive</p>
+              </div>
+              <div class="col-md-3 col-sm-3 col-3">
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-arrow-up fa-fw"></i>
+                </button>
+                <p class="small text-primary">Send</p>
+              </div>
+              <div class="col-md-3 col-sm-3 col-3">
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-credit-card fa-fw"></i>
+                </button>
+                <p class="small text-primary">Buy</p>
+              </div>
+              <div class="col-md-3 col-sm-3 col-3">
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-exchange-alt fa-fw"></i>
+                </button>
+                <p class="small text-primary">Swap</p>
+              </div>
+            </div>
+
+          </div>-->
           <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
           <!--</div>
 
@@ -170,7 +172,7 @@
 
 
 
-  </div>-->
+        </div>-->
 
 
         </div>
@@ -231,7 +233,7 @@
                       </div>
 
 
-                      <button type="submit" [disabled]="!AddEmployeeForm.form.valid" class="btn btn-success">Add Employee</button>
+                      <button type="submit" [disabled]="!AddEmployee.form.valid" class="btn btn-success">Add Employee</button>
                     </form>
                     <hr />
 
@@ -388,10 +390,10 @@
             <table class="table">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col">User Name</th>
+                  <th scope="col">Employee Name</th>
                   <th scope="col">Employee Id</th>
-                  <th scope="col">Public Crypto Id</th>
-                  <th scope="col">Password</th>
+                  <th scope="col">Employee Rank</th>
+                  <th scope="col">Employee Group</th>
                 </tr>
               </thead>
               <tbody>

@@ -217,5 +217,37 @@ export class HatTokenService {
   }
 
 
+  view_employee() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log('transfer.service :: transferEther :: tokenAbi');
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log('transfer.service :: transferEther :: transferContract');
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.employees_view(
+          //{
+          //  from: value.crypto_id
+          //}
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve(status);
+        }
+        else {
+          return resolve({ status });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('transfer.service error');
+      });
+    });
+  }
+
+
+
 
 }

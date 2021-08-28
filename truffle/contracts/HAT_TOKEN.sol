@@ -149,6 +149,28 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
+    function user_view() public view returns (User[] memory)
+    {
+
+        return (Users); // return multiple values like this
+    }
+    
+    
+    function transaction_view() public view returns (Transaction[] memory)
+    {
+
+        return (Transactions); // return multiple values like this
+    }
+    
+    
+    function contacts_view() public view returns (Contact[] memory)
+    {
+
+        return (Contacts); // return multiple values like this
+    }
+    
+    
+    
     // function get_transaction_details() public view returns (Transactions[] memory){
     //     Transactions[] memory Transactions_Detail= new Transactions[](Transactions.length);
     //     uint count=0;

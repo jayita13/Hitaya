@@ -108,7 +108,7 @@
               <div class="col-md-8 text-center">
                 <h2 class="mt-3 text-dark-grey">{{token_name}} ({{token_symbol}})</h2>
                 <h5 class="mt-3 text-muted">{{admin_crypto_id}}</h5>
-                <h8 class="mt-3 text-muted">Total Supply : {{totalsupply}} Decimals : {{decimals}}</h8>
+                <h6 class="mt-3 text-muted">Total Supply : {{totalsupply}} Decimals : {{decimals}}</h6>
                 <br />
               </div>
             </div>
@@ -193,6 +193,12 @@
                       <strong>EMPLOYEE ADMIN</strong>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="profile"
+                       aria-selected="false">
+                      <strong>ADMINISTRATOR</strong>
+                    </a>
+                  </li>
                 </ul>
 
                 <div class="tab-content mx-4" id="myTabContent">
@@ -216,16 +222,16 @@
                   <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
 
 
-                    <form>
+                    <form #airdrop="ngForm" (ngSubmit)="submitairdropForm(airdrop)">
                       <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label">Receiver Crypto ID Address</label>
+                        <input type="text" class="form-control" #reciverRef name="crypto" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Amount</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputPassword1" class="form-label">HAT Token Amount</label>
+                        <input type="text" class="form-control" #amountRef name="amount" ngModel id="exampleInputPassword1" required>
                       </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" [disabled]="!airdrop.form.valid" class="btn btn-primary">Submit</button>
                     </form>
                   </div>
 
@@ -235,8 +241,19 @@
                         <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
                         <input type="text" class="form-control" #idRef name="crypto_id" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
                       </div>
-                      
+
                       <button type="submit" [disabled]="!ChangeEmployeeAdminAdmin.form.valid" class="btn btn-danger">Change Employee Admin</button>
+                    </form>
+                  </div>
+
+                  <div class="tab-pane fade" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+                    <form #ChangeDappEmployeeAdminAdmin="ngForm" (ngSubmit)="ChangeDappEmployeeAdminAdminForm(ChangeDappEmployeeAdminAdmin)">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">DAPP Admin ID Address</label>
+                        <input type="text" class="form-control" #adminRef name="admin_id" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+
+                      <button type="submit" [disabled]="!ChangeDappEmployeeAdminAdmin.form.valid" class="btn btn-danger">Change Dapp Admin</button>
                     </form>
                   </div>
 

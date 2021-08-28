@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 import { ITransaction } from '../hitaya-interfaces/ITransaction';
 import { IAdmin } from '../hitaya-interfaces/IAdmin';
+import { IMint } from '../hitaya-interfaces/IMint';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
@@ -48,6 +49,7 @@ export class AdminDashboardComponent implements OnInit {
 
   admin_change: IAdmin;
   transaction: ITransaction;
+  airdrop: ITransaction;
 
   constructor(private router: Router, private hat_token_servie: HatTokenService) {
     this.userName = sessionStorage.getItem('userName');
@@ -236,10 +238,34 @@ export class AdminDashboardComponent implements OnInit {
 
   ChangeEmployeeAdminAdminForm(form: NgForm) {
 
-    console.log("Sign Up Fuction Started");
+    console.log("Employee Admin Change Fuction Started");
     this.admin_change = { cryptoid: form.value.crypto_id };
     console.log(this.admin_change);
     this.hat_token_servie.change_employee_Admin(this.admin_change).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+
+  }
+
+
+  submitairdropForm(form: NgForm) {
+    console.log('transfer.components :: submitForm :: this.userForm.value');
+    this.airdrop = { sender: this.admin_crypto_id, reciver: form.value.crypto, amount: form.value.amount };
+    // TODO: service call
+    this.hat_token_servie.air_drop(this.airdrop).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  ChangeDappEmployeeAdminAdminForm(form: NgForm) {
+
+    console.log("Admin Change Fuction Started");
+    this.admin_change = { cryptoid: form.value.admin_id };
+    console.log(this.admin_change);
+    this.hat_token_servie.change_dapp_Admin(this.admin_change).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

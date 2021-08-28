@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 const Web3 = require('web3');
+/*Web3.emitter.setMaxListeners(300);*/
 
 declare let require: any;
 declare let window: any;
@@ -219,6 +220,35 @@ export class HatTokenService {
   }
 
 
+
+  change_dapp_Admin(value) {
+    const that = this;
+    console.log(value);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.change_admin(
+          value.cryptoid,
+          {
+            from: value.cryptoid
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Change Dapp Admin Error.service error');
+      });
+    });
+  }
+
+
   view_employee() {
     const that = this;
     return new Promise((resolve, reject) => {
@@ -273,6 +303,35 @@ export class HatTokenService {
       }).catch(function (error) {
         console.log(error);
         return reject('Change_Employee_Admin_Error.service error');
+      });
+    });
+  }
+
+
+  air_drop(value) {
+    const that = this;
+    console.log(value);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.mint(
+          value.reciver,
+          value.amount,
+          {
+            from: value.sender
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Air Drop Error.service error');
       });
     });
   }

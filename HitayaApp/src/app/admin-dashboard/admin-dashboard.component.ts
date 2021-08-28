@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+
+
+import { ITransaction } from '../hitaya-interfaces/ITransaction';
+import { IAdmin } from '../hitaya-interfaces/IAdmin';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -30,7 +35,10 @@ export class AdminDashboardComponent implements OnInit {
   commonLayout: boolean = false;
   adminLayout: boolean = true;
 
-  constructor(private router: Router) {
+  admin_change: IAdmin;
+  transaction: ITransaction;
+
+  constructor(private router: Router, private hat_token_servie: HatTokenService) {
     this.userName = sessionStorage.getItem('userName');
     console.log(this.userName);
     if (this.userName != null) {
@@ -206,6 +214,19 @@ export class AdminDashboardComponent implements OnInit {
 
   getUserData() {
     alert("Worked");
+  }
+
+
+  ChangeEmployeeAdminAdminForm(form: NgForm) {
+
+    console.log("Sign Up Fuction Started");
+    this.admin_change = { cryptoid: form.value.crypto_id };
+    console.log(this.admin_change);
+    this.hat_token_servie.change_employee_Admin(this.admin_change).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+
   }
 
 }

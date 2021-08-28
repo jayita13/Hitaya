@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
+import { ITransaction } from '../hitaya-interfaces/ITransaction';
+import { IEmployee } from '../hitaya-interfaces/IEmployee';
+import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 @Component({
   selector: 'app-employee-admin',
@@ -30,7 +34,12 @@ export class EmployeeAdminComponent implements OnInit {
   commonLayout: boolean = false;
   adminLayout: boolean = true;
 
-  constructor(private router: Router) {
+  addemployee: IEmployee;
+
+  adminid: any;
+  employees: any;
+
+  constructor(private router: Router, private hat_token_servie: HatTokenService) {
     this.userName = sessionStorage.getItem('userName');
     console.log(this.userName);
     if (this.userName != null) {
@@ -42,6 +51,8 @@ export class EmployeeAdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.getAccountAndBalance();
 
     this.miniChart_1 = new Chart("mini-chart-1", {
       type: 'line',
@@ -204,6 +215,31 @@ export class EmployeeAdminComponent implements OnInit {
   getUserData() {
     alert("Worked");
   
+  }
+
+  getAccountAndBalance = () => {
+    const that = this;
+    this.hat_token_servie.getUserBalance().
+      then(function (retAccount: any) {
+        that.adminid = retAccount.account;
+        console.log('transfer.components :: getAccountAndBalance :: that.user');
+        console.log(that.adminid);
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  AddEmployeeForm(form: NgForm) {
+
+    console.log("Add Employee Fuction Started");
+    this.addemployee = { name: form.value.name, employeeid: form.value.employeeid, employeerank: form.value.employeerank, employeegroup: form.value.employeegroup };
+    console.log(this.addemployee);
+    this.hat_token_servie.add_employee(this.addemployee,this.adminid).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+
   }
 
 }

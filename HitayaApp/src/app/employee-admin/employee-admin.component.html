@@ -189,7 +189,7 @@
                   <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
                        aria-controls="home" aria-selected="true">
-                      <strong>TRANSACTIONS</strong>
+                      <strong>ADD EMPLOYEE</strong>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -208,27 +208,34 @@
 
                 <div class="tab-content mx-4" id="myTabContent">
                   <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
-                    <div class="row">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">10 ETH</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                      </div>
-                    </div>
 
+                    <form #AddEmployee="ngForm" (ngSubmit)="AddEmployeeForm(AddEmployee)">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" #nameRef name="name" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" #employeeidRef name="employeeid" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Employee Rank</label>
+                        <input type="text" class="form-control" #employeerankRef name="employeerank" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Employee Group</label>
+                        <input type="text" class="form-control" #employeegroupRef name="employeegroup" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+
+
+                      <button type="submit" [disabled]="!AddEmployeeForm.form.valid" class="btn btn-success">Add Employee</button>
+                    </form>
                     <hr />
 
-                    <div class="row mt-4">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">0 ETH</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                      </div>
-                    </div>
+
 
                     <hr />
                   </div>
@@ -388,11 +395,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="semi-bold" *ngFor="let data of userdata">
-                  <td scope="row">{{data.emailid}}</td>
-                  <td scope="row">{{data.empid}}</td>
-                  <td scope="row">{{data.gender}}</td>
-                  <td scope="row">{{data.age}}</td>
+                <tr class="semi-bold" *ngFor="let data of employees">
+                  <td scope="row">{{data[0]}}</td>
+                  <td scope="row">{{data[1]}}</td>
+                  <td scope="row">{{data[2]}}</td>
+                  <td scope="row">{{data[3]}}</td>
                 </tr>
               </tbody>
             </table>

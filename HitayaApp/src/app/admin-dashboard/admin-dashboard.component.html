@@ -183,22 +183,28 @@
                       <strong>AIR DROP / TRANSFER</strong>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
+                       aria-selected="false">
+                      <strong>EMPLOYEE ADMIN</strong>
+                    </a>
+                  </li>
                 </ul>
 
                 <div class="tab-content mx-4" id="myTabContent">
                   <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
 
-                      <form>
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Amount</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
+                    <form>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
 
                     <hr />
@@ -216,6 +222,17 @@
                         <input type="text" class="form-control" id="exampleInputPassword1">
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  </div>
+
+                  <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
+                    <form #ChangeEmployeeAdminAdmin="ngForm" (ngSubmit)="ChangeEmployeeAdminAdminForm(ChangeEmployeeAdminAdmin)">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Crypto ID Address</label>
+                        <input type="text" class="form-control" #idRef name="crypto_id" ngModel id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                      </div>
+                      
+                      <button type="submit" [disabled]="!ChangeEmployeeAdminAdmin.form.valid" class="btn btn-danger">Change Employee Admin</button>
                     </form>
                   </div>
 
@@ -321,16 +338,16 @@
                 <tr>
                   <th scope="col">Sender Id</th>
                   <th scope="col">Receiver Id</th>
-                  <th scope="col">Amount Crypto Id</th>
+                  <th scope="col">Amount</th>
                   <th scope="col">Time</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="semi-bold" *ngFor="let data of userdata">
-                  <td scope="row">{{data.emailid}}</td>
-                  <td scope="row">{{data.empid}}</td>
-                  <td scope="row">{{data.gender}}</td>
-                  <td scope="row">{{data.age}}</td>
+                <tr class="semi-bold" *ngFor="let tran of transaction">
+                  <td scope="row">{{tran.sender}}</td>
+                  <td scope="row">{{tran.reciver}}</td>
+                  <td scope="row">{{tran.amount}}</td>
+                  <td scope="row">{{data.amount}}</td>
                 </tr>
               </tbody>
             </table>

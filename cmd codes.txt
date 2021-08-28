@@ -9,6 +9,10 @@ HAT.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 });
 ;
 
+Hat.employeeadmin();
+Hat.employees_view();
+Hat.change_employeeadmin(0x78cb9ebe3a15607c63e4e3995683c88b1fb249e61c744c5e1ea713b5aef92f92);
+
 
 Hat._create_New_Employee("raj713335@gmail.com","10800116107","JL3", "STG");
 

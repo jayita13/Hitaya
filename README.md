@@ -28,7 +28,7 @@ After it receives certain necessary inputs from user (i.e. current age, salary, 
 <p><strong>Including solutions that support retirement planning for longer lives or protect against financial abuse.</strong></p>
 
 ```
-It is a Web Based Project that requires a browser and internet connection to be operable.
+It is a Web Based Project that requires a browser, internet connection, local blockchain using Ganache and Truffe Framework to be operable.
 
 Some Examples -
 
@@ -43,9 +43,7 @@ On front end -
   3. Realtime data analysis calculator.
 
 On back end -
-  1. Machine Learning Model that predicts Life Expectancy from certain parameters and also total wealth calculation.
-  2. Realtime Calculation for Realtime Analysis Calculator.
-
+  1. ML OCR Application to Extract Information from ID Card To validate a Employee Belonging to a Particular Organization
 ```
 
 # INVESTOPIA WORKING SAMPLE

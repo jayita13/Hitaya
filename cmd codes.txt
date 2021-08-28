@@ -1,0 +1,15 @@
+
+HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
+
+ Hat._create_New_User("raj713335@gmail.com","0x59521931430B5df139eFcB800841D3f6D6988C6e","34343");
+
+HAT.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
+.then(function(receipt){
+    // receipt can also be a new contract instance, when coming from a "contract.deploy({...}).send()"
+});
+;
+
+
+Hat._create_New_Employee("raj713335@gmail.com","10800116107","JL3", "STG");
+
+Hat._create_New_Employee("Nitesh Sakpal","748240","JL4", "STG");

@@ -143,6 +143,20 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 
+<br />
+
+
+<img src="DATA/screenshot/15.png" />
+
+<br />
+
+
+<br />
+
+
+<img src="DATA/screenshot/16.png" />
+
+<br />
 
 
 <h1>Project Requirements</h1>

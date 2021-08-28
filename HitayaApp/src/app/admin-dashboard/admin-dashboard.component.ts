@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { ITransaction } from '../hitaya-interfaces/ITransaction';
 import { IAdmin } from '../hitaya-interfaces/IAdmin';
 import { IMint } from '../hitaya-interfaces/IMint';
+import { IUserDetails } from '../hitaya-interfaces/IUserDetails';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
@@ -48,8 +49,9 @@ export class AdminDashboardComponent implements OnInit {
   balance: any;
 
   admin_change: IAdmin;
-  transaction: ITransaction;
+  listtransaction: ITransaction;
   airdrop: ITransaction;
+  listuser: IUserDetails;
 
   constructor(private router: Router, private hat_token_servie: HatTokenService) {
     this.userName = sessionStorage.getItem('userName');

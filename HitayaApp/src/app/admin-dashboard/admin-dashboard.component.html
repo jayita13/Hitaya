@@ -86,7 +86,8 @@
 <div>
   <div class="pl-4 pr-3 pt-3">
     <!-- Demo content -->
-    <h3>DApp Administrator Dashboard</h3>
+    <!--<h3>DApp Administrator Dashboard</h3>-->
+    <h1 class="display-4 super-bold big-text-shadow">DApp Administrator Dashboard</h1>
 
     <!--<div class="row">
     <div class="col-md-12">
@@ -153,7 +154,7 @@
               <!--<qrcode [qrdata]="myAngularxQrCode" [width]="340" [errorCorrectionLevel]="'M'"></qrcode>-->
             </div>
 
-            
+
 
 
 
@@ -237,7 +238,7 @@
                         <label for="exampleInputPassword1" class="form-label">HAT Token Amount</label>
                         <input type="text" class="form-control" #amountRef name="amount" ngModel id="exampleInputPassword1" required>
                       </div>
-                      <button type="submit" [disabled]="!airdrop.form.valid" class="btn btn-primary">Submit</button>
+                      <button type="submit" [disabled]="!airdrop.form.valid" class="btn btn-primary">Transfer Tokens</button>
                     </form>
                   </div>
 
@@ -375,24 +376,46 @@
             <table class="table">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col">Sender Id</th>
-                  <th scope="col">Receiver Id</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Time</th>
+                  <th scope="col">User Name</th>
+                  <th scope="col">User Public Crypto Id</th>
+                  <th scope="col">Password</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="semi-bold" *ngFor="let tran of transaction">
-                  <td scope="row">{{tran.sender}}</td>
-                  <td scope="row">{{tran.reciver}}</td>
-                  <td scope="row">{{tran.amount}}</td>
-                  <td scope="row">{{data.amount}}</td>
+                <tr class="semi-bold" *ngFor="user tran of listuser">
+                  <td scope="row">{{user[0]}}</td>
+                  <td scope="row">{{user[1]}}</td>
+                  <td scope="row">{{user[2]}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
+
+      <div class="col-md-12">
+        <div class="card border-4x">
+          <div class="card-body">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Sender Id</th>
+                  <th scope="col">Receiver Id</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="semi-bold" *ngFor="let tran of listtransaction">
+                  <td scope="row">{{tran[0]}}</td>
+                  <td scope="row">{{tran[1]}}</td>
+                  <td scope="row">{{tran[2]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <div class="col-md-6">
 
       </div>

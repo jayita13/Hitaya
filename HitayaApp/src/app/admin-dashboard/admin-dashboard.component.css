@@ -1,3 +1,8 @@
+.big-text-shadow {
+  text-shadow: 3px 4px 2px #00000030;
+}
+
+
 .vertical-nav {
   min-width: 17rem;
   width: 16rem;

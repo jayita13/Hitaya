@@ -3,7 +3,7 @@
 
 How can you utilize Azure  to empower banks, capital markets, and insurance firms to provide next-generation experiences for customers, improve regulatory compliance, manage risk, and reduce waste? Submit ideas to personalize customer experiences, modernize financial systems and optimize risk management.</p> 
 
-<img src="DATA/02.png" align="right" width="350" height="350" />
+<img src="DATA/screenshot/05a.png" align="right" width="350" height="350" />
 <h3>Key Features</h3>
 <ul>
   <li>Introduced Machine Learning for Life Expectancy and Wealth Analysis.</li>

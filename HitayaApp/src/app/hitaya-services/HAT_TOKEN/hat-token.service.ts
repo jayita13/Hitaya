@@ -279,7 +279,7 @@ export class HatTokenService {
     });
   }
 
-  transfer(value,id) {
+  transfer(value) {
     const that = this;
     console.log(value);
     return new Promise((resolve, reject) => {
@@ -293,7 +293,7 @@ export class HatTokenService {
           value.reciver,
           value.amount,
           {
-            from: id
+            from: value.sender
           }
         );
       }).then(function (status) {
@@ -308,9 +308,10 @@ export class HatTokenService {
   }
 
 
-  air_drop(value) {
+  mint(value) {
     const that = this;
     console.log(value);
+    console.log("Air Drop Service");
     return new Promise((resolve, reject) => {
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
@@ -331,7 +332,36 @@ export class HatTokenService {
         }
       }).catch(function (error) {
         console.log(error);
-        return reject('Air Drop Error.service error');
+        return reject('Mint Token Error.service error');
+      });
+    });
+  }
+
+
+  burn(value, id) {
+    console.log("Admin Id "+ id);
+    const that = this;
+    console.log(value);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.burn(
+          value,
+          {
+            from: id
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Burn Token Error.service error');
       });
     });
   }

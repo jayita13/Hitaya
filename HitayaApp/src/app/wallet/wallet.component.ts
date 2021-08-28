@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { QrScannerComponent } from 'angular2-qrscanner';
 
 import { ITransfer } from '../hitaya-interfaces/ITransfer';
+import { ITransaction } from '../hitaya-interfaces/ITransaction';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 import { NgForm } from '@angular/forms';
@@ -34,7 +35,7 @@ export class WalletComponent implements OnInit {
   userForm: FormGroup;
   user: any;
 
-  transfer: ITransfer;
+  transfer: ITransaction;
 
 
   accountValidationMessages = {
@@ -177,9 +178,9 @@ export class WalletComponent implements OnInit {
 
   submitTransferForm(form: NgForm) {
     console.log('transfer.components :: submitForm :: this.userForm.value');
-    this.transfer = { reciver: form.value.crypto, amount: form.value.amount };
+    this.transfer = { sender: this.user.address, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
-    this.hat_token_servie.transfer(this.transfer, this.user.address).
+    this.hat_token_servie.transfer(this.transfer).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

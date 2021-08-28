@@ -253,7 +253,28 @@ export class AdminDashboardComponent implements OnInit {
     console.log('transfer.components :: submitForm :: this.userForm.value');
     this.airdrop = { sender: this.admin_crypto_id, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
-    this.hat_token_servie.air_drop(this.airdrop).
+    this.hat_token_servie.transfer(this.airdrop).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  mintForm(form: NgForm) {
+    console.log('transfer.components :: submitForm :: this.userForm.value');
+    this.airdrop = { sender: this.admin_crypto_id, reciver: form.value.minter, amount: form.value.amtx };
+    // TODO: service call
+    this.hat_token_servie.mint(this.airdrop).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  burn(form: NgForm) {
+    console.log('transfer.components :: submitForm :: this.userForm.value');
+    // TODO: service call
+    this.hat_token_servie.burn(form.value.amt, this.admin_crypto_id).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

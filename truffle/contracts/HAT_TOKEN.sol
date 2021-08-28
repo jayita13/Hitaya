@@ -35,6 +35,7 @@ contract HAT_TOKEN is ERC20 {
         address owner;
         address contact_name;
         string name;
+        string contact_type;
     }
 
     //event NewUser( string name, address user_crypto_id, string password);
@@ -59,8 +60,8 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    function burn(uint amounnt) external {
-        _burn(msg.sender, amounnt);
+    function burn(uint amount) external {
+        _burn(msg.sender, amount);
     }
     
     
@@ -98,8 +99,8 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    function _create_New_Contact(address _owner, address _contact_name, string memory _name) public {
-        Contacts.push(Contact( _owner, _contact_name, _name));
+    function _create_New_Contact(address _owner, address _contact_name, string memory _name, string memory _contact_type) public {
+        Contacts.push(Contact( _owner, _contact_name, _name,_contact_type));
     }
     
     
@@ -108,13 +109,13 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    function _create_New_Contact(address _contact_name, string memory _name) public {
-        for (uint i=0;i<Users.length;i++){
-            if(Users[i].user_crypto_id==msg.sender){
-                Contacts.push(Contact( msg.sender, _contact_name, _name));
-            }
-        }
-    }
+    // function _create_New_Contact(address _contact_name, string memory _name, string _contact_type) public {
+    //     for (uint i=0;i<Users.length;i++){
+    //         if(Users[i].user_crypto_id==msg.sender){
+    //             Contacts.push(Contact( msg.sender, _contact_name, _contact_type));
+    //         }
+    //     }
+    // }
     
     
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {

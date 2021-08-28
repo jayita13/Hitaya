@@ -1,7 +1,9 @@
 <h1 align="center">HITAYA</h1>
-<p><strong>Banking, Finance and Investment –</strong> Reinvent the financial services experience and unlock new opportunities to empower intelligent banking, secured payment processing, modernize trading, and personalize insurance software systems. With Azure, financial organizations have the infrastructure and security to take customer experiences to the next level. 
+<p><strong>Employee Welfare DApp –</strong> DApp Employee Welfare Application that can be used my employees to transfer tokens during a purchase, or to store contact in blockchain via smart Contract.
+	
+Dapp Admin can change the Employee Administrator, Mint Token, Burn Tokens, Transfer Tokens or can view Transaction Details , or User Details.
 
-How can you utilize Azure  to empower banks, capital markets, and insurance firms to provide next-generation experiences for customers, improve regulatory compliance, manage risk, and reduce waste? Submit ideas to personalize customer experiences, modernize financial systems and optimize risk management.</p> 
+Employee Admin Can add new employee to the blockchain via samrtContract and view all Employee details stored in blockchain.</p> 
 
 <img src="DATA/screenshot/05a.png" align="right" width="350" height="350" />
 <h3>Key Features</h3>

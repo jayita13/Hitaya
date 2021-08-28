@@ -49,9 +49,10 @@ export class AdminDashboardComponent implements OnInit {
   balance: any;
 
   admin_change: IAdmin;
-  listtransaction: ITransaction;
+  listtransaction: any;
   airdrop: ITransaction;
-  listuser: IUserDetails;
+  listuser: any;
+ 
 
   constructor(private router: Router, private hat_token_servie: HatTokenService) {
     this.userName = sessionStorage.getItem('userName');
@@ -74,6 +75,8 @@ export class AdminDashboardComponent implements OnInit {
     this.get_total_supply();
     this.get_decimal();
     this.get_balance();
+    this.getUsers();
+    this.gettransaction();
 
     this.miniChart_1 = new Chart("mini-chart-1", {
       type: 'line',
@@ -293,6 +296,33 @@ export class AdminDashboardComponent implements OnInit {
         console.log(error);
       });
 
+  }
+
+
+  getUsers = () => {
+    const that = this;
+    this.hat_token_servie.view_Users().
+      then(function (user_data: any) {
+        that.listuser = user_data;
+        console.log(that.listuser[0]);
+        console.log("IT Worked LA LA");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+
+  gettransaction = () => {
+    const that = this;
+    this.hat_token_servie.view_Transaction().
+      then(function (trans_data: any) {
+        that.listtransaction = trans_data;
+        console.log(that.listtransaction[0]);
+        console.log("IT Worked LA LA");
+      }).catch(function (error) {
+        console.log(error);
+      });
   }
 
 

@@ -1,7 +1,7 @@
 
 HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
 
- Hat._create_New_User("raj713335@gmail.com","0x7EeecCb07e39044e8eBE486D2B32a3A3318D652E","34343");
+ Hat._create_New_User("Arnab Das","0x18665a283B639E3793d6Bc3983E027CB3d67ebD6","34343");
 
 Hat.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 .then(function(receipt){

@@ -174,9 +174,18 @@ export class RegistrationComponent implements OnInit {
     this.signup = { name: this.name, password: form.value.password, cryptoid: this.user.address };
     console.log(this.signup);
     this.hat_token_servie.Create_New_User(this.signup).
-        then(function () { }).catch(function (error) {
-          console.log(error);
-        });
+      then(function (status) {
+        console.log(status);
+        
+      }).catch(function (error) {
+        console.log(error);
+        this.msg = "Try again with valid credentials.";
+        alert("Enter Credentails Don't Mtched with Employee Data");
+        console.log(this.msg);
+      });
+
+    sessionStorage.setItem('userName', this.user.address);
+    this.router.navigate(['/wallet']);
     
   }
 

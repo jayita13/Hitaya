@@ -113,6 +113,8 @@ export class HatTokenService {
           );
       }).then(function (status) {
         if (status) {
+          console.log(status);
+          console.log("It worked");
           return resolve({ status: true });
         }
       }).catch(function (error) {
@@ -305,5 +307,147 @@ export class HatTokenService {
     });
   }
 
+
+  view_employee_admin() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.employeeadmin(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Hat Balance Error.service error');
+      });
+    });
+  }
+
+
+  view_dapp_admin() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.admin(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Hat Balance Error.service error');
+      });
+    });
+  }
+
+
+  view_decimals() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.decimals(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Decimals Error.service error');
+      });
+    });
+  }
+
+  view_total_supply() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.totalSupply(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Total Supply Error.service error');
+      });
+    });
+  }
+
+
+  view_name() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.name(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Name Error.service error');
+      });
+    });
+  }
+
+
+  view_symbol() {
+    const that = this;
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.symbol(
+        );
+      }).then(function (status) {
+        console.log(status);
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Symbol Error.service error');
+      });
+    });
+  }
 
 }

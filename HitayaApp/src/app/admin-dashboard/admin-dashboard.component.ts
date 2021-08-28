@@ -35,6 +35,17 @@ export class AdminDashboardComponent implements OnInit {
   commonLayout: boolean = false;
   adminLayout: boolean = true;
 
+  admin_crypto_id: any;
+  employee_admin_id: any;
+
+
+  decimals: any;
+  totalsupply: any;
+  token_name: any;
+  token_symbol: any;
+
+  balance: any;
+
   admin_change: IAdmin;
   transaction: ITransaction;
 
@@ -52,7 +63,13 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
 
     
-
+    this.getadmin();
+    this.get_employee_admin();
+    this.get_token_name();
+    this.get_token_symbol();
+    this.get_total_supply();
+    this.get_decimal();
+    this.get_balance();
 
     this.miniChart_1 = new Chart("mini-chart-1", {
       type: 'line',
@@ -227,6 +244,96 @@ export class AdminDashboardComponent implements OnInit {
         console.log(error);
       });
 
+  }
+
+
+  getadmin = () => {
+    const that = this;
+    this.hat_token_servie.view_dapp_admin().
+      then(function (admin: any) {
+        that.admin_crypto_id = admin;
+        console.log(that.admin_crypto_id);
+        console.log("GET DAPP ADMIN WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  get_employee_admin = () => {
+    const that = this;
+    this.hat_token_servie.view_employee_admin().
+      then(function (admin: any) {
+        that.employee_admin_id = admin;
+        console.log(that.employee_admin_id);
+        console.log("GET EMPLOYEE ADMIN WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  get_token_name = () => {
+    const that = this;
+    this.hat_token_servie.view_name().
+      then(function (name: any) {
+        that.token_name = name;
+        console.log(that.token_name);
+        console.log("GET TOKEN NAME WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  get_token_symbol = () => {
+    const that = this;
+    this.hat_token_servie.view_symbol().
+      then(function (symbol: any) {
+        that.token_symbol = symbol;
+        console.log(that.token_symbol);
+        console.log("GET TOKEN SYMBOL WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  get_decimal = () => {
+    const that = this;
+    this.hat_token_servie.view_decimals().
+      then(function (decimals: any) {
+        that.decimals = decimals;
+        console.log(that.decimals);
+        console.log("GET TOKEN DECIMALS WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  get_total_supply = () => {
+    const that = this;
+    this.hat_token_servie.view_total_supply().
+      then(function (supply: any) {
+        that.totalsupply = supply;
+        console.log(that.totalsupply);
+        console.log("GET TOKEN TOTAL SUPPLY WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  get_balance = () => {
+    const that = this;
+    this.hat_token_servie.view_HAT_balance(this.admin_crypto_id).
+      then(function (balance: any) {
+        that.balance = balance;
+        console.log(that.balance);
+        console.log("GET TOKEN BALANCE WORKED!");
+      }).catch(function (error) {
+        console.log(error);
+      });
   }
 
 }

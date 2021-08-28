@@ -55,26 +55,11 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 </p>
 
 
-# INVESTOPIA SIGN UP SAMPLE 
+# HITAYA APPLICATION SCREENSHOTS
 
-<p align="center">
-    <img src="DATA/screenshot/Working Sample/SignUp.gif" width="1200">
-    <br>
-    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
-</p>
+<br />
 
-# INVESTOPIA STOCK PRICE PREDICTION WORKING SAMPLE DEMO
-
-<p align="center">
-    <img src="DATA/screenshot/Working Sample/StockPricePrediction.gif" width="1200">
-    <br>
-    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
-</p>
-
-
-<h1>Project Screenshots</h1>
-<img src="DATA/screenshot/08.png" width="390" height="320" align="left" />
-<img src="DATA/screenshot/07.png" width="400" height="360" align="right" />
+<img src="DATA/screenshot/01.png" />
 
 <br />
 
@@ -90,13 +75,37 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 
+
+
 <img src="DATA/screenshot/05.png" />
 
 <br />
 
 
+<img src="DATA/screenshot/06.png" />
+
+<br />
+
+<br />
+
+
+<img src="DATA/screenshot/07.png" />
+
+<br />
+
+<br />
+
+
+<img src="DATA/screenshot/08.png" />
+
+<br />
+
+<br />
+
 
 <img src="DATA/screenshot/09.png" />
+
+<br />
 
 <br />
 
@@ -105,7 +114,27 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 
-<h1 align="center">HITAYA</h1>
+<br />
+
+
+<img src="DATA/screenshot/11.png" />
+
+<br />
+
+<br />
+
+
+<img src="DATA/screenshot/12.png" />
+
+<br />
+
+<br />
+
+
+<img src="DATA/screenshot/13.png" />
+
+<br />
+
 
 
 <h1>Project Requirements</h1>

@@ -284,13 +284,12 @@
 
           </div>
 
-          <form *ngIf="send" [formGroup]="userForm" (ngSubmit)="submitForm()">
+          <form *ngIf="send" #TransferForm="ngForm" (ngSubmit)="submitTransferForm(TransferForm)">
 
 
             <div class="form-group row">
               <h5 class="col-md-4 mt-1">ADDRESS:</h5>
-              <input class="form-control form-control-sm col-md-8" placeholder="Transfer Address" name="transferAddress"
-                     formControlName="transferAddress" maxlength="42" minlength="42" required>
+              <input class="form-control form-control-sm col-md-8"  #CryptoRef name="crypto" ngModel placeholder="Transfer Address"  maxlength="42" minlength="42" required>
               <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
         <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
       </div>-->
@@ -300,9 +299,9 @@
 
 
             <div class="form-group row">
-              <h5 class="col-md-4 mt-1">ETHE WEI:</h5>
-              <input class="form-control form-control-sm col-md-8" placeholder="Amount" name="amount"
-                     formControlName="amount" required>
+              <h5 class="col-md-4 mt-1">HAT AMT:</h5>
+              <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT" 
+                      #amountRef name="amount" ngModel  required >
               <!--<div *ngFor="let validation of accountValidationMessages.amount">
         <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
       </div>-->

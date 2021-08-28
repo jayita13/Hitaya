@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { QrScannerComponent } from 'angular2-qrscanner';
 
-import { ContractService } from '../hitaya-services/blockchain-service/contract.service';
+import { ITransfer } from '../hitaya-interfaces/ITransfer';
+import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,8 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
-  styleUrls: ['./wallet.component.css'],
-  providers: [ContractService],
+  styleUrls: ['./wallet.component.css']
 })
 
 export class WalletComponent implements OnInit {
@@ -25,12 +25,16 @@ export class WalletComponent implements OnInit {
   buy: boolean = false;
   swap: boolean = false;
 
+  hat_balance: any;
+
   public myAngularxQrCode: string = null;
 
 
   formSubmitted = false;
   userForm: FormGroup;
   user: any;
+
+  transfer: ITransfer;
 
 
   accountValidationMessages = {
@@ -48,7 +52,7 @@ export class WalletComponent implements OnInit {
     ]
   };
 
-  constructor(private fb: FormBuilder, private transferService: ContractService, private router: Router) {
+  constructor(private fb: FormBuilder, private hat_token_servie: HatTokenService, private router: Router) {
 
     this.userName = sessionStorage.getItem('userName');
     this.myAngularxQrCode = this.userName;
@@ -145,7 +149,7 @@ export class WalletComponent implements OnInit {
 
   getAccountAndBalance = () => {
     const that = this;
-    this.transferService.getUserBalance().
+    this.hat_token_servie.getUserBalance().
       then(function (retAccount: any) {
         that.user.address = retAccount.account;
         that.user.balance = retAccount.balance/(10**18);
@@ -156,18 +160,14 @@ export class WalletComponent implements OnInit {
       });
   }
 
-  submitForm() {
-    if (this.userForm.invalid) {
-      alert('transfer.components :: submitForm :: Form invalid');
-      return;
-    } else {
-      console.log('transfer.components :: submitForm :: this.userForm.value');
-      console.log(this.userForm.value);
-      // TODO: service call
-      this.transferService.transferEther(this.userForm.value).
-        then(function () { }).catch(function (error) {
-          console.log(error);
-        });
-    }
+  submitTransferForm(form: NgForm) {
+    console.log('transfer.components :: submitForm :: this.userForm.value');
+    this.transfer = { reciver: form.value.crypto, amount: form.value.amount };
+    // TODO: service call
+    this.hat_token_servie.transfer(this.transfer, this.user.address).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
   }
+  
 }

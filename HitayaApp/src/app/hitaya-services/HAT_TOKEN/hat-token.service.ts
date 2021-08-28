@@ -247,7 +247,62 @@ export class HatTokenService {
     });
   }
 
+  transfer(value,id) {
+    const that = this;
+    console.log(value);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.transfer(
+          value.reciver,
+          value.amount,
+          {
+            from: id
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve({ status: true });
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('Change_Employee_Admin_Error.service error');
+      });
+    });
+  }
 
+
+
+  view_HAT_balance(value) {
+    const that = this;
+    console.log(' Public Crypto Id : ' + value.cryptoid);
+    return new Promise((resolve, reject) => {
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const HAT_TOKEN = contract(tokenAbi);
+      HAT_TOKEN.setProvider(that.web3);
+      console.log(HAT_TOKEN);
+      HAT_TOKEN.deployed().then(function (instance) {
+        return instance.balanceOf(
+          value,
+          {
+            from: value
+          }
+        );
+      }).then(function (status) {
+        if (status) {
+          return resolve(status);
+        }
+      }).catch(function (error) {
+        console.log(error);
+        return reject('View Hat Balance Error.service error');
+      });
+    });
+  }
 
 
 }

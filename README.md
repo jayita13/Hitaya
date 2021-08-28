@@ -1,4 +1,111 @@
 <h1 align="center">HITAYA</h1>
+<p><strong>Banking, Finance and Investment –</strong> Reinvent the financial services experience and unlock new opportunities to empower intelligent banking, secured payment processing, modernize trading, and personalize insurance software systems. With Azure, financial organizations have the infrastructure and security to take customer experiences to the next level. 
+
+How can you utilize Azure  to empower banks, capital markets, and insurance firms to provide next-generation experiences for customers, improve regulatory compliance, manage risk, and reduce waste? Submit ideas to personalize customer experiences, modernize financial systems and optimize risk management.</p> 
+
+<img src="DATA/02.png" align="right" width="350" height="350" />
+<h3>Key Features</h3>
+<ul>
+  <li>Introduced Machine Learning for Life Expectancy and Wealth Analysis.</li>
+  <li>Proper Financila Planning for Retirement and Old Age.</li>
+  <li>Visual and Detailed Displays with Analysis.</li>
+  <li>Charts and Graphs for enhanced calculations</li>
+  <li>Management Flow.</li>
+  <li>Realtime Cash Flows, Statements, Investments and Retirement monetary values</li>
+</ul>
+
+After it receives certain necessary inputs from user (i.e. current age, salary, health related info, etc), it will show all the required information including graphs and charts for better view and financial controls. It also uses Machine Learning to improve for more better investments.
+
+<br />
+<br />
+
+<h1>THEME: Banking, Finance and Investment</h1>
+<p><strong>Including solutions that support retirement planning for longer lives or protect against financial abuse.</strong></p>
+
+```
+It is a Web Based Project that requires a browser and internet connection to be operable.
+
+Some Examples -
+
+  1. Savings
+  2. Stock Investments
+  3. Savings and Investments Analysis for Old Age.
+  4. To have enough wealth for secure retirement and still have your pleasures during old age.
+
+On front end -
+  1. Receives inputs through a form from user.
+  2. Calculates and Displays the data and other information including visual charts.
+  3. Realtime data analysis calculator.
+
+On back end -
+  1. Machine Learning Model that predicts Life Expectancy from certain parameters and also total wealth calculation.
+  2. Realtime Calculation for Realtime Analysis Calculator.
+
+```
+
+# INVESTOPIA WORKING SAMPLE
+
+For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=wVqjilbKox8&t=2s">here.</a> 
+
+
+<p align="center">
+    <img src="DATA/screenshot/Working Sample/INVESTOPIA.gif" width="1200">
+    <br>
+    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
+</p>
+
+
+# INVESTOPIA SIGN UP SAMPLE 
+
+<p align="center">
+    <img src="DATA/screenshot/Working Sample/SignUp.gif" width="1200">
+    <br>
+    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
+</p>
+
+# INVESTOPIA STOCK PRICE PREDICTION WORKING SAMPLE DEMO
+
+<p align="center">
+    <img src="DATA/screenshot/Working Sample/StockPricePrediction.gif" width="1200">
+    <br>
+    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
+</p>
+
+
+<h1>Project Screenshots</h1>
+<img src="DATA/screenshot/08.png" width="390" height="320" align="left" />
+<img src="DATA/screenshot/07.png" width="400" height="360" align="right" />
+
+<br />
+
+<img src="DATA/screenshot/02.png" />
+
+<br />
+
+<img src="DATA/screenshot/03.png" />
+
+<br />
+
+<img src="DATA/screenshot/04.png" />
+
+<br />
+
+<img src="DATA/screenshot/05.png" />
+
+<br />
+
+
+
+<img src="DATA/screenshot/09.png" />
+
+<br />
+
+
+<img src="DATA/screenshot/10.png" />
+
+<br />
+
+<h1 align="center">HITAYA</h1>
 
 
 <h1>Project Requirements</h1>

@@ -30,13 +30,13 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
 
 # HITAYA WORKING SAMPLE
 
-For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=wVqjilbKox8&t=2s">here.</a> 
+For video demostration refer to the YouTube link <a href="https://www.youtube.com">here.</a> 
 
 
 <p align="center">
-    <img src="DATA/screenshot/Working Sample/INVESTOPIA.gif" width="1200">
+    <img src="DATA/hitaya.gif" width="1200">
     <br>
-    <sup><a href="https://github.com/raj713335/INVESTOPIA" target="_blank"><strong>INVESTOPIA</strong></a></sup>
+    <sup><a href="https://github.com/raj713335/Hitaya" target="_blank"><strong>HITAYA</strong></a></sup>
 </p>
 
 

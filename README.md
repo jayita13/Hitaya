@@ -19,34 +19,16 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
   <li>View Crypto Market details</li>
 </ul>
 
-After it receives certain necessary inputs from user (i.e. current age, salary, health related info, etc), it will show all the required information including graphs and charts for better view and financial controls. It also uses Machine Learning to improve for more better investments.
+
 
 <br />
 <br />
 
 <h1>THEME: DApp Employee Welfare</h1>
-<p><strong>Including solutions that support retirement planning for longer lives or protect against financial abuse.</strong></p>
 
-```
-It is a Web Based Project that requires a browser, internet connection, local blockchain using Ganache and Truffe Framework to be operable.
 
-Some Examples -
 
-  1. Savings
-  2. Stock Investments
-  3. Savings and Investments Analysis for Old Age.
-  4. To have enough wealth for secure retirement and still have your pleasures during old age.
-
-On front end -
-  1. Receives inputs through a form from user.
-  2. Calculates and Displays the data and other information including visual charts.
-  3. Realtime data analysis calculator.
-
-On back end -
-  1. ML OCR Application to Extract Information from ID Card To validate a Employee Belonging to a Particular Organization
-```
-
-# INVESTOPIA WORKING SAMPLE
+# HITAYA WORKING SAMPLE
 
 For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=wVqjilbKox8&t=2s">here.</a> 
 

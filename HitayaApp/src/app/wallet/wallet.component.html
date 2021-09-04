@@ -282,36 +282,6 @@
 
 
 
-          <form *ngIf="send" #TransferForm="ngForm" (ngSubmit)="submitTransferForm(TransferForm)">
-
-
-            <div class="form-group row">
-              <h5 class="col-md-4 mt-1">ADDRESS:</h5>
-              <input class="form-control form-control-sm col-md-8" #CryptoRef name="crypto" ngModel placeholder="Transfer Address" maxlength="42" minlength="42" required>
-              <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
-            <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
-          </div>-->
-            </div>
-
-
-
-
-            <div class="form-group row">
-              <h5 class="col-md-4 mt-1">HAT AMT:</h5>
-              <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT"
-                     #amountRef name="amount" ngModel required>
-              <!--<div *ngFor="let validation of accountValidationMessages.amount">
-            <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
-          </div>-->
-            </div>
-
-
-            <div class="mb-4">
-              <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
-            </div>
-
-
-          </form>
 
 
 
@@ -322,276 +292,324 @@
 
       </div>
 
-      <div *ngIf="swap">
+      <div *ngIf="send">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <select type="text" class="form-control">
-                        <option value="HAT">HAT</option>
-                        <option value="BTC">BTC</option>
-                        <option value="BTC">BTC</option>
-                        <option value="BTC">BTC</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="form-group">
-                      <input type="text" class="form-control" />
-                    </div>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <button class="btn btn-primary btn-sm"><i class="fa fa-exchange-alt" style="transform: rotate(90deg);"></i></button>
-                  </div>
-                </div>
-
-                <div class="row mt-3">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <select type="text" class="form-control">
-                        <option value="BTC">BTC</option>
-                        <option value="BTC">BTC</option>
-                        <option value="BTC">BTC</option>
-                        <option value="BTC">BTC</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="form-group">
-                      <input type="text" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <button class="btn btn-success btn-block">Transfer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="col-md-8">
+                      <form #TransferForm="ngForm" (ngSubmit)="submitTransferForm(TransferForm)">
 
 
-
-      <div class="card border-2x" id="basic-details-2">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
-                     aria-controls="home" aria-selected="true">
-                    <strong>TRANSACTIONS</strong>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
-                     aria-selected="true">
-                    <strong>CONTACTS</strong>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
-                     aria-selected="false">
-                    <strong>NFTs</strong>
-                  </a>
-                </li>
-              </ul>
-
-              <div class="tab-content mx-4" id="myTabContent">
-                <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
-                  <div class="row">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
-                    </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">10 ETH</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                    </div>
-                  </div>
-
-                  <hr />
-
-                  <div class="row mt-4">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
-                    </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">0 ETH</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">$0</p>
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <div class="tab-pane fade show active" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
-                  <div class="row">
-
-                    <div class="col-md-12">
-                      <div *ngIf="add_contacts">
-                        <form #AddContactForm="ngForm" (ngSubmit)="SubmitAddContact(AddContactForm)">
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contact Name</label>
-                            <input type="text" #NameRef name="name" ngModel class="form-control" id="exampleInputPassword1" required />
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Contact Public Crypto Address</label>
-                            <input type="text" #CryptoRef name="crypto" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
-                            <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contact Type</label>
-                            <input type="text" #typeRef name="type" ngModel class="form-control" id="exampleInputPassword1" required />
-                          </div>
-                          <button type="submit" [disabled]="!AddContactForm.form.valid" class="btn btn-primary">Submit</button>
-                        </form>
-                      </div>
-                      <button class="btn btn-primary btn-sm float-right" (click)="addcontact()"><i class="fa fa-plus"></i> Add Contact</button>
-                    </div>
-                  </div>
-
-                  <hr />
-
-                  <div class="row" *ngFor="let data of contact_list">
-                    <div class="col-3 col-sm-2 col-md-2">
-                      <img src="assets/profile-pic.png" class="img-fluid" />
-                    </div>
-                    <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                      <h4 class="mb-0 bold">{{data[2]}}             ({{data[3]}})</h4>
-                      <p class="mt-0 no-td-space text-muted type-6">{{data[1]}}</p>
-                      <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                      <hr />
-                    </div>
-                    <hr />
-                  </div>
-
-
-
-                  <!--<div class="row mt-4">
-                <div class="col-3 col-sm-2 col-md-2">
-                  <img src="assets/profile-pic.png" class="img-fluid" />
-                </div>
-                <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                  <h4 class="mb-0 bold">Veggie Grill</h4>
-                  <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
-                  <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                </div>
-              </div>-->
-
-                  <hr />
-                </div>
-                <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
-                  <!--<div class="text-center text-dark-grey">
-                <i class="fa fa-circle-notch fa-3x fa-fw"></i>
-                <h3 class="mt-2 mb-0">No NFTs yet</h3>
-                <a href="#">Learn More</a>
-              </div>
-
-              <div class="row text-center text-muted mt-4">
-                <div class="col-md-12">
-                  <p class="type-6 mb-0">Don't see your NFT?</p>
-                  <a class="type-6 mt-0" href="#">+ ADD NFTs</a>
-                </div>
-              </div>-->
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="card" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h5 class="mb-0">Legend</h5>
-                              <p class="type-6 text-muted">Yearly Stickers</p>
-                            </div>
-                            <div class="col-md-6">
-                              <p class="text-right text-success my-0"><i class="fa fa-lock-open fa-sm"></i></p>
-                              <p class="text-right text-success type-7-2 my-0">3</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-12">
-                              <img class="img-fluid" src="2.png" />
-                            </div>
-                          </div>
+                        <div class="form-group row">
+                          <h5 class="col-md-4 mt-1">ADDRESS:</h5>
+                          <input class="form-control form-control-sm col-md-8" #CryptoRef name="crypto" ngModel placeholder="Transfer Address" maxlength="42" minlength="42" required>
+                          <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
+                      <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
+                    </div>-->
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h5 class="mb-0">Team Player</h5>
-                              <p class="type-6 text-muted">Monthly Stickers</p>
-                            </div>
-                            <div class="col-md-6">
-                              <p class="text-right text-success my-0"><i class="fa fa-lock-open fa-sm"></i></p>
-                              <p class="text-right text-success type-7-2 my-0">600</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-12">
-                              <img class="img-fluid" src="1.png" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+                        <div class="form-group row">
+                          <h5 class="col-md-4 mt-1">HAT AMT:</h5>
+                          <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT"
+                                 #amountRef name="amount" ngModel required>
         
+                          
 
-<!--<form [formGroup]="userForm" (ngSubmit)="submitForm()"
-      novalidate autocomplete="off">
-  <div class="container">
-    <div class="transfer-container">
-      <div>
-        Address: {{user.address}} <br />
-        Balance: {{user.balance}} Eth
-      </div>
-
-        <input matInput placeholder="Transfer Address" name="transferAddress" formControlName="transferAddress"
-               maxlength="42" minlength="42" required>
-        <mat-error *ngFor="let validation of accountValidationMessages.transferAddress">
-          <mat-error *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</mat-error>
-        </mat-error>
+                          <!--<div *ngFor="let validation of accountValidationMessages.amount">
+                      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+                    </div>-->
+                        </div>
 
 
-        <input matInput placeholder="Amount" name="amount" formControlName="amount" required>
-        <mat-error *ngFor="let validation of accountValidationMessages.amount">
-          <mat-error *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</mat-error>
-        </mat-error>
+                        <div class="mb-4">
+                          <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
+                        </div>
 
 
-        <input matInput placeholder="Remarks" name="remarks" formControlName="remarks"
-               maxlength="42" required>
-        <mat-error *ngFor="let validation of accountValidationMessages.remarks">
-          <mat-error *ngIf="userForm.get('remarks').hasError(validation.type) && (userForm.get('remarks').dirty || userForm.get('remarks').touched)">{{validation.message}}</mat-error>
-        </mat-error>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+  
 
-      <div style="width: 100px">
-        <button type="submit">Transfer Ether</button>
-      </div>
-    </div>
-  </div>
-</form>-->
+          </div>
+
+                    </div>
+
+                    <div *ngIf="swap">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <select type="text" class="form-control">
+                                      <option value="HAT">HAT</option>
+                                      <option value="BTC">BTC</option>
+                                      <option value="BTC">BTC</option>
+                                      <option value="BTC">BTC</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-12 text-center">
+                                  <button class="btn btn-primary btn-sm"><i class="fa fa-exchange-alt" style="transform: rotate(90deg);"></i></button>
+                                </div>
+                              </div>
+
+                              <div class="row mt-3">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <select type="text" class="form-control">
+                                      <option value="BTC">BTC</option>
+                                      <option value="BTC">BTC</option>
+                                      <option value="BTC">BTC</option>
+                                      <option value="BTC">BTC</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <button class="btn btn-success btn-block">Transfer</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-8">
+
+
+
+                    <div class="card border-2x" id="basic-details-2">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link" id="home-tab" data-toggle="tab" href="#transactions" role="tab"
+                                   aria-controls="home" aria-selected="true">
+                                  <strong>TRANSACTIONS</strong>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
+                                   aria-selected="true">
+                                  <strong>CONTACTS</strong>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nfts" role="tab" aria-controls="profile"
+                                   aria-selected="false">
+                                  <strong>NFTs</strong>
+                                </a>
+                              </li>
+                            </ul>
+
+                            <div class="tab-content mx-4" id="myTabContent">
+                              <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="tokens-tab">
+                                <div class="row">
+                                  <div class="col-3 col-sm-2 col-md-2">
+                                    <img src="assets/profile-pic.png" class="img-fluid" />
+                                  </div>
+                                  <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                                    <h4 class="mb-0 bold">10 ETH</h4>
+                                    <p class="mt-0 no-td-space text-muted type-6">$0</p>
+                                  </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="row mt-4">
+                                  <div class="col-3 col-sm-2 col-md-2">
+                                    <img src="assets/profile-pic.png" class="img-fluid" />
+                                  </div>
+                                  <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                                    <h4 class="mb-0 bold">0 ETH</h4>
+                                    <p class="mt-0 no-td-space text-muted type-6">$0</p>
+                                  </div>
+                                </div>
+
+                                <hr />
+                              </div>
+                              <div class="tab-pane fade show active" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
+                                <div class="row">
+
+                                  <div class="col-md-12">
+                                    <div *ngIf="add_contacts">
+                                      <form #AddContactForm="ngForm" (ngSubmit)="SubmitAddContact(AddContactForm)">
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword1" class="form-label">Contact Name</label>
+                                          <input type="text" #NameRef name="name" ngModel class="form-control" id="exampleInputPassword1" required />
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Contact Public Crypto Address</label>
+                                          <input type="text" #CryptoRef name="crypto" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                                          <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword1" class="form-label">Contact Type</label>
+                                          <input type="text" #typeRef name="type" ngModel class="form-control" id="exampleInputPassword1" required />
+                                        </div>
+                                        <button type="submit" [disabled]="!AddContactForm.form.valid" class="btn btn-primary">Submit</button>
+                                      </form>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm float-right" (click)="addcontact()"><i class="fa fa-plus"></i> Add Contact</button>
+                                  </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="row" *ngFor="let data of contact_list">
+                                  <div class="col-3 col-sm-2 col-md-2">
+                                    <img src="assets/profile-pic.png" class="img-fluid" />
+                                  </div>
+                                  <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                                    <h4 class="mb-0 bold">{{data[2]}}             ({{data[3]}})</h4>
+                                    <p class="mt-0 no-td-space text-muted type-6">{{data[1]}}</p>
+                                    <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                                    <hr />
+                                  </div>
+                                  <hr />
+                                </div>
+
+
+
+                                <!--<div class="row mt-4">
+                            <div class="col-3 col-sm-2 col-md-2">
+                              <img src="assets/profile-pic.png" class="img-fluid" />
+                            </div>
+                            <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+                              <h4 class="mb-0 bold">Veggie Grill</h4>
+                              <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
+                              <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                            </div>
+                          </div>-->
+
+                                <hr />
+                              </div>
+                              <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
+                                <!--<div class="text-center text-dark-grey">
+                            <i class="fa fa-circle-notch fa-3x fa-fw"></i>
+                            <h3 class="mt-2 mb-0">No NFTs yet</h3>
+                            <a href="#">Learn More</a>
+                          </div>
+
+                          <div class="row text-center text-muted mt-4">
+                            <div class="col-md-12">
+                              <p class="type-6 mb-0">Don't see your NFT?</p>
+                              <a class="type-6 mt-0" href="#">+ ADD NFTs</a>
+                            </div>
+                          </div>-->
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="card" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);">
+                                      <div class="card-body">
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <h5 class="mb-0">Legend</h5>
+                                            <p class="type-6 text-muted">Yearly Stickers</p>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <p class="text-right text-success my-0"><i class="fa fa-lock-open fa-sm"></i></p>
+                                            <p class="text-right text-success type-7-2 my-0">3</p>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <img class="img-fluid" src="2.png" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="card" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);">
+                                      <div class="card-body">
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <h5 class="mb-0">Team Player</h5>
+                                            <p class="type-6 text-muted">Monthly Stickers</p>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <p class="text-right text-success my-0"><i class="fa fa-lock-open fa-sm"></i></p>
+                                            <p class="text-right text-success type-7-2 my-0">600</p>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <img class="img-fluid" src="1.png" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!--<form [formGroup]="userForm" (ngSubmit)="submitForm()"
+              novalidate autocomplete="off">
+          <div class="container">
+            <div class="transfer-container">
+              <div>
+                Address: {{user.address}} <br />
+                Balance: {{user.balance}} Eth
+              </div>
+
+                <input matInput placeholder="Transfer Address" name="transferAddress" formControlName="transferAddress"
+                       maxlength="42" minlength="42" required>
+                <mat-error *ngFor="let validation of accountValidationMessages.transferAddress">
+                  <mat-error *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+
+
+                <input matInput placeholder="Amount" name="amount" formControlName="amount" required>
+                <mat-error *ngFor="let validation of accountValidationMessages.amount">
+                  <mat-error *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+
+
+                <input matInput placeholder="Remarks" name="remarks" formControlName="remarks"
+                       maxlength="42" required>
+                <mat-error *ngFor="let validation of accountValidationMessages.remarks">
+                  <mat-error *ngIf="userForm.get('remarks').hasError(validation.type) && (userForm.get('remarks').dirty || userForm.get('remarks').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+
+              <div style="width: 100px">
+                <button type="submit">Transfer Ether</button>
+              </div>
+            </div>
+          </div>
+        </form>-->

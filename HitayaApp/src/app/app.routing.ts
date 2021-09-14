@@ -13,6 +13,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
+import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'analysis', component: RetirementSavingsComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'edit-user', component: EditUserDetailsComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'user-dashboard', component: UserDashboardComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'savings-dashboard', component: SavingsDashboardComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'about', component: AboutComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'admin-dashboard', component: AdminDashboardComponent, /* canActivate: [RegisterDoneService] */ },
   { path: 'employee-admin-dashboard', component: EmployeeAdminComponent, /* canActivate: [RegisterDoneService] */ },

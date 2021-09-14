@@ -258,7 +258,7 @@ export class AdminDashboardComponent implements OnInit {
     console.log('transfer.components :: submitForm :: this.userForm.value');
     this.airdrop = { sender: this.admin_crypto_id, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
-    this.hat_token_servie.transfer(this.airdrop).
+    this.hat_token_servie.air_drop(this.airdrop).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

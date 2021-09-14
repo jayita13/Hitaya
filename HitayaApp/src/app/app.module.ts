@@ -27,6 +27,7 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
+import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EmployeeAdminComponent } from './employee-admin/employee-admin.componen
     AdminLayoutComponent,
     EditUserDetailsComponent,
     UserDashboardComponent,
-    EmployeeAdminComponent
+    EmployeeAdminComponent,
+    SavingsDashboardComponent
   ],
   imports: [
     BrowserModule,

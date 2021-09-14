@@ -130,12 +130,10 @@ export class HatTokenService {
     const that = this;
     console.log(' User Password : ' + value.password + ' Public Crypto Id : ' + value.crypto_id);
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance.login(
@@ -153,7 +151,7 @@ export class HatTokenService {
         }
       }).catch(function (error) {
         console.log(error);
-        return reject('transfer.service error');
+        return reject('login.service error');
       });
     });
   }
@@ -284,12 +282,10 @@ export class HatTokenService {
   view_employee() {
     const that = this;
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance.employees_view(
@@ -306,7 +302,7 @@ export class HatTokenService {
         }
       }).catch(function (error) {
         console.log(error);
-        return reject('transfer.service error');
+        return reject('view_employee.service error');
       });
     });
   }
@@ -315,12 +311,10 @@ export class HatTokenService {
   view_contacts() {
     const that = this;
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance.contacts_view(
@@ -346,12 +340,10 @@ export class HatTokenService {
   view_Users() {
     const that = this;
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance.user_view(
@@ -378,12 +370,10 @@ export class HatTokenService {
   view_Transaction() {
     const that = this;
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance.transaction_view(

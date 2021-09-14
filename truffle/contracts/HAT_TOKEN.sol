@@ -44,6 +44,8 @@ contract HAT_TOKEN is ERC20 {
     Contact[] public Contacts;
     Transaction[] public Transactions;
     Employee[] public Employees;
+    
+    mapping(address => uint256) private _balances;
 
     
     address public admin;
@@ -83,8 +85,8 @@ contract HAT_TOKEN is ERC20 {
         }
         return false;
     }
-
     
+
     function _create_New_User(string memory _name, address _user_crypto_id, string memory _password) public {
         Users.push(User( _name, _user_crypto_id, _password));
 	//emit NewUser(_name, _user_crypto_id, _password);
@@ -109,30 +111,12 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    // function _create_New_Contact(address _contact_name, string memory _name, string _contact_type) public {
-    //     for (uint i=0;i<Users.length;i++){
-    //         if(Users[i].user_crypto_id==msg.sender){
-    //             Contacts.push(Contact( msg.sender, _contact_name, _contact_type));
-    //         }
-    //     }
-    // }
-    
     
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
-        bool key = false;
-        for (uint i=0;i<Users.length;i++){
-            if(Users[i].user_crypto_id==msg.sender){
-                for (uint j=0;i<Users.length;i++){
-                    if(Users[j].user_crypto_id==recipient){
-                        key = true;
-                        _transfer(_msgSender(), recipient, amount);
-                        Transactions.push(Transaction( msg.sender, recipient, amount));
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
+         
+         _transfer(msg.sender, recipient, amount);
+        Transactions.push(Transaction( msg.sender, recipient, amount));
+        return true;
     }
     
     
@@ -171,17 +155,5 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    
-    // function get_transaction_details() public view returns (Transactions[] memory){
-    //     Transactions[] memory Transactions_Detail= new Transactions[](Transactions.length);
-    //     uint count=0;
-    //     for (uint i=0;i<Transactions.length;i++){
-    //         if (Transactions[i].sender==msg.sender){
-    //             Transactions_Detail[count].push([Transactions[i].sender,Transaction[i].recipient,Transactions[i].amount]);
-    //             count++;
-    //         }
-    //     }
-    //     return Transactions_Detail;
-    // }
-    
+
 }

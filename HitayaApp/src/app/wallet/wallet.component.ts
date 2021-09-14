@@ -41,6 +41,8 @@ export class WalletComponent implements OnInit {
   contact: IContact;
   contact_list: any;
 
+  curr_user_name : any;
+
 
   accountValidationMessages = {
     transferAddress: [

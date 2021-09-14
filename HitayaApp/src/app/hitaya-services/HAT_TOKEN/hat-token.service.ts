@@ -396,7 +396,7 @@ export class HatTokenService {
   }
 
 
-  transfer(value) {
+  transfer(value,type) {
     const that = this;
     console.log(value);
     return new Promise((resolve, reject) => {
@@ -409,6 +409,7 @@ export class HatTokenService {
         return instance.transfer(
           value.reciver,
           value.amount,
+          type,
           {
             from: value.sender
           }

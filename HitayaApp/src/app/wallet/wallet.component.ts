@@ -211,7 +211,7 @@ export class WalletComponent implements OnInit {
     console.log('transfer.components :: submitForm :: this.userForm.value');
     this.transfer = { sender: this.user.address, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
-    this.hat_token_servie.transfer(this.transfer).
+    this.hat_token_servie.transfer(this.transfer, form.value.typex).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

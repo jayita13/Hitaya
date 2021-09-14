@@ -298,39 +298,64 @@
             <div class="card">
               <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
 
-                      <form #TransferForm="ngForm" (ngSubmit)="submitTransferForm(TransferForm)">
+                <form #TransferForm="ngForm" (ngSubmit)="submitTransferForm(TransferForm)">
 
 
-                        <div class="form-group row">
-                          <h5 class="col-md-4 mt-1">ADDRESS:</h5>
-                          <input class="form-control form-control-sm col-md-8" #CryptoRef name="crypto" ngModel placeholder="Transfer Address" maxlength="42" minlength="42" required>
-                          <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
-                      <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
-                    </div>-->
-                        </div>
+                  <div class="form-group row">
+                    <h5 class="col-md-4 mt-1">ADDRESS:</h5>
+                    <input class="form-control form-control-sm col-md-8" #CryptoRef name="crypto" ngModel placeholder="Transfer Address" maxlength="42" minlength="42" required>
+                    <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
+      <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
+    </div>-->
+                  </div>
 
 
 
 
-                        <div class="form-group row">
-                          <h5 class="col-md-4 mt-1">HAT AMT:</h5>
-                          <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT"
-                                 #amountRef name="amount" ngModel required>
-        
-                          
-
-                          <!--<div *ngFor="let validation of accountValidationMessages.amount">
-                      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
-                    </div>-->
-                        </div>
+                  <div class="form-group row">
+                    <h5 class="col-md-4 mt-1">HAT AMT:</h5>
+                    <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT"
+                           #amountRef name="amount" ngModel required>
 
 
-                        <div class="mb-4">
-                          <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
-                        </div>
+
+                    <!--<div *ngFor="let validation of accountValidationMessages.amount">
+      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+    </div>-->
+                  </div>
 
 
-                      </form>
+                  <div class="form-group row">
+                    <h5 class="col-md-4 mt-1">TYPE:</h5>
+                    <select type="text" #typexRef name="typex" ngModel class="form-control form-control-sm col-md-8" id="exampleInputPassword1" required>
+                      <option value="Mortgage/Rent">Mortgage/Rent</option>
+                      <option value="Food">Food</option>
+                      <option value="Utilities">Utilities</option>
+                      <option value="Bills">Bills</option>
+                      <option value="Shopping">Shopping</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Insurance">Insurance</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Clothing">Clothing</option>
+                      <option value="Others">Others</option>
+                    </select>
+
+
+
+                    <!--<div *ngFor="let validation of accountValidationMessages.amount">
+      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+    </div>-->
+                  </div>
+
+                  
+
+
+                  <div class="mb-4">
+                    <button class="btn btn-success float-right" type="submit">Transfer Ether</button>
+                  </div>
+
+
+                </form>
                       </div>
                     </div>
                   </div>

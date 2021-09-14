@@ -21,6 +21,7 @@ contract HAT_TOKEN is ERC20 {
         string name;
         address user_crypto_id;
         string password;
+        uint256 balance;
     }
     
     
@@ -28,6 +29,7 @@ contract HAT_TOKEN is ERC20 {
         address sender;
         address reciver;
         uint256 amount;
+        string transaction_type;
     }
     
     
@@ -45,11 +47,12 @@ contract HAT_TOKEN is ERC20 {
     Transaction[] public Transactions;
     Employee[] public Employees;
     
-    mapping(address => uint256) private _balances;
+
 
     
     address public admin;
     address public employeeadmin;
+    uint256 total_hat_burnt;
     
     constructor() ERC20('Hitaya Token', 'HAT'){
         _mint(msg.sender, 1000000000 * 10 ** 18);
@@ -63,6 +66,7 @@ contract HAT_TOKEN is ERC20 {
     
     
     function burn(uint amount) external {
+        total_hat_burnt+=amount;
         _burn(msg.sender, amount);
     }
     
@@ -86,9 +90,14 @@ contract HAT_TOKEN is ERC20 {
         return false;
     }
     
+    
+    function hat_burnt() public view returns(uint256){
+        return (total_hat_burnt);
+    }
+    
 
     function _create_New_User(string memory _name, address _user_crypto_id, string memory _password) public {
-        Users.push(User( _name, _user_crypto_id, _password));
+        Users.push(User( _name, _user_crypto_id, _password,0));
 	//emit NewUser(_name, _user_crypto_id, _password);
        
     }
@@ -106,16 +115,30 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-    function _Transaction_details(address _sender, address _reciver, uint32 _amount) public {
-        Transactions.push(Transaction( _sender, _reciver, _amount));
+
+    function transfer(address recipient, uint256 amount, string memory _trans_type) public virtual returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        for (uint i=0;i<Users.length;i++){
+            if (Users[i].user_crypto_id==msg.sender){
+                Users[i].balance=Users[i].balance-amount;
+            }
+            if (Users[i].user_crypto_id==recipient){
+                Users[i].balance=Users[i].balance+amount;
+            }
+        }
+        Transactions.push(Transaction( msg.sender, recipient, amount, _trans_type));
+        return true;
     }
     
     
-    
-    function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
-         
-         _transfer(msg.sender, recipient, amount);
-        Transactions.push(Transaction( msg.sender, recipient, amount));
+    function airdrop(address recipient, uint256 amount) public virtual returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        for (uint i=0;i<Users.length;i++){
+            if (Users[i].user_crypto_id==recipient){
+                Users[i].balance=Users[i].balance+amount;
+            }
+        }
+        Transactions.push(Transaction( msg.sender, recipient, amount, "Air DROP"));
         return true;
     }
     
@@ -155,5 +178,4 @@ contract HAT_TOKEN is ERC20 {
     }
     
     
-
 }

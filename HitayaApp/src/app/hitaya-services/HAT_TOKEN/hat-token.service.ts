@@ -224,7 +224,7 @@ export class HatTokenService {
 
 
 
-  change_employee_Admin(value) {
+  change_employee_Admin(value, dapp_admin) {
     const that = this;
     console.log(' Public Crypto Id : ' + value.cryptoid);
     return new Promise((resolve, reject) => {
@@ -237,7 +237,7 @@ export class HatTokenService {
         return instance.change_employeeadmin(
           value.cryptoid,
           {
-            from: value.cryptoid
+            from: dapp_admin
           }
         );
       }).then(function (status) {
@@ -253,9 +253,9 @@ export class HatTokenService {
 
 
 
-  change_dapp_Admin(value) {
+  change_dapp_Admin(value,dapp_admin) {
     const that = this;
-    console.log(value);
+    console.log(value,dapp_admin);
     return new Promise((resolve, reject) => {
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
@@ -266,7 +266,7 @@ export class HatTokenService {
         return instance.change_admin(
           value.cryptoid,
           {
-            from: value.cryptoid
+            from: dapp_admin
           }
         );
       }).then(function (status) {

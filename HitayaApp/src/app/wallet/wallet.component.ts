@@ -5,6 +5,7 @@ import { QrScannerComponent } from 'angular2-qrscanner';
 import { ITransfer } from '../hitaya-interfaces/ITransfer';
 import { IContact } from '../hitaya-interfaces/IContact';
 import { ITransaction } from '../hitaya-interfaces/ITransaction';
+import { IUserDetails } from '../hitaya-interfaces/IUserDetails';
 import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
 
 import { NgForm } from '@angular/forms';
@@ -41,7 +42,7 @@ export class WalletComponent implements OnInit {
   contact: IContact;
   contact_list: any;
 
-  curr_user_name : any;
+  curr_user_name: String = "UnRegistered";
 
 
   accountValidationMessages = {
@@ -81,6 +82,7 @@ export class WalletComponent implements OnInit {
     this.createForms();
     this.getHatBalance();
     this.getContacts();
+    this.getusername();
 
 
   }
@@ -222,6 +224,25 @@ export class WalletComponent implements OnInit {
     console.log(this.contact);
     this.hat_token_servie.add_contact(this.contact).
       then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  getusername = () => {
+    const that = this;
+    this.hat_token_servie.view_Users().
+      then(function (employee_data: any) {
+        for (var i = 0; i < employee_data.length; i++) {
+          console.log(employee_data);
+          if (that.user.address == employee_data[i][1]) {
+            that.curr_user_name = String(employee_data[i][0]);            
+          }
+          else {
+            this.curr_user_name = "UnRegistered";
+          }
+        }
+      }).catch(function (error) {
         console.log(error);
       });
   }

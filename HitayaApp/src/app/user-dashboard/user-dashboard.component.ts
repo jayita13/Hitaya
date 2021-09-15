@@ -3,6 +3,8 @@ import Chart from 'chart.js/auto';
 
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { HatTokenService } from '../hitaya-services/HAT_TOKEN/hat-token.service';
+import { Convert } from 'igniteui-angular-core';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -17,7 +19,30 @@ export class UserDashboardComponent implements OnInit {
   commonLayout: boolean = false;
   adminLayout: boolean = false;
 
-  constructor(private router: Router) {
+  listtransaction = [];
+  curr_user_name: any;
+  hat_balance: any;
+
+  no_of_transaction: any;
+
+  income: any = 0;
+  expences: any = 0;
+  Mortgage_Rent: any = 0;
+  Food: any = 0;
+  Utilities: any = 0;
+  Bills: any = 0;
+  Shopping: any = 0;
+  Transportation: any = 0;
+  Insurance: any = 0;
+  Healthcare: any = 0;
+  Clothing: any = 0;
+  Others: any = 0;
+
+  myChart: any;
+
+  expense_data: any;
+
+  constructor(private hat_token_servie: HatTokenService, private router: Router) {
     this.userName = sessionStorage.getItem('userName');
     console.log(this.userName);
     if (this.userName != null) {
@@ -26,11 +51,18 @@ export class UserDashboardComponent implements OnInit {
     else {
       this.commonLayout = true;
     }
+
+    
+
   }
 
   ngOnInit(): void {
+
+    this.getusername();
+    this.gettransaction();
+
     /*var ctx = document.getElementById('expenseDistribution').getContext('2d');*/
-    var myChart = new Chart("expenseDistribution", {
+    this.myChart = new Chart("expenseDistribution", {
       type: 'doughnut',
       data: {
         labels: ['Mortgage/Rent', 'Food', 'Utilities', 'Bills', 'Shopping', 'Transportation', 'Insurance', 'Healthcare', 'Clothing', 'Others'],
@@ -109,6 +141,102 @@ export class UserDashboardComponent implements OnInit {
       }
     });
 
+
+    this.expense_update();
+
+    
   }
+
+
+
+
+  getusername = () => {
+    const that = this;
+    this.hat_token_servie.view_Users().
+      then(function (employee_data: any) {
+        for (var i = 0; i < employee_data.length; i++) {
+          console.log(employee_data);
+          if (that.userName == employee_data[i][1]) {
+            that.curr_user_name = String(employee_data[i][0]);
+            that.hat_balance = employee_data[i][3];
+          }
+          else {
+            that.curr_user_name = "UnRegistered";
+          }
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+  gettransaction = () => {
+    const that = this;
+    this.hat_token_servie.view_Transaction().
+      then(function (trans_data: any) {
+        for (var i = 0; i < trans_data.length; i++) {
+          if (that.userName == trans_data[i][0] || that.userName == trans_data[i][1]) {
+            that.listtransaction.push(trans_data[i]);
+            if (trans_data[i][3] == "Air DROP") {
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Mortgage/Rent") {
+              that.Mortgage_Rent = that.Mortgage_Rent + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Food") {
+              that.Food = that.Food + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Utilities") {
+              that.Utilities = that.Utilities + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Bills") {
+              that.Bills = that.Bills + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Shopping") {
+              that.Shopping = that.Shopping + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Transportation") {
+              that.Transportation = (that.Transportation + Convert.toInt64(trans_data[i][2])).toString();
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Insurance") {
+              that.Insurance = that.Insurance + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Healthcare") {
+              that.Healthcare = that.Healthcare + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Clothing") {
+              that.Clothing = that.Clothing + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Others") {
+              that.Others = that.Others + Convert.toInt64(trans_data[i][2]);
+              that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+          }
+        }   
+        that.no_of_transaction = that.listtransaction.length;
+        console.log(that.Transportation);
+        console.log("Transaction List Fetched From Blockchain");
+      }).catch(function (error) {
+        console.log(error);
+      });
+
+  }
+
+
+
+
+
+  expense_update() {
+    this.myChart.data.datasets[0].data = this.expense_data;
+}
 
 }

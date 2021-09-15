@@ -31,7 +31,7 @@ export class WalletComponent implements OnInit {
 
   hat_balance: any;
 
-  listtransaction: any;
+  listtransaction = [];
 
   public myAngularxQrCode: string = null;
 
@@ -214,9 +214,13 @@ export class WalletComponent implements OnInit {
     const that = this;
     this.hat_token_servie.view_Transaction().
       then(function (trans_data: any) {
-        that.listtransaction = trans_data;
-        console.log(that.listtransaction[0]);
-        console.log("IT Worked LA LA");
+        for (var i = 0; i < trans_data.length; i++) {
+          if (that.userName == trans_data[i][0] || that.userName == trans_data[i][1]) {
+            that.listtransaction.push(trans_data[i]);
+          }
+        }
+        
+        console.log("Transaction List Fetched From Blockchain");
       }).catch(function (error) {
         console.log(error);
       });

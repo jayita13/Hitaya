@@ -13,7 +13,7 @@
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="text-blue">INCOME</h5>
-          <h3>142400</h3>
+          <h3>{{income}} HAT</h3>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="text-blue">EXPENSES</h5>
-          <h3>142400</h3>
+          <h3>{{expences}}</h3>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="text-blue">BALANCE</h5>
-          <h3>142400</h3>
+          <h3>{{hat_balance}} HAT</h3>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="text-blue">TRANSACTIONS</h5>
-          <h3>142400</h3>
+          <h3>{{no_of_transaction}}</h3>
         </div>
       </div>
     </div>
@@ -106,17 +106,17 @@
                   <th scope="col">Date</th>
                   <th scope="col">Category</th>
                   <th scope="col">Payment Mode</th>
-                  <th scope="col">Description</th>
+                  <th scope="col">Send To</th>
                   <th scope="col">Amount</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>22/12/2020</td>
-                  <td>Food</td>
-                  <td>Debit Card</td>
-                  <td>Chicken Tikka Pizza, Taco Mexicano</td>
-                  <td>Rs. 1000</td>
+                <tr *ngFor="let tran of listtransaction">
+                  <td>16/09/2021</td>
+                  <td>{{tran[3]}}</td>
+                  <td>Crypto HAT Tokens</td>
+                  <td>{{tran[1]}}</td>
+                  <td>{{tran[2]}}</td>
                 </tr>
               </tbody>
             </table>

@@ -18,4 +18,9 @@ Hat.change_employeeadmin(0x6130d30ba1b3b2743ffDDF1872436C73546fA8fd);
 
 Hat._create_New_Employee("raj713335@gmail.com","10800116107","JL3", "STG");
 
+Hat._create_New_User("Simran","0x8596E93b87488806b832105B2B68C43B8Caed480","12345678",0);
+
+Hat._create_New_Employee("Nitesh Sakpal","748240","JL4", "STG");
+
+
 Hat._create_New_Employee("Nitesh Sakpal","748240","JL4", "STG");

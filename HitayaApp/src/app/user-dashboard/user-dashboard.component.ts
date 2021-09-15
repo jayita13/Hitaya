@@ -142,7 +142,7 @@ export class UserDashboardComponent implements OnInit {
     });
 
 
-    this.expense_update();
+    /*this.expense_update();*/
 
     
   }
@@ -236,6 +236,20 @@ export class UserDashboardComponent implements OnInit {
 
 
   expense_update() {
+    //console.log(this.expense_data);
+    //this.myChart.data.datasets[0].backgroundColor = [
+    //  '#61efcd',
+    //  '#cdde1f',
+    //  '#fec200',
+    //  '#ca765a',
+    //  '#2485fa',
+    //  '#f57d7d',
+    //  '#c152d2',
+    //  '#8854d9',
+    //  '#3d4eb8',
+    //  '#00bcd7'
+    //];
+    
     this.myChart.data.datasets[0].data = this.expense_data;
 }
 

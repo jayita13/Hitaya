@@ -29,7 +29,7 @@ export class WalletComponent implements OnInit {
   swap: boolean = false;
   add_contacts: boolean = false;
 
-  hat_balance: any;
+  hat_balance: any = 0;
 
   listtransaction = [];
 
@@ -82,7 +82,7 @@ export class WalletComponent implements OnInit {
     this.user = { address: '', transferAddress: '', balance: '', amount: '', remarks: '' };
     this.getAccountAndBalance();
     this.createForms();
-    this.getHatBalance();
+    /*this.getHatBalance();*/
     this.getContacts();
     this.getusername();
     this.gettransaction();
@@ -184,19 +184,18 @@ export class WalletComponent implements OnInit {
       });
   }
 
-  getHatBalance = () => {
-    const that = this;
-    console.log(this.user.address);
-    console.log("LOL");
-    this.hat_token_servie.view_HAT_balance(this.userName).
-      then(function (balance: any) {
-        that.hat_balance = balance;
-        console.log(that.hat_balance);
-        console.log("IT Worked HAT BALANCE");
-      }).catch(function (error) {
-        console.log(error);
-      });
-  }
+  //getHatBalance = () => {
+  //  const that = this;
+  //  console.log(this.user.address);
+  //  this.hat_token_servie.view_HAT_balance(this.userName).
+  //    then(function (balance: any) {
+  //      that.hat_balance = balance;
+  //      console.log(that.hat_balance);
+  //      console.log("IT Worked HAT BALANCE");
+  //    }).catch(function (error) {
+  //      console.log(error);
+  //    });
+  //}
 
   getContacts = () => {
     const that = this;
@@ -253,13 +252,10 @@ export class WalletComponent implements OnInit {
     this.hat_token_servie.view_Users().
       then(function (employee_data: any) {
         for (var i = 0; i < employee_data.length; i++) {
-          console.log(employee_data);
-          if (that.user.address == employee_data[i][1]) {
+          console.log(employee_data[i][0]);
+          if (that.userName == employee_data[i][1]) {
             that.curr_user_name = String(employee_data[i][0]);
             that.hat_balance = employee_data[i][3];
-          }
-          else {
-            this.curr_user_name = "UnRegistered";
           }
         }
       }).catch(function (error) {

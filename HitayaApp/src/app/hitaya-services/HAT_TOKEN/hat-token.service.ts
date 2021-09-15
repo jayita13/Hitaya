@@ -97,12 +97,10 @@ export class HatTokenService {
     console.log('User Name : ' +
       value.name + ' User Password : ' + value.password + ' Public Crypto Id : ' + value.cryptoid);
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
       console.log(tokenAbi);
       const contract = require('@truffle/contract');
       const HAT_TOKEN = contract(tokenAbi);
       HAT_TOKEN.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
         return instance._create_New_User(
@@ -121,7 +119,7 @@ export class HatTokenService {
         }
       }).catch(function (error) {
         console.log(error);
-        return reject('transfer.service error');
+        return reject('Create_New_User.service error');
       });
     });
   }

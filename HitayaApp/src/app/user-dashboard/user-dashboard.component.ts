@@ -175,11 +175,11 @@ export class UserDashboardComponent implements OnInit {
     this.hat_token_servie.view_Transaction().
       then(function (trans_data: any) {
         for (var i = 0; i < trans_data.length; i++) {
-          if (that.userName == trans_data[i][0] || that.userName == trans_data[i][1]) {
+          if (that.userName == trans_data[i][0]) {
             that.listtransaction.push(trans_data[i]);
-            if (trans_data[i][3] == "Air DROP") {
-              that.income = that.income + Convert.toInt64(trans_data[i][2]);
-            }
+            //if (trans_data[i][3] == "Air DROP") {
+            //  that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            //}
             if (trans_data[i][3] == "Mortgage/Rent") {
               that.Mortgage_Rent = that.Mortgage_Rent + Convert.toInt64(trans_data[i][2]);
               that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
@@ -219,6 +219,54 @@ export class UserDashboardComponent implements OnInit {
             if (trans_data[i][3] == "Others") {
               that.Others = that.Others + Convert.toInt64(trans_data[i][2]);
               that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
+            }
+          }
+
+
+          if (that.userName == trans_data[i][1]) {
+            that.listtransaction.push(trans_data[i]);
+            if (trans_data[i][3] == "Air DROP") {
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Mortgage/Rent") {
+              that.Mortgage_Rent = that.Mortgage_Rent + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Food") {
+              that.Food = that.Food + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Utilities") {
+              that.Utilities = that.Utilities + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Bills") {
+              that.Bills = that.Bills + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Shopping") {
+              that.Shopping = that.Shopping + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Transportation") {
+              that.Transportation = (that.Transportation + Convert.toInt64(trans_data[i][2]));
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Insurance") {
+              that.Insurance = that.Insurance + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Healthcare") {
+              that.Healthcare = that.Healthcare + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Clothing") {
+              that.Clothing = that.Clothing + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
+            }
+            if (trans_data[i][3] == "Others") {
+              that.Others = that.Others + Convert.toInt64(trans_data[i][2]);
+              that.income = that.income + Convert.toInt64(trans_data[i][2]);
             }
           }
         }   

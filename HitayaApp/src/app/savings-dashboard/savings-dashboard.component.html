@@ -30,7 +30,7 @@
               <div class="card border-2x">
                 <div class="card-body text-center">
                   <p class="type-6 semi-bold">Recommended Savings Yearly</p>
-                  <h3 class="text-blue">200 HAT</h3>
+                  <h3 class="text-blue">120 HAT</h3>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@
               <div class="card border-2x">
                 <div class="card-body text-center">
                   <p class="type-6 semi-bold">Years To Retirement Left</p>
-                  <h3 class="text-blue">60 Years</h3>
+                  <h3 class="text-blue">27 Years</h3>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
               <div class="card border-2x mb-3">
                 <div class="card-body">
                   <p class="type-6 semi-bold">Current Savings</p>
-                  <h3 class="text-blue">200 HAT</h3>
+                  <h3 class="text-blue">{{hat_balance}} HAT</h3>
                 </div>
               </div>
             </div>
@@ -125,9 +125,40 @@
             <div class="col-md-6">
               <div class="card card-border-2x">
                 <div class="card-body">
-                  <h4>Growth Vs Inflation Data (India)</h4>
+                  <h4>My Daily Activities Chart</h4>
                   <div id="dashboard-display-dbl-line-chart">
                     <canvas id="dashboard-chart-dbl-line-display"></canvas>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="card card-border-2x">
+                <div class="card-body">
+                  <h4>Income/Expenditure Graph</h4>
+                  <div id="dashboard-display-pie-chart">
+                    <canvas id="dashboard-chart-dbl-line-display2"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card card-border-2x">
+                <div class="card-body">
+                  <h4>Nominial Growth Vs Inflation Data</h4>
+                  <div id="dashboard-display-dbl-line-chart">
+                    <canvas id="dashboard-chart-dbl-line-display1"></canvas>
                   </div>
 
                 </div>

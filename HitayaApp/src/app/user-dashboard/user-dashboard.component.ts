@@ -163,9 +163,6 @@ export class UserDashboardComponent implements OnInit {
             that.curr_user_name = String(employee_data[i][0]);
             that.hat_balance = employee_data[i][3];
           }
-          else {
-            that.curr_user_name = "UnRegistered";
-          }
         }
       }).catch(function (error) {
         console.log(error);

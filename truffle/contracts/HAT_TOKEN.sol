@@ -118,6 +118,7 @@ contract HAT_TOKEN is ERC20 {
 
     function transfer(address recipient, uint256 amount, string memory _trans_type) public virtual returns (bool) {
         _transfer(msg.sender, recipient, amount);
+        //transferFrom(msg.sender, recipient, amount);
         for (uint i=0;i<Users.length;i++){
             if (Users[i].user_crypto_id==msg.sender){
                 Users[i].balance=Users[i].balance-amount;
@@ -138,7 +139,7 @@ contract HAT_TOKEN is ERC20 {
                 Users[i].balance=Users[i].balance+amount;
             }
         }
-        Transactions.push(Transaction( msg.sender, recipient, amount, "Air DROP"));
+        Transactions.push(Transaction( msg.sender, recipient, amount, "AIR DROP"));
         return true;
     }
     

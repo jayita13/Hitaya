@@ -31,6 +31,8 @@ export class WalletComponent implements OnInit {
 
   hat_balance: any;
 
+  listtransaction: any;
+
   public myAngularxQrCode: string = null;
 
 
@@ -83,6 +85,7 @@ export class WalletComponent implements OnInit {
     this.getHatBalance();
     this.getContacts();
     this.getusername();
+    this.gettransaction();
 
 
   }
@@ -207,6 +210,18 @@ export class WalletComponent implements OnInit {
       });
   }
 
+  gettransaction = () => {
+    const that = this;
+    this.hat_token_servie.view_Transaction().
+      then(function (trans_data: any) {
+        that.listtransaction = trans_data;
+        console.log(that.listtransaction[0]);
+        console.log("IT Worked LA LA");
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
   submitTransferForm(form: NgForm) {
     console.log('transfer.components :: submitForm :: this.userForm.value');
     this.transfer = { sender: this.user.address, reciver: form.value.crypto, amount: form.value.amount };
@@ -236,7 +251,8 @@ export class WalletComponent implements OnInit {
         for (var i = 0; i < employee_data.length; i++) {
           console.log(employee_data);
           if (that.user.address == employee_data[i][1]) {
-            that.curr_user_name = String(employee_data[i][0]);            
+            that.curr_user_name = String(employee_data[i][0]);
+            that.hat_balance = employee_data[i][3];
           }
           else {
             this.curr_user_name = "UnRegistered";

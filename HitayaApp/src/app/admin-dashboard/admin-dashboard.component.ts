@@ -246,7 +246,7 @@ export class AdminDashboardComponent implements OnInit {
     console.log("Employee Admin Change Fuction Started");
     this.admin_change = { cryptoid: form.value.crypto_id };
     console.log(this.admin_change);
-    this.hat_token_servie.change_dapp_Admin(this.admin_change, this.admin_crypto_id).
+    this.hat_token_servie.change_employee_Admin(this.admin_change, this.admin_crypto_id).
       then(function () { }).catch(function (error) {
         console.log(error);
       });
@@ -255,7 +255,7 @@ export class AdminDashboardComponent implements OnInit {
 
 
   submitairdropForm(form: NgForm) {
-    console.log('transfer.components :: submitForm :: this.userForm.value');
+    console.log('AIR DROP FUNCTION STARTTED');
     this.airdrop = { sender: this.admin_crypto_id, reciver: form.value.crypto, amount: form.value.amount };
     // TODO: service call
     this.hat_token_servie.air_drop(this.airdrop).
@@ -291,7 +291,7 @@ export class AdminDashboardComponent implements OnInit {
     console.log("Admin Change Fuction Started");
     this.admin_change = { cryptoid: form.value.admin_id };
     console.log(this.admin_change);
-    this.hat_token_servie.change_employee_Admin(this.admin_change, this.admin_crypto_id).
+    this.hat_token_servie.change_dapp_Admin(this.admin_change, this.admin_crypto_id).
       then(function () { }).catch(function (error) {
         console.log(error);
       });

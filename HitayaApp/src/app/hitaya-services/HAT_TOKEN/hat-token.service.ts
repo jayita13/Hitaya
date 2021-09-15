@@ -406,7 +406,7 @@ export class HatTokenService {
       HAT_TOKEN.setProvider(that.web3);
       console.log(HAT_TOKEN);
       HAT_TOKEN.deployed().then(function (instance) {
-        return instance.transfer(
+        return instance.airdrop(
           value.reciver,
           value.amount,
           {
@@ -419,7 +419,7 @@ export class HatTokenService {
         }
       }).catch(function (error) {
         console.log(error);
-        return reject('Change_Employee_Admin_Error.service error');
+        return reject('AirDrop.service error');
       });
     });
   }

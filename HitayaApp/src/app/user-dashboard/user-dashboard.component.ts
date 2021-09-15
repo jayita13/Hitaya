@@ -39,6 +39,8 @@ export class UserDashboardComponent implements OnInit {
   Others: any = 0;
 
   myChart: any;
+  myChart2: any;
+  myChart3: any;
 
   expense_data: any;
 
@@ -52,14 +54,15 @@ export class UserDashboardComponent implements OnInit {
       this.commonLayout = true;
     }
 
-    
+    this.getusername();
+    this.gettransaction();
+    /*this.expense_update();*/
 
   }
 
   ngOnInit(): void {
 
-    this.getusername();
-    this.gettransaction();
+    
 
     /*var ctx = document.getElementById('expenseDistribution').getContext('2d');*/
     this.myChart = new Chart("expenseDistribution", {
@@ -85,15 +88,16 @@ export class UserDashboardComponent implements OnInit {
         }],
       }
     });
+    
 
     /*var ctx = document.getElementById('barAccountBalance').getContext('2d');*/
-    var myChart2 = new Chart("barAccountBalance", {
+    this.myChart2 = new Chart("barAccountBalance", {
       type: 'line',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October', 'November', 'December'],
         datasets: [{
           label: 'Income',
-          data: [65, 59, 80, 81, 56, 55],
+          data: [0, 0, 0, 65, 59, 80, 81, 56, 55, 90, 100, 12 ],
           fill: false,
           borderColor: 'rgb(75, 192, 192)',
           tension: 0.1
@@ -110,13 +114,13 @@ export class UserDashboardComponent implements OnInit {
 
 
     /*var ctx = document.getElementById('barIncomeExpense').getContext('2d');*/
-    var myChart3 = new Chart("barIncomeExpense", {
+    this.myChart3 = new Chart("barIncomeExpense", {
       type: 'bar',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [{
           label: 'Income',
-          data: [2000, 500, 1000, 800, 2400, 1300],
+          data: [2000, 500, 1000, 800, 2400, 1300, 2000, 500, 1000, 800, 2400, 1300],
           backgroundColor: [
             '#00bcd7'
           ],
@@ -124,7 +128,7 @@ export class UserDashboardComponent implements OnInit {
         },
         {
           label: 'Expense',
-          data: [1200, 420, 800, 700, 2100, 1000],
+          data: [1200, 420, 800, 700, 2100, 1000, 1200, 420, 800, 700, 2100, 1000],
           backgroundColor: [
             '#fec200'
           ],
@@ -141,8 +145,7 @@ export class UserDashboardComponent implements OnInit {
       }
     });
 
-
-    /*this.expense_update();*/
+    
 
     
   }
@@ -201,7 +204,7 @@ export class UserDashboardComponent implements OnInit {
               that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
             }
             if (trans_data[i][3] == "Transportation") {
-              that.Transportation = (that.Transportation + Convert.toInt64(trans_data[i][2])).toString();
+              that.Transportation = (that.Transportation + Convert.toInt64(trans_data[i][2]));
               that.expences = that.expences + Convert.toInt64(trans_data[i][2]);
             }
             if (trans_data[i][3] == "Insurance") {
@@ -224,11 +227,14 @@ export class UserDashboardComponent implements OnInit {
         }   
         that.no_of_transaction = that.listtransaction.length;
         console.log(that.Transportation);
+        that.expense_data = [that.Mortgage_Rent, that.Food, that.Utilities, that.Bills, that.Shopping, that.Transportation, that.Insurance, that.Healthcare, that.Clothing, that.Others];
+        that.expense_update();
         console.log("Transaction List Fetched From Blockchain");
       }).catch(function (error) {
         console.log(error);
       });
 
+    
   }
 
 
@@ -236,7 +242,7 @@ export class UserDashboardComponent implements OnInit {
 
 
   expense_update() {
-    //console.log(this.expense_data);
+    console.log(this.expense_data);
     //this.myChart.data.datasets[0].backgroundColor = [
     //  '#61efcd',
     //  '#cdde1f',
@@ -249,8 +255,19 @@ export class UserDashboardComponent implements OnInit {
     //  '#3d4eb8',
     //  '#00bcd7'
     //];
+
+    
+
     
     this.myChart.data.datasets[0].data = this.expense_data;
+    this.myChart2.data.datasets[0].data = [0, 0, 0, 0, 0, 0, 0, 0, this.income];
+    this.myChart3.data.datasets[0].data = [0, 0, 0, 0, 0, 0, 0, 0, this.income];
+    this.myChart3.data.datasets[1].data = [0, 0, 0, 0, 0, 0, 0, 0, this.expences];
+
+    this.myChart.update();
+    this.myChart2.update();
+    this.myChart3.update();
+
 }
 
 }

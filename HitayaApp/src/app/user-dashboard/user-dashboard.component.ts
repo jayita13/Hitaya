@@ -225,7 +225,7 @@ export class UserDashboardComponent implements OnInit {
 
           if (that.userName == trans_data[i][1]) {
             that.listtransaction.push(trans_data[i]);
-            if (trans_data[i][3] == "Air DROP") {
+            if (trans_data[i][3] == "AIR DROP") {
               that.income = that.income + Convert.toInt64(trans_data[i][2]);
             }
             if (trans_data[i][3] == "Mortgage/Rent") {

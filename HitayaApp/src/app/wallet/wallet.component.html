@@ -264,9 +264,9 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-3">
                   <button class="btn btn-primary btn-sm" (click)="buytoken()">
-                    <i class="fa fa-credit-card fa-fw"></i>
+                    <i class="fa fa-fire fa-fw"></i>
                   </button>
-                  <p class="small text-primary">Buy</p>
+                  <p class="small text-primary">Burn</p>
                 </div>
                 <div class="col-md-3 col-sm-3 col-3">
                   <button class="btn btn-primary btn-sm" (click)="swaptoken()">
@@ -292,6 +292,48 @@
 
       </div>
 
+
+      <div *ngIf="buy">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
+
+                <form #BurnForm="ngForm" (ngSubmit)="burn(BurnForm)">
+
+
+                  <div class="form-group row">
+                    <h5 class="col-md-4 mt-1">HAT AMT:</h5>
+                    <input class="form-control form-control-sm col-md-8" placeholder="Amount HAT"
+                           #amountRef name="amt" ngModel required>
+
+
+
+                    <!--<div *ngFor="let validation of accountValidationMessages.amount">
+                  <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+                </div>-->
+                  </div>
+
+
+                  
+
+
+
+                  <div class="mb-4">
+                    <button class="btn btn-danger btn-block" type="submit">Burn HAT</button>
+                  </div>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
       <div *ngIf="send">
         <div class="row">
           <div class="col-md-12">
@@ -305,8 +347,8 @@
                     <h5 class="col-md-4 mt-1">ADDRESS:</h5>
                     <input class="form-control form-control-sm col-md-8" #CryptoRef name="crypto" ngModel placeholder="Transfer Address" maxlength="42" minlength="42" required>
                     <!--<div *ngFor="let validation of accountValidationMessages.transferAddress">
-      <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
-    </div>-->
+                  <p *ngIf="userForm.get('transferAddress').hasError(validation.type) && (userForm.get('transferAddress').dirty || userForm.get('transferAddress').touched)">{{validation.message}}</p>
+                </div>-->
                   </div>
 
 
@@ -320,8 +362,8 @@
 
 
                     <!--<div *ngFor="let validation of accountValidationMessages.amount">
-      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
-    </div>-->
+                  <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+                </div>-->
                   </div>
 
 
@@ -343,11 +385,11 @@
 
 
                     <!--<div *ngFor="let validation of accountValidationMessages.amount">
-      <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
-    </div>-->
+                  <p *ngIf="userForm.get('amount').hasError(validation.type) && (userForm.get('amount').dirty || userForm.get('amount').touched)">{{validation.message}}</p>
+                </div>-->
                   </div>
 
-                  
+
 
 
                   <div class="mb-4">
@@ -356,74 +398,74 @@
 
 
                 </form>
-                      </div>
-                    </div>
-                  </div>
-  
-
+              </div>
+            </div>
           </div>
 
+
+        </div>
+
+      </div>
+
+      <div *ngIf="swap">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select type="text" class="form-control">
+                        <option value="HAT">HAT</option>
+                        <option value="BTC">BTC</option>
+                        <option value="BTC">BTC</option>
+                        <option value="BTC">BTC</option>
+                      </select>
                     </div>
-
-                    <div *ngIf="swap">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="card">
-                            <div class="card-body px-3 py-3" style="padding:0; margin: 0;">
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <select type="text" class="form-control">
-                                      <option value="HAT">HAT</option>
-                                      <option value="BTC">BTC</option>
-                                      <option value="BTC">BTC</option>
-                                      <option value="BTC">BTC</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control" />
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-md-12 text-center">
-                                  <button class="btn btn-primary btn-sm"><i class="fa fa-exchange-alt" style="transform: rotate(90deg);"></i></button>
-                                </div>
-                              </div>
-
-                              <div class="row mt-3">
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <select type="text" class="form-control">
-                                      <option value="BTC">BTC</option>
-                                      <option value="BTC">BTC</option>
-                                      <option value="BTC">BTC</option>
-                                      <option value="BTC">BTC</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-12">
-                                  <button class="btn btn-success btn-block">Transfer</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
                   </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-sm"><i class="fa fa-exchange-alt" style="transform: rotate(90deg);"></i></button>
+                  </div>
+                </div>
+
+                <div class="row mt-3">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select type="text" class="form-control">
+                        <option value="BTC">BTC</option>
+                        <option value="BTC">BTC</option>
+                        <option value="BTC">BTC</option>
+                        <option value="BTC">BTC</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-success btn-block">Transfer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 
                   <div class="col-md-8">
 

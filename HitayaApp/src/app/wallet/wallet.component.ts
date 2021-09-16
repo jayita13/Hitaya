@@ -42,7 +42,7 @@ export class WalletComponent implements OnInit {
 
   transfer: ITransaction;
   contact: IContact;
-  contact_list: any;
+  contact_list = [];
 
   curr_user_name: String = "UnRegistered";
 
@@ -201,8 +201,13 @@ export class WalletComponent implements OnInit {
     const that = this;
     this.hat_token_servie.view_contacts().
       then(function (employee_data: any) {
-        that.contact_list = employee_data;
-        console.log(that.contact_list[0]);
+        for (var i = 0; i < employee_data.length; i++) {
+          console.log(employee_data[i][0]);
+          if (that.userName == employee_data[i][0]) {
+            that.contact_list.push(employee_data[i]);
+          }
+        }
+        
         console.log("IT Worked LA LA");
       }).catch(function (error) {
         console.log(error);
@@ -234,6 +239,17 @@ export class WalletComponent implements OnInit {
         console.log(error);
       });
   }
+
+
+  burn(form: NgForm) {
+    console.log('transfer.components :: submitForm :: this.userForm.value');
+    // TODO: service call
+    this.hat_token_servie.burn(form.value.amt, this.user.address).
+      then(function () { }).catch(function (error) {
+        console.log(error);
+      });
+  }
+
 
 
   SubmitAddContact(form: NgForm) {

@@ -197,7 +197,7 @@
                   <li class="nav-item">
                     <a class="nav-link" id="home-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="home"
                        aria-selected="true">
-                      <strong>CONTACTS</strong>
+                      <strong>ADD MERCHANTS</strong>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -238,41 +238,111 @@
                   </div>
 
 
+                  <!--<div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-3 col-sm-2 col-md-2">
+        <img src="assets/profile-pic.png" class="img-fluid" />
+      </div>
+      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+        <h4 class="mb-0 bold">StarBucks</h4>
+        <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
+        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row mt-4">
+      <div class="col-3 col-sm-2 col-md-2">
+        <img src="assets/profile-pic.png" class="img-fluid" />
+      </div>
+      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+        <h4 class="mb-0 bold">Veggie Grill</h4>
+        <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
+        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+      </div>
+    </div>
+
+    <hr />
+  </div>-->
+
                   <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="tokens-tab">
                     <div class="row">
+
                       <div class="col-md-12">
-                        <button class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Add Contact</button>
+                        <div *ngIf="add_contacts">
+                          <form #AddContactForm="ngForm" (ngSubmit)="SubmitAddContact(AddContactForm)">
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Merchant Name</label>
+                              <input type="text" #NameRef name="name" ngModel class="form-control" id="exampleInputPassword1" required />
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Merchant Public Crypto Address</label>
+                              <input type="text" #CryptoRef name="crypto" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                              <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Merchant Type</label>
+                              <select type="text" #typeRef name="type" ngModel class="form-control" id="exampleInputPassword1" required>
+                                <option value="Mortgage/Rent">Mortgage/Rent</option>
+                                <option value="Food">Food</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Bills">Bills</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Transportation">Transportation</option>
+                                <option value="Insurance">Insurance</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Clothing">Clothing</option>
+                                <option value="Others">Others</option>
+                              </select>
+                              <!--<input type="text" #typeRef name="type" ngModel class="form-control" id="exampleInputPassword1" required />-->
+                            </div>
+                            <button type="submit" [disabled]="!AddContactForm.form.valid" class="btn btn-primary">Submit</button>
+                          </form>
+                        </div>
+                        <button class="btn btn-primary btn-sm float-right" (click)="addcontact()"><i class="fa fa-plus"></i> Add Merchants</button>
                       </div>
                     </div>
 
                     <hr />
 
-                    <div class="row">
+                    <div class="row" *ngFor="let data of contact_list">
                       <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
+                        <img src="assets/merchant.jpg" class="img-fluid" />
                       </div>
                       <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">StarBucks</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">dshfsjr8259fhjsgfydhasry39</p>
+                        <h4 class="mb-0 bold">{{data[2]}}             ({{data[3]}})</h4>
+                        <p class="mt-0 no-td-space text-muted type-6">{{data[1]}}</p>
                         <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                        <hr />
                       </div>
+                      <hr />
                     </div>
 
-                    <hr />
+                    
 
-                    <div class="row mt-4">
-                      <div class="col-3 col-sm-2 col-md-2">
-                        <img src="assets/profile-pic.png" class="img-fluid" />
-                      </div>
-                      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
-                        <h4 class="mb-0 bold">Veggie Grill</h4>
-                        <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
-                        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
-                      </div>
-                    </div>
+                    <!--<div class="row mt-4">
+      <div class="col-3 col-sm-2 col-md-2">
+        <img src="assets/profile-pic.png" class="img-fluid" />
+      </div>
+      <div class="col-9 col-sm-10 col-md-10 mt-md-2">
+        <h4 class="mb-0 bold">Veggie Grill</h4>
+        <p class="mt-0 no-td-space text-muted type-6">sjfhjgdfhdfkdoe8ytudshfkjsdfkj</p>
+        <button class="btn btn-link btn-sm"><i class="fa fa-edit"></i> Edit</button>
+      </div>
+    </div>-->
 
                     <hr />
                   </div>
+
                   <div class="tab-pane fade" id="nfts" role="tabpanel" aria-labelledby="nfts-tab">
                     <div class="text-center text-dark-grey">
                       <i class="fa fa-circle-notch fa-3x fa-fw"></i>

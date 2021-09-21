@@ -1,0 +1,33 @@
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 29970621 (0x1c950bd)
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'HAT_TOKEN'
+   ---------------------
+   > transaction hash:    0xf13931c9846c8f9081114ecae180e844306f471d6f64c077d2cdf0a92e383fee
+   > Blocks: 1            Seconds: 10
+   > contract address:    0xA0384449c314e80B2cA2d7794ed22B46227f0ebA
+   > block number:        9332180
+   > block timestamp:     1632238627
+   > account:             0xde53974B387B33296f61C01d6BA16Fee25787cc8
+   > balance:             40.487525274372386529
+   > gas used:            4113410 (0x3ec402)
+   > gas price:           1.000000011 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00411341004524751 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00411341004524751 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.00411341004524751 ETH

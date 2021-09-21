@@ -7,7 +7,14 @@ import numpy as np #Image Processing
 from io import BytesIO
 from fastapi.middleware.cors import CORSMiddleware
 
+import pickle
+from health import health
+
 app = FastAPI()
+
+
+pickle_in = open("Models/classifier.pkl", "rb")
+classifier = pickle.load(pickle_in)
 
 
 origins = ["*"]
@@ -48,6 +55,19 @@ async def predict(file: UploadFile = File(...)):
         result_text.append(text[1])
 
     return result_text
+
+@app.post('/health')
+async def health(data: health):
+
+    data = data.dict()
+
+    Status = data["Status"]
+    Alcohol = data["Alcohol"]
+    BMI = data["BMI"]
+
+    prediction = classifier.predict([[Status, Alcohol, BMI]])
+
+    return prediction[0]
 
 
 

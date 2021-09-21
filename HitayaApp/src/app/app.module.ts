@@ -28,6 +28,7 @@ import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
+import { HealthDataComponent } from './health-data/health-data.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard
     EditUserDetailsComponent,
     UserDashboardComponent,
     EmployeeAdminComponent,
-    SavingsDashboardComponent
+    SavingsDashboardComponent,
+    HealthDataComponent
   ],
   imports: [
     BrowserModule,

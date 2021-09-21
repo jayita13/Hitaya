@@ -14,6 +14,7 @@ import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
+import { HealthDataComponent } from './health-data/health-data.component';
 
 
 
@@ -30,16 +31,17 @@ import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.servic
 const routes: Routes = [
   { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
-  { path: 'wallet', component: WalletComponent },
-  { path: 'crypto', component: CryptoDataComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'stocks', component: StockMarketComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'analysis', component: RetirementSavingsComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'edit-user', component: EditUserDetailsComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'user-dashboard', component: UserDashboardComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'savings-dashboard', component: SavingsDashboardComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'about', component: AboutComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'admin-dashboard', component: AdminDashboardComponent, /* canActivate: [RegisterDoneService] */ },
-  { path: 'employee-admin-dashboard', component: EmployeeAdminComponent, /* canActivate: [RegisterDoneService] */ },
+  { path: 'wallet', component: WalletComponent, canActivate: [AuthGuardService] },
+  { path: 'health', component: HealthDataComponent, canActivate: [AuthGuardService] },
+  { path: 'crypto', component: CryptoDataComponent, canActivate: [AuthGuardService]  },
+  { path: 'stocks', component: StockMarketComponent, canActivate: [AuthGuardService]  },
+  { path: 'analysis', component: RetirementSavingsComponent, canActivate: [AuthGuardService]  },
+  { path: 'edit-user', component: EditUserDetailsComponent, canActivate: [AuthGuardService]  },
+  { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuardService]  },
+  { path: 'savings-dashboard', component: SavingsDashboardComponent, canActivate: [AuthGuardService]  },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuardService]  },
+  { path: 'admin-dashboard', component: AdminDashboardComponent/*, canActivate: [AuthGuardService]*/  },
+  { path: 'employee-admin-dashboard', component: EmployeeAdminComponent/*, canActivate: [AuthGuardService] */ },
   { path: '**', component: PageNotFoundComponentComponent }
 ];
 

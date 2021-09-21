@@ -8,5 +8,5 @@ numpy
 python-multipart
 streamlit
 easyocr
-numpy
-Pillow
+scipy
+scikit-learn

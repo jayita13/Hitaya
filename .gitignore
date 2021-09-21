@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+.Deploy_Rinkeby/truffle/.envx
+.Deploy_Rinkeby/truffle/.env
+/Deploy_Rinkeby/truffle/.env
+/Deploy_Rinkeby/truffle/.envx

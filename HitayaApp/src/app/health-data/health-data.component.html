@@ -1,0 +1,522 @@
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+
+<form #AddDataForm="ngForm" (ngSubmit)="AddUserData(AddDataForm)">
+  <div class="container mt-5 mb-4">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Welcome {{userName}},</h2>
+            <p>
+              Nowadays, everyone invests for future, some a little, someone with big proportion.
+              <br />
+              <span class="text-blue">
+                Wouldn't it be better, if you know what should be the proper* proportion
+                that could be profitable and helpful during your old age?
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row mt-5">
+          <div class="col-md-5">
+            <h2>BASIC DETAILS</h2>
+          </div>
+          <div class="col-md-7">
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4>What is your Gender?</h4>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-4">
+                    <div>
+                      <input type="radio" class="custom-super-special-radio" id="gender_01" value="Male" #GenderRef name="gender" ngModel>
+                      <label class="custom-super-special-label" for="gender_01">
+                        <h4>Male</h4>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div>
+                      <input type="radio" class="custom-super-special-radio" id="gender_02" value="Female" #GenderRef name="gender" ngModel>
+                      <label class="custom-super-special-label" for="gender_02">
+                        <h4>Female</h4>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4>What is your Age?</h4>
+                <p class="text-dark-grey type-6">
+                  Don't Worry :)<br /> We need your age to provide you with Correct Calculations.
+                </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="myAge" #AgeRef name="age" ngModel>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Any Disabilities you have ?</h4>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row mt-4">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div>
+                              <input type="radio" class="custom-super-special-radio" id="disability_01" value="Yes" #DisabilityRef name="disabilities" ngModel />
+                              <label class="custom-super-special-label" for="disability_01">
+                                <h4>Yes</h4>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div>
+                              <input type="radio" class="custom-super-special-radio" id="disability_02" value="No" #DisabilityRef name="disabilities" ngModel>
+                              <label class="custom-super-special-label" for="disability_02">
+                                <h4>No</h4>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h6>Dependents :</h6>
+                  <select type="text" class="form-control custom-select" #dependentsRef name="dependents" ngModel required>
+                    <option selected>Select Dependents</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>LOCATION</h2>
+          </div>
+          <div class="col-md-7">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6>Country :</h6>
+                          <input type="text" class="form-control" #countryRef name="country" ngModel required>
+                          <!--<select type="text" class="form-control custom-select" name="select-country" id="select-country">
+                            <option>Select Country</option>
+                            <option>India</option>
+                            <option>Uganda</option>
+                          </select>-->
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6>State :</h6>
+                          <input type="text" class="form-control" #stateRef name="state" ngModel required>
+                          <!--<select type="text" class="form-control custom-select" name="select-dependents" id="pan-tax-no">
+                          <option>Select State</option>
+                          <option>West Bengal</option>
+                          <option>Jharkhand</option>-->
+                          <!--</select>-->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6>Select Country Status :</h6>
+                          <select type="text" class="form-control custom-select" #countryStatusRef name="countryStatus" ngModel required>
+                            <!--<option>Select Country Status</option>-->
+                            <option>Developed</option>
+                            <option>Developing</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6>Pin Code :</h6>
+                          <input type="text" class="form-control" #pinCodeRef name="pinCode" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <h6>TAX/PAN Number :</h6>
+                  <input type="text" class="form-control" #taxidRef name="taxid" ngModel required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <h6>DIQ/Passport Number :</h6>
+                  <input type="text" class="form-control" #passportidRef name="passportid" ngModel required>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>NOMINEE DETAILS</h2>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h6>Nominee Name :</h6>
+                  <input type="text" class="form-control" #nomineeRef name="nominee" ngModel required>
+                </div>
+
+                <div class="row mt-4 mb-3">
+                  <div class="col-md-12">
+                    <h5>Relationship with Nominee :</h5>
+                    <div class="row mt-2">
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-son" class="custom-control-input" #relationshipWithNomineeRef value="Son" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-son">Son</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-daughter" class="custom-control-input" #relationshipWithNomineeRef value="Daughter" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-daughter">Daughter</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-wife" class="custom-control-input" #relationshipWithNomineeRef value="Wife" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-wife">Wife</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-husband" class="custom-control-input" #relationshipWithNomineeRef value="Husband" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-husband">Husband</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-father" class="custom-control-input" #relationshipWithNomineeRef value="Father" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-father">Father</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-mother" class="custom-control-input" #relationshipWithNomineeRef value="Mother" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-mother">Mother</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="nominee-other" class="custom-control-input" #relationshipWithNomineeRef value="Other" name="relationshipWithNominee" ngModel required>
+                          <label class="custom-control-label" for="nominee-other">Other</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>SALARY DETAILS</h2>
+          </div>
+          <div class="col-md-7">
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="no-td-space">Your Current Salary</h5>
+                <p class="text-dark-grey type-6">
+                  Enter your <span class="text-blue">Salary</span> on <span class="text-blue">Yearly</span> Basis.
+                </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" #currentSalaryRef name="currentSalary" ngModel required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5 class="no-td-space">Your Current Savings</h5>
+                <p class="text-dark-grey type-6">
+                  If none, then enter <span class="text-blue">0</span>.
+                </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" #savingsRef name="savings" ngModel required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>INSURANCE</h2>
+            <p class="text-blue">
+              Let me know if you are insured or not?
+            </p>
+          </div>
+          <div class="col-md-7">
+
+            <div class="row">
+              <div class="col-md-12">
+                <h5>Have you taken <span class="text-blue">Health</span> Insurance ?</h5>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="health-insurance-yes" class="custom-control-input" #healthInsuranceRef value="Yes" name="healthInsurance" ngModel required>
+                          <label class="custom-control-label" for="health-insurance-yes">Yes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="health-insurance-no" class="custom-control-input" #healthInsuranceRef value="No" name="healthInsurance" ngModel required>
+                          <label class="custom-control-label" for="health-insurance-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5>Have you taken <span class="text-blue">Any Other</span> Insurance ?</h5>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="any-other-insurance-yes" class="custom-control-input" #otherInsuranceRef value="Yes" name="otherInsurance" ngModel required>
+                          <label class="custom-control-label" for="any-other-insurance-yes">Yes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="any-other-insurance-no" class="custom-control-input" #otherInsuranceRef value="No" name="otherInsurance" ngModel required>
+                          <label class="custom-control-label" for="any-other-insurance-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>HEALTH INFORMATION</h2>
+            <p class="text-blue">Let me know your daily life Activities.</p>
+          </div>
+          <div class="col-md-7">
+
+            <h5>You Smoke ?</h5>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="smoking-yes" class="custom-control-input" #smokeRef value="Yes" name="smoke" ngModel required>
+                      <label class="custom-control-label" for="smoking-yes">Yes</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="smoking-no" class="custom-control-input" #smokeRef value="No" name="smoke" ngModel required>
+                      <label class="custom-control-label" for="smoking-no">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+
+
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5>Do you have any other Health Issues ?</h5>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="other-health-issue-yes" class="custom-control-input" #healthIssueRef value="Yes" name="healthIssue" ngModel required>
+                          <label class="custom-control-label" for="other-health-issue-yes">Yes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="other-health-issue-no" class="custom-control-input" #healthIssueRef value="No" name="healthIssue" ngModel required>
+                          <label class="custom-control-label" for="other-health-issue-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5>Do you Exercise Regularly ?</h5>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="regular-exercise-yes" class="custom-control-input" #exerciseRef value="Yes" name="exercise" ngModel required>
+                          <label class="custom-control-label" for="regular-exercise-yes">Yes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="regular-exercise-no" class="custom-control-input" #exerciseRef value="No" name="exercise" ngModel required>
+                          <label class="custom-control-label" for="regular-exercise-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h6>How many Liters of Alcohol Do you drink in a year on Average?</h6>
+                  <input type="text" class="form-control" #alcoholRef name="alcohol" ngModel required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h6>YOUR BMI SCORE</h6>
+                  <input type="text" class="form-control" #bmiRef name="bmi" ngModel required>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-5">
+            <h2>GET STARTED</h2>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-12">
+                <p>
+                  Thanks for your Patience!
+                </p>
+                <p class="text-blue">
+                  Let me help you with today's fight that could save you tomorrow.
+                </p>
+                <button class="btn btn-success btn-sm btn-block" id="health-page-final" [disabled]="!AddDataForm.form.valid"> <i class="fa fa-star fa-fw"></i> Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

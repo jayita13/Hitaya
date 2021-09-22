@@ -17,6 +17,7 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
   <li>View Employee Details</li>
   <li>View Stock Market details</li>
   <li>View Crypto Market details</li>
+  <li>Recommendation System for Wealth Management</li>
 </ul>
 
 

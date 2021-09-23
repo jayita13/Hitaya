@@ -1,7 +1,7 @@
 
 HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
 
- Hat._create_New_User("Arnab Das","0x18665a283B639E3793d6Bc3983E027CB3d67ebD6","34343");
+ Hat._create_New_User("Ameeta Som","0x07bEfD6f5cE5D37c985A8Ac65eF8afAB3362EC10","12345678");
 
 Hat.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 .then(function(receipt){
@@ -9,7 +9,7 @@ Hat.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 });
 ;
 Hat.admin();
-Hat.change_admin("0xFa01c029D1eb0d6e59EAA1Da3B766800e6bf54dd");
+Hat.change_admin("0x355eC55Fc7069B970BE2CA6c785a6cD99A788173");
 Hat.employeeadmin();
 Hat.employees_view();
 Hat.balanceOf(0x171F16b701F6301900C1f9C28263d88a4A712397);
@@ -19,7 +19,7 @@ Nitesh Sakpal
 748240
 
 
-0xB88134810745ae8C98237432eF8a0CE6376C9b46
+0x84791132f2875a690FE198ac878D6142bB6Ee079
 
 Hat._create_New_Employee("raj713335@gmail.com","10800116107","JL3", "STG");
 

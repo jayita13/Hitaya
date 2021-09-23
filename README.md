@@ -1,5 +1,5 @@
 <h1 align="center">HITAYA</h1>
-<p><strong>Employee Welfare DApp –</strong> DApp Employee Welfare Application that can be used my employees to transfer tokens during a purchase, or to store contact in blockchain via smart Contract.
+<p><strong>Employee Welfare DApp –</strong> DApp Employee Welfare Application that can be used by employees to transfer tokens during a purchase, or to store contact in blockchain via smart Contract.
 	
 Dapp Admin can change the Employee Administrator, Mint Token, Burn Tokens, Transfer Tokens or can view Transaction Details , or User Details.
 
@@ -17,6 +17,7 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
   <li>View Employee Details</li>
   <li>View Stock Market details</li>
   <li>View Crypto Market details</li>
+  <li>Recommendation System for Wealth Management</li>
 </ul>
 
 

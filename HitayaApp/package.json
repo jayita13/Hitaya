@@ -1,14 +1,16 @@
 {
   "name": "hitaya-app",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "e2e": "ng e2e",
+    "electron": "ng build --base-href ./ && electron ."
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.6",
@@ -26,6 +28,7 @@
     "bootstrap": "^5.0.0-beta3",
     "chart.js": "^3.5.0",
     "core-js": "^2.5.7",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "igniteui-angular-charts": "^11.2.1",
     "igniteui-angular-core": "^11.2.1",
@@ -44,6 +47,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "electron": "^15.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",

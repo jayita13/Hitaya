@@ -28,6 +28,18 @@ export class UserRegistrationService {
   }
 
 
+  uploadpneumoniaImage(file): Observable<any> {
+
+    console.log(file);
+    const formData = new FormData();
+
+    formData.append('file', file, file.name);
+    console.log(formData);
+
+    return this.http.post<any[]>('http://127.0.0.1:8000/pneumonia', formData).pipe(catchError(this.errorHandler));
+  }
+
+
 
   errorHandler(error: HttpErrorResponse) {
     console.error(error);

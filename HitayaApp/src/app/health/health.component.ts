@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
+import { UserRegistrationService } from '../hitaya-services/user_registration/user-registration.service';
 
 
 class ImageSnippet {
@@ -24,7 +27,10 @@ export class HealthComponent implements OnInit {
 
   file: File = null;
 
-  constructor(private router: Router) {
+  name: string = "";
+  id: string = "";
+
+  constructor(private router: Router, private imageService: UserRegistrationService) {
     this.userName = sessionStorage.getItem('userName');
     console.log(this.userName);
     if (this.userName != null) {
@@ -33,6 +39,7 @@ export class HealthComponent implements OnInit {
     else {
       this.commonLayout = true;
     }
+    this.url = "assets/back_x.gif";
   }
 
   ngOnInit(): void {
@@ -63,20 +70,23 @@ export class HealthComponent implements OnInit {
       //    })
       //});
 
-      //this.imageService.uploadImage(this.file).subscribe(
-      //  (event: any) => {
-      //    if (typeof (event) === 'object') {
+      this.imageService.uploadpneumoniaImage(this.file).subscribe(
+        (event: any) => {
+          if (typeof (event) === 'object') {
 
-      //      console.log(event);
-      //      this.name = event[1];
-      //      this.id = event[2];
+            console.log(event);
+            this.name = event[1];
+            this.id = event[2];
 
-      //      console.log(this.name, this.id);
+            console.log(this.name, this.id);
 
+            // Short link via api response
+            //this.shortLink = event.link;
 
-      //    }
-      //  }
-      //);
+            //this.loading = false; // Flag variable 
+          }
+        }
+      );
 
 
 

@@ -1,16 +1,36 @@
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 
+
+from flask import Flask, render_template, request, jsonify,redirect
+
 import easyocr as ocr  #OCR
 from PIL import Image #Image Processing
 import numpy as np #Image Processing
 from io import BytesIO
 from fastapi.middleware.cors import CORSMiddleware
 
+import tensorflow as tf
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.models import model_from_json
+from tensorflow.keras.preprocessing.image import img_to_array
+
+
+
 import pickle
 from health import health
 
 app = FastAPI()
+
+
+json_file = open('Models/Pneumonia/model.json','r')
+loaded_model_json = json_file.read()
+json_file.close()
+global model
+model = model_from_json(loaded_model_json)
+
+#load weights into new model
+model.load_weights("Models/Pneumonia/model.h5")
 
 
 pickle_in = open("Models/classifier.pkl", "rb")
@@ -33,6 +53,20 @@ def index():
 
 def read_imagefile(file) -> Image.Image:
     image = Image.open(BytesIO(file))
+    return image
+
+
+def process_image(image):
+    #read image
+    image = Image.open(BytesIO(image))
+    if image.mode != "RGB":
+        image = image.convert("RGB")
+
+    # resize and convert to tensor
+    image = image.resize((96, 96))
+    image = img_to_array(image)
+    image = preprocess_input(image)
+    image = np.expand_dims(image, axis=0)
     return image
 
 
@@ -68,6 +102,24 @@ async def health(data: health):
     prediction = classifier.predict([[Status, Alcohol, BMI]])
 
     return prediction[0]
+
+
+@app.post('/pneumonia')
+async def pneumonia():
+
+    predictions = {}
+
+    # only make predictions after sucessfully receiving the file
+    if request.files:
+        try:
+            image = request.files["image"].read()
+            image = process_image(image)
+            out = model.predict(image)
+            # send the predictions to index page
+            predictions = {"positive":str(np.round(out[0][1],2)),"negative":str(np.round(out[0][0],2))}
+        except:
+            predictions ={}
+    return predictions
 
 
 

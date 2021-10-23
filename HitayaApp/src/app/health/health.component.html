@@ -1,0 +1,222 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+<!--<app-common-layout *ngIf="commonLayout"></app-common-layout>-->
+
+<app-user-layout></app-user-layout>
+
+
+<div class="logo float-left">
+  <h1 class="text-light"><a href="/"><span> </span></a></h1>
+  <!-- Uncomment below if you prefer to use an image logo -->
+  <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+</div>
+
+
+<form class="hello">
+  <section id="contact" class="contact">
+    <div class="container">
+
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <br>
+          <div class="row">
+            <div class="col-md-12" style="margin:0; padding:0;">
+              <div class="info-box">
+
+                <br>
+
+
+
+
+                <!--<div id="wrapper">
+                  <div id="image-holder" class="text-center">
+                    <img id="image_output" src="../static/img/back_x.gif" style="max-width:100%; height:375px; max-height:375px;" />
+                  </div>-->
+                  <!--    <input id="fileUpload" type="file" /> -->
+                  <!--<br>
+
+                  {{ form.hidden_tag() }}-->
+                  <!--                      {{ form.file(class="upload-btn-wrapper.img-fluid") }}-->
+                  <!--                      {{ form.submit(for="file") }}-->
+                  <!--<div class="upload-btn-wrapper">
+                    <input class="img-fluid" type="file" id="file" accept="image/*" onchange="image_preview(event)" name="file">
+                    <label for="file">Upload an Image</label>
+                  </div>
+                  <br>
+                </div>-->
+            
+
+
+
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-lg-6">
+          <br>
+          <!--            <form action="forms/contact.php" method="post" role="form" class="php-email-form">-->
+          <div class="php-email-form">
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="text" name="name" class="form-control form-control-sm" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="age" id="age" placeholder="Your Age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="text" name="race" class="form-control form-control-sm" id="race" placeholder="Your Race" data-rule="minlen:4" data-msg="Please enter at least 4 chars" list="exampleList1">
+                <datalist id="exampleList1">
+                  <option value="Aleut">
+                  <option value="Eskimo">
+                  <option value="Indian">
+                  <option value="Black">
+                  <option value="White">
+                  <option value="Other">
+                </datalist>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="text" class="form-control form-control-sm" name="sex" id="sex" placeholder="Your Sex" data-rule="minlen:4" data-msg="Please enter at least 4 chars" list="exampleList">
+                <datalist id="exampleList">
+                  <option value="Male">
+                  <option value="Female">
+                </datalist>
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="diastolic_bp" class="form-control form-control-sm" id="diastolic_bp" placeholder="Your Diastolic BP" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="red_blood_cells" id="red_blood_cells" placeholder="Your Red Blood Cells" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="sedimantation_rate" class="form-control form-control-sm" id="sedimantation_rate" placeholder="Your Sedimantation Rate" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="serum_albumin" id="serum_albumin" placeholder="Your Serum Albumin" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="serum_cholestrol" class="form-control form-control-sm" id="serum_cholestrol" placeholder="Your Serum Cholestrol" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="serum_iron" id="serum_iron" placeholder="Your Serum Iron" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="serum_magnesium" class="form-control form-control-sm" id="serum_magnesium" placeholder="Your Serum Magnesium" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="serum_protein" id="serum_protein" placeholder="Your Serum Protein" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="systolic_bp" class="form-control form-control-sm" id="systolic_bp" placeholder="Your Systolic BP" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="tibc" id="tibc" placeholder="Your TIBC" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="ts" class="form-control form-control-sm" id="ts" placeholder="Your TS" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="white_blood_cells" id="white_blood_cells" placeholder="Your White Blood Cells" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" name="bmi" class="form-control form-control-sm" id="bmi" placeholder="Your BMI" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 col-md-6 col-sm-6 col-6 form-group">
+                <input type="number" class="form-control form-control-sm" name="pulse_pressure" id="pulse_pressure" placeholder="Your Pulse Pressure" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+            </div>
+
+
+
+            <!--              <div class="form-group">-->
+            <!--                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />-->
+            <!--                <div class="validate"></div>-->
+            <!--              </div>-->
+            <!--              <div class="form-group">-->
+            <!--                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />-->
+            <!--                <div class="validate"></div>-->
+            <!--              </div>-->
+
+
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your data sent for processing . Thank you !</div>
+            </div>
+            <div class="text-center"><button class="btn btn-site-theme btn-block" type="submit" name="submit">SUBMIT</button></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</form>

@@ -29,6 +29,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
 import { HealthDataComponent } from './health-data/health-data.component';
+import { HealthComponent } from './health/health.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { HealthDataComponent } from './health-data/health-data.component';
     UserDashboardComponent,
     EmployeeAdminComponent,
     SavingsDashboardComponent,
-    HealthDataComponent
+    HealthDataComponent,
+    HealthComponent
   ],
   imports: [
     BrowserModule,

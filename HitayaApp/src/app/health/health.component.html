@@ -28,9 +28,9 @@
                 <br>
 
                 <div id="wrapper">
-                  <h1>Pneumonia Xray Detector</h1>
+                  <h1>Pneumonia X-Ray Detector</h1>
                 </div>
-                
+
                 <br />
 
                 <div id="wrapper">
@@ -42,13 +42,16 @@
                     <input #imageInput type="file" id="file" accept="image/*" (change)="onSelectFile($event)">
                     <label for="file">Upload an Image</label>
                   </div>
+                  <br />
+                  <div *ngIf="pneumonia_graph">
+                    <div class="text-center">
+                      <canvas id="pneumonia-risk"></canvas>
+                    </div>
+                  </div>
+          
                 </div>
 
-
-
-
-
-                </div>
+              </div>
               </div>
 
           </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Chart from 'chart.js/auto';
 
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
@@ -27,8 +28,11 @@ export class HealthComponent implements OnInit {
 
   file: File = null;
 
-  name: string = "";
-  id: string = "";
+  positive: string = "";
+  negative: string = "";
+  myChart: any;
+
+  pneumonia_graph: boolean = true;
 
   constructor(private router: Router, private imageService: UserRegistrationService) {
     this.userName = sessionStorage.getItem('userName');
@@ -43,10 +47,31 @@ export class HealthComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
+
+  pneumonia() {
+    this.myChart = new Chart("pneumonia-risk", {
+      type: 'doughnut',
+      data: {
+        labels: ['Risk', 'Safe'],
+        datasets: [{
+          label: '# of Votes',
+          data: [50, 50],
+          backgroundColor: [
+            '#f57d7d',
+            '#cdde1f'
+          ],
+          hoverOffset: 2
+        }],
+      }
+    });
+  }
+    
 
 
   onSelectFile(event) { // called each time file input changes
+    this.pneumonia();
     this.file = event.target.files[0];
     if (event.target.files && event.target.files[0]) {
       var readerx = new FileReader();
@@ -75,10 +100,14 @@ export class HealthComponent implements OnInit {
           if (typeof (event) === 'object') {
 
             console.log(event);
-            this.name = event[1];
-            this.id = event[2];
+            this.positive = event['positive'];
+            this.negative = event['negative'];
 
-            console.log(this.name, this.id);
+            console.log(this.positive, this.negative);
+
+            this.myChart.data.datasets[0].data = [this.positive, this.negative];
+            this.myChart.update();
+
 
             // Short link via api response
             //this.shortLink = event.link;

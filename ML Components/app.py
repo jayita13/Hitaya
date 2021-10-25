@@ -16,12 +16,17 @@ from tensorflow.keras.preprocessing.image import img_to_array
 
 import pickle
 from health import health
+from heart import heart
 
 app = FastAPI()
 
 
-pickle_in = open("Models/classifier.pkl", "rb")
+pickle_in = open("Models/heart_rate.pkl", "rb")
 classifier = pickle.load(pickle_in)
+
+
+pickle_heart = open("Models/classifier.pkl", "rb")
+heart_classifier = pickle.load(pickle_in)
 
 
 origins = ["*"]
@@ -120,6 +125,25 @@ async def health(data: health):
     BMI = data["BMI"]
 
     prediction = classifier.predict([[Status, Alcohol, BMI]])
+
+    return prediction[0]
+
+
+@app.post('/heart')
+async def health(data: heart):
+
+    data = data.dict()
+
+    age = data["age"]
+    totChol = data["totChol"]
+    sysBP = data["sysBP"]
+    diaBP = data["diaBP"]
+    BMI = data["BMI"]
+    heartRate = data["heartRate"]
+    glucose = data["glucose"]
+
+
+    prediction = heart_classifier.predict([[Status, Alcohol, BMI]])
 
     return prediction[0]
 

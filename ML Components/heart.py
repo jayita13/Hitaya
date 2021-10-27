@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class heart  (BaseModel):
+class heart(BaseModel):
     gender: int
     age: int
     currentSmoker: int

@@ -30,6 +30,7 @@ import { EmployeeAdminComponent } from './employee-admin/employee-admin.componen
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
 import { HealthDataComponent } from './health-data/health-data.component';
 import { HealthComponent } from './health/health.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { HealthComponent } from './health/health.component';
     EmployeeAdminComponent,
     SavingsDashboardComponent,
     HealthDataComponent,
-    HealthComponent
+    HealthComponent,
+    DoctorsComponent
   ],
   imports: [
     BrowserModule,

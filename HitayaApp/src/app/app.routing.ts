@@ -16,7 +16,7 @@ import { EmployeeAdminComponent } from './employee-admin/employee-admin.componen
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
 import { HealthDataComponent } from './health-data/health-data.component';
 import { HealthComponent } from './health/health.component';
-
+import { DoctorsComponent } from './doctors/doctors.component';
 
 
 import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.service';
@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent, canActivate: [AuthGuardService] },
   { path: 'health-data', component: HealthDataComponent, canActivate: [AuthGuardService] },
   { path: 'health', component: HealthComponent/*, canActivate: [AuthGuardService]*/ },
+  { path: 'doctors', component: DoctorsComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'crypto', component: CryptoDataComponent, canActivate: [AuthGuardService]  },
   { path: 'stocks', component: StockMarketComponent, canActivate: [AuthGuardService]  },
   { path: 'analysis', component: RetirementSavingsComponent, canActivate: [AuthGuardService]  },

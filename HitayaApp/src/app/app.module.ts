@@ -31,6 +31,14 @@ import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard
 import { HealthDataComponent } from './health-data/health-data.component';
 import { HealthComponent } from './health/health.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { CalenderComponent } from './calender/calender.component';
+
+
+//import { CommonModule } from '@angular/common';
+//import { FlatpickrModule } from 'angularx-flatpickr';
+//import { CalendarModule, DateAdapter } from 'angular-calendar';
+//import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+//import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -53,7 +61,8 @@ import { DoctorsComponent } from './doctors/doctors.component';
     SavingsDashboardComponent,
     HealthDataComponent,
     HealthComponent,
-    DoctorsComponent
+    DoctorsComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
+
 <app-user-layout></app-user-layout>
 
 <div class="container text-center">
@@ -10,175 +11,245 @@
 </div>
 
 
-<div class="shell">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img">
-            <img src="assets/Cardiology.jpg" alt="Product" class="img-responsive" />
+<div class="dropdown">
+  <select class="btn btn-primary select-list">
+    <option>Select list</option>
+    <option>Orthopedic</option>
+    <option>Cardiologist</option>
+    <option>Gynaecologist</option>
+    <option>Dermatologist</option>
+  </select>
+</div>
+<!-- Cards -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="picture">
+              <img class="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+            </div>
+            <div class="team-content">
+              <h3 class="name">Vincent Strange</h3>
+              <h4 class="title profession">Orthopedic</h4>
+            </div>
+            <button type="button" class="btn btn-info flip-card">Know Your Doctor</button>
+            <ul class="social">
+              <li>
+                <a href="" class="fa fa-facebook" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-twitter" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-instagram" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-linkedin" aria-hidden="true"></a>
+              </li>
+            </ul>
           </div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Cardiology</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Diabetology</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-XL_Ba-178Fo/WVSvm5AbApI/AAAAAAAAAK4/X5109HTqUiAhPjbmz4NFVHcpL7ZWe6T3ACPcBGAYYCw/s1600/wow-29.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Beauty</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://3.bp.blogspot.com/-iUes8qr4uC8/WVSvl6Wf_fI/AAAAAAAAAKs/JiTUUVvdbqEC_QGGaQhuVJiezIN3LIqEgCPcBGAYYCw/s1600/IMG_5367-bp.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Drama</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart cvf ggf gfg g</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
+          <div class="flip-card-back">
+            <p class="card-text">MBBS, MD</p>
+            <p class="card-text"><span>Experience ~</span> 10+ years</p>
+            <p class="card-text"><span>Availability ~ </span>Mon, Tue, Wed, Fri, Sat</p>
+            <p class="card-text"><span>Timings ~ </span>10am - 7pm</p>
+            <button type="button" class="btn btn-outline-primary flip-card">Go Back</button>
+            <button type="button" class="btn btn-outline-primary book-apt" data-toggle="modal" data-target="#exampleModal">Book Appointment</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img">
-            <img src="https://3.bp.blogspot.com/-eDeTttUjHxI/WVSvmI-552I/AAAAAAAAAKw/0T3LN6jABKMyEkTRUUQMFxpe6PLvtcMMwCPcBGAYYCw/s1600/001-culture-clash-matthew-gianoulis.jpg" alt="Product" class="img-responsive" />
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="picture">
+              <img class="img-fluid"
+                   src="https://picsum.photos/130/130?image=839" />
+            </div>
+            <div class="team-content">
+              <h3 class="name">Bruce Wayne</h3>
+              <h4 class="title profession">Cardiologist</h4>
+            </div>
+            <button type="button" class="btn btn-info flip-card">
+              Know Your Doctor
+            </button>
+            <ul class="social">
+              <li>
+                <a href="" class="fa fa-facebook" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-twitter" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-instagram" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-linkedin" aria-hidden="true"></a>
+              </li>
+            </ul>
           </div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Ethnic</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Introvert</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-XL_Ba-178Fo/WVSvm5AbApI/AAAAAAAAAK4/X5109HTqUiAhPjbmz4NFVHcpL7ZWe6T3ACPcBGAYYCw/s1600/wow-29.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Beauty</span>
-            </div>
-            <div class="title-product">
-              <h3>My face not my heart</h3>
-            </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
+          <div class="flip-card-back">
+            <p class="card-text">MBBS, MD, MS</p>
+            <p class="card-text"><span>Experience ~</span> 17+ years</p>
+            <p class="card-text"><span>Availability ~ </span>Sun, Tue, Wed, Sat</p>
+            <p class="card-text"><span>Timings ~ </span>11am - 5pm</p>
+            <button type="button" class="btn btn-outline-primary flip-card">
+              Go Back
+            </button>
+            <button type="button" class="btn btn-outline-primary book-apt" data-toggle="modal" data-target="#exampleModal">
+              Book Appointment
+            </button>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img"><img src="https://3.bp.blogspot.com/-iUes8qr4uC8/WVSvl6Wf_fI/AAAAAAAAAKs/JiTUUVvdbqEC_QGGaQhuVJiezIN3LIqEgCPcBGAYYCw/s1600/IMG_5367-bp.jpg" alt="Product" class="img-responsive" /></div>
-          <div class="wsk-cp-text">
-            <div class="category">
-              <span>Drama</span>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="picture">
+              <img class="img-fluid"
+                   src="https://picsum.photos/130/130?image=856" />
             </div>
-            <div class="title-product">
-              <h3>My face not my heart cvf ggf gfg g</h3>
+            <div class="team-content">
+              <h3 class="name">Peter Parker</h3>
+              <h4 class="title profession">Gynaecologist</h4>
             </div>
-            <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+            <button type="button" class="btn btn-info flip-card">
+              Know Your Doctor
+            </button>
+            <ul class="social">
+              <li>
+                <a href="" class="fa fa-facebook" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-twitter" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-instagram" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-linkedin" aria-hidden="true"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="flip-card-back">
+            <p class="card-text">MBBS, MD, DM</p>
+            <p class="card-text"><span>Experience ~ </span>15+ years</p>
+            <p class="card-text"><span>Availability ~</span> Sun, Mon, Thr, Fri, Sat</p>
+            <p class="card-text"><span>Timings ~ </span>11am - 6pm</p>
+            <button type="button" class="btn btn-outline-primary flip-card">
+              Go Back
+            </button>
+            <button type="button" class="btn btn-outline-primary book-apt" data-toggle="modal" data-target="#exampleModal">
+              Book Appointment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="picture">
+              <img class="img-fluid"
+                   src="https://picsum.photos/130/130?image=836" />
             </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+            <div class="team-content">
+              <h3 class="name">Natassa Romanoff</h3>
+              <h4 class="title profession">Dermatologist</h4>
             </div>
+            <button type="button" class="btn btn-info flip-card">
+              Know Your Doctor
+            </button>
+            <ul class="social">
+              <li>
+                <a href="" class="fa fa-facebook" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-twitter" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-instagram" aria-hidden="true"></a>
+              </li>
+              <li>
+                <a href="" class="fa fa-linkedin" aria-hidden="true"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="flip-card-back">
+            <p class="card-text">MBBS DMRD</p>
+            <p class="card-text">
+              <span>Experience ~</span> 8+ years
+            </p>
+            <p class="card-text"><span>Availability ~ </span>Tue, Wed, Sat</p>
+            <p class="card-text"><span>Timings ~</span> 12pm - 8pm</p>
+            <button type="button" class="btn btn-outline-primary flip-card">
+              Go Back
+            </button>
+            <button type="button" class="btn btn-outline-primary book-apt" data-toggle="modal" data-target="#exampleModal">
+              Book Appointment
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Appointment Calendar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input data-date-format="dd/mm/yyyy" id="datepicker">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // card-flipping
+    $(".flip-card").on("click", function () {
+      $('.our-team').toggleClass("flipped");
+    });
+
+    // date-picker
+    $('#datepicker').datepicker({
+      weekStart: 1,
+      daysOfWeekHighlighted: "6,0",
+      autoclose: true,
+      todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
+
+    // filter content acc to dropdown list
+    $('.select-list').on('change', function () {
+      var text = $(this).find('option').filter(':selected').text();
+      $('.our-team').each(function () {
+        if ($(this).text().indexOf(text) != -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      })
+    });
+
+  });
+</script>

@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: '', component: LoadingComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'wallet', component: WalletComponent, canActivate: [AuthGuardService] },
-  { path: 'health-data', component: HealthDataComponent, canActivate: [AuthGuardService] },
+  { path: 'health-data', component: HealthDataComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'health', component: HealthComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'doctors', component: DoctorsComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'crypto', component: CryptoDataComponent, canActivate: [AuthGuardService]  },

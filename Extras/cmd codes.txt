@@ -1,4 +1,4 @@
-
+0x362f3f055fe737d12664c19796e8bfb977a8d9d0b3dc72d31740797e8b711a56
 HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
 
  Hat._create_New_User("Ameeta Som","0x07bEfD6f5cE5D37c985A8Ac65eF8afAB3362EC10","12345678");

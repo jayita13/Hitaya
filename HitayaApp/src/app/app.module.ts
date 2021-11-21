@@ -32,6 +32,7 @@ import { HealthDataComponent } from './health-data/health-data.component';
 import { HealthComponent } from './health/health.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { CalenderComponent } from './calender/calender.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 //import { CommonModule } from '@angular/common';
@@ -62,7 +63,8 @@ import { CalenderComponent } from './calender/calender.component';
     HealthDataComponent,
     HealthComponent,
     DoctorsComponent,
-    CalenderComponent
+    CalenderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

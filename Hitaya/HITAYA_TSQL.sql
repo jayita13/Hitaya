@@ -30,3 +30,11 @@ Go
 
 SELECT * FROM Doctors
 
+CREATE FUNCTION ufn_GetDoctorDetails()
+RETURNS TABLE 
+AS
+	RETURN (SELECT * FROM Doctors)
+GO
+
+
+SELECT * FROM ufn_GetDoctorDetails()

@@ -1,4 +1,4 @@
-0x362f3f055fe737d12664c19796e8bfb977a8d9d0b3dc72d31740797e8b711a56
+
 HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
 
  Hat._create_New_User("Ameeta Som","0x07bEfD6f5cE5D37c985A8Ac65eF8afAB3362EC10","12345678");
@@ -9,7 +9,7 @@ Hat.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 });
 ;
 Hat.admin();
-Hat.change_admin("0xEd1267362fA2e464d7b3BD2059CFE1519e168670");
+Hat.change_admin("0x860562C7F652bA8a28382D3473600212BEAEf38b");
 Hat.employeeadmin();
 Hat.employees_view();
 Hat.balanceOf(0x171F16b701F6301900C1f9C28263d88a4A712397);
@@ -23,9 +23,13 @@ Nitesh Sakpal
 
 Hat._create_New_Employee("raj713335@gmail.com","10800116107","JL3", "STG");
 
-Hat._create_New_User("Ameeta Som","0xE1088E40e5A43a2F34663745E589D0e9540B8cF3","12345678");
+Hat._create_New_User("Arnab Das","0xB088c7680E2140659d88F71dB5ab48b3B70C18E3","1116332");
 
 Hat._create_New_Employee("Nitesh Sakpal","748240","JL4", "STG");
 
 
 Hat._create_New_Employee("Nitesh Sakpal","748240","JL4", "STG");
+
+
+
+0xdd704842cdC6995e46f3B27E6701fe426f7B53A5

@@ -14,9 +14,12 @@ import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
 import { SavingsDashboardComponent } from './savings-dashboard/savings-dashboard.component';
+
 import { HealthDataComponent } from './health-data/health-data.component';
 import { HealthComponent } from './health/health.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+
+import { LoanRequestComponent } from './loan-request/loan-request.component';
 
 
 import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.service';
@@ -42,7 +45,8 @@ const routes: Routes = [
   { path: 'edit-user', component: EditUserDetailsComponent, canActivate: [AuthGuardService]  },
   { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuardService]  },
   { path: 'savings-dashboard', component: SavingsDashboardComponent, canActivate: [AuthGuardService]  },
-  { path: 'about', component: AboutComponent/*, canActivate: [AuthGuardService]*/  },
+  { path: 'about', component: AboutComponent/*, canActivate: [AuthGuardService]*/ },
+  { path: 'loan_request', component: LoanRequestComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'admin-dashboard', component: AdminDashboardComponent/*, canActivate: [AuthGuardService]*/  },
   { path: 'employee-admin-dashboard', component: EmployeeAdminComponent/*, canActivate: [AuthGuardService] */ },
   { path: '**', component: PageNotFoundComponentComponent }

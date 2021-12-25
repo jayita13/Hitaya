@@ -21,6 +21,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 
 import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { LoanNotificationComponent } from './loan-notification/loan-notification.component';
+import { LoanRequestHistoryComponent } from './loan-request-history/loan-request-history.component';
 
 
 import { AuthGuardService } from './hitaya-services/auth-guard/auth-guard.service';
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'loan_request', component: LoanRequestComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'loan_notification', component: LoanNotificationComponent/*, canActivate: [AuthGuardService]*/ },
+  { path: 'loan_request_history', component: LoanRequestHistoryComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'admin-dashboard', component: AdminDashboardComponent/*, canActivate: [AuthGuardService]*/  },
   { path: 'employee-admin-dashboard', component: EmployeeAdminComponent/*, canActivate: [AuthGuardService] */ },
   { path: '**', component: PageNotFoundComponentComponent }

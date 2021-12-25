@@ -34,6 +34,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { CalenderComponent } from './calender/calender.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
+import { LoanNotificationComponent } from './loan-notification/loan-notification.component';
 
 
 //import { CommonModule } from '@angular/common';
@@ -66,7 +67,8 @@ import { LoanRequestComponent } from './loan-request/loan-request.component';
     DoctorsComponent,
     CalenderComponent,
     FooterComponent,
-    LoanRequestComponent
+    LoanRequestComponent,
+    LoanNotificationComponent
   ],
   imports: [
     BrowserModule,

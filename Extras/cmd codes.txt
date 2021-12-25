@@ -1,4 +1,4 @@
-0x362f3f055fe737d12664c19796e8bfb977a8d9d0b3dc72d31740797e8b711a56
+0xc6f2beb39aA13bfcc1C58a232C7F3672bFE5372d
 HAT_TOKEN.deployed().then(function(instance){Hat = instance;})
 
  Hat._create_New_User("Ameeta Som","0x07bEfD6f5cE5D37c985A8Ac65eF8afAB3362EC10","12345678");
@@ -9,7 +9,7 @@ Hat.Users(0).send({from: '0x59521931430B5df139eFcB800841D3f6D6988C6e'})
 });
 ;
 Hat.admin();
-Hat.change_admin("0xEd1267362fA2e464d7b3BD2059CFE1519e168670");
+Hat.change_admin("0x41077CD1B0c19C0ca675D22bC03a87A6416803Ae");
 Hat.employeeadmin();
 Hat.employees_view();
 Hat.balanceOf(0x171F16b701F6301900C1f9C28263d88a4A712397);

@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'health', component: HealthComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'doctors', component: DoctorsComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'crypto', component: CryptoDataComponent/*, canActivate: [AuthGuardService]*/  },
-  { path: 'stocks', component: StockMarketComponent, canActivate: [AuthGuardService]  },
+  { path: 'stocks', component: StockMarketComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'analysis', component: RetirementSavingsComponent, canActivate: [AuthGuardService]  },
   { path: 'edit-user', component: EditUserDetailsComponent, canActivate: [AuthGuardService]  },
   { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuardService]  },

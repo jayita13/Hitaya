@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'analysis', component: RetirementSavingsComponent/*, canActivate: [AuthGuardService]*/  },
   { path: 'edit-user', component: EditUserDetailsComponent/*, canActivate: [AuthGuardService]*/  },
   { path: 'user-dashboard', component: UserDashboardComponent/*, canActivate: [AuthGuardService] */ },
-  { path: 'savings-dashboard', component: SavingsDashboardComponent, canActivate: [AuthGuardService]  },
+  { path: 'savings-dashboard', component: SavingsDashboardComponent/*, canActivate: [AuthGuardService]*/  },
   { path: 'about', component: AboutComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'loan_request', component: LoanRequestComponent/*, canActivate: [AuthGuardService]*/ },
   { path: 'loan_notification', component: LoanNotificationComponent/*, canActivate: [AuthGuardService]*/ },

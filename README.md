@@ -156,10 +156,10 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <h4>Frameworks</h4>
 <ul>
-  <li>Angular 9</li>
+  <li>Angular 11</li>
   <li>BootStrap 4.6</li>
-  <li>Chart.js 3.1</li>
   <li>ASP .NET CORE WEB API</li>
+  <li>Truffle</li>
 </ul>
 
 <h1>Getting Started</h1>

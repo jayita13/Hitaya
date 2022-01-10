@@ -44,24 +44,24 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 # HITAYA APPLICATION SCREENSHOTS
 
 <br />
-
-<img src="DATA/screenshot/01.png" width="400"/>
-<img src="DATA/screenshot/02.png" width="400"/>
-<img src="DATA/screenshot/03.png" width="400"/>
-<img src="DATA/screenshot/04.png" width="400"/>
-<img src="DATA/screenshot/05.png" width="400"/>
-<img src="DATA/screenshot/06.png" width="400"/>
-<img src="DATA/screenshot/07.png" width="400"/>
-<img src="DATA/screenshot/08.png" width="400"/>
-<img src="DATA/screenshot/09.png" width="400"/>
-<img src="DATA/screenshot/10.png" width="400"/>
-<img src="DATA/screenshot/11.png" width="400"/>
-<img src="DATA/screenshot/12.png" width="400"/>
-<img src="DATA/screenshot/13.png" width="400"/>
-<img src="DATA/screenshot/14.png" width="400"/>
-<img src="DATA/screenshot/15.png" width="400"/>
-<img src="DATA/screenshot/16.png" width="400"/>
-
+<p align="center">
+	<img src="DATA/screenshot/01.png" width="400"/>
+	<img src="DATA/screenshot/02.png" width="400"/>
+	<img src="DATA/screenshot/03.png" width="400"/>
+	<img src="DATA/screenshot/04.png" width="400"/>
+	<img src="DATA/screenshot/05.png" width="400"/>
+	<img src="DATA/screenshot/06.png" width="400"/>
+	<img src="DATA/screenshot/07.png" width="400"/>
+	<img src="DATA/screenshot/08.png" width="400"/>
+	<img src="DATA/screenshot/09.png" width="400"/>
+	<img src="DATA/screenshot/10.png" width="400"/>
+	<img src="DATA/screenshot/11.png" width="400"/>
+	<img src="DATA/screenshot/12.png" width="400"/>
+	<img src="DATA/screenshot/13.png" width="400"/>
+	<img src="DATA/screenshot/14.png" width="400"/>
+	<img src="DATA/screenshot/15.png" width="400"/>
+	<img src="DATA/screenshot/16.png" width="400"/>
+</p>
 <br />
 
 

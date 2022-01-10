@@ -185,15 +185,6 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
   - Install Python 3.7.3 and its required Packages like tensorflow etc.
  
   $ pip install -r requirements.txt
-<!--   $ pip install scipy
-  $ pip install scikit-learn
-  $ pip install matplotlib
-  $ pip install pandas
-  $ pip install fastapi
-  $ pip install uvicorn
-  $ pip install gunicorn==19.9.0
-  $ pip install uvloop
-  $ pip install httptools -->
 ```
 
 - Run the app
@@ -205,7 +196,7 @@ $ python Hitaya/ML Components/ocr.py
 # Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
-## Development server
+<!-- ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -227,7 +218,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md). -->
 ## Installing Angular and other Libraries
 	
 	Go insisde HitayaApp folder and run `ng serve -o`

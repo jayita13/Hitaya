@@ -170,22 +170,22 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
   $ cd Hitaya
 ```
 
-## Running ASP .NEW CORE WEB API APPLICATION
+<!-- ## Running ASP .NEW CORE WEB API APPLICATION
 	
 	Run HITAYA_TSQL.sql script present in the project root directory
 
 ## Running ASP .NEW CORE WEB API APPLICATION
 	
 	From Folder Hitaya.ServiceLayer
-
+ -->
 
 ## Installing Python ML Module
 
 ```
   - Install Python 3.7.3 and its required Packages like tensorflow etc.
  
-  $ pip install numpy
-  $ pip install scipy
+  $ pip install -r requirements.txt
+<!--   $ pip install scipy
   $ pip install scikit-learn
   $ pip install matplotlib
   $ pip install pandas
@@ -193,7 +193,7 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
   $ pip install uvicorn
   $ pip install gunicorn==19.9.0
   $ pip install uvloop
-  $ pip install httptools
+  $ pip install httptools -->
 ```
 
 - Run the app

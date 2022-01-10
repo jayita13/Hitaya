@@ -45,102 +45,22 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 
-<img src="DATA/screenshot/01.png" />
-
-<br />
-
-<img src="DATA/screenshot/02.png" />
-
-<br />
-
-<img src="DATA/screenshot/03.png" />
-
-<br />
-
-<img src="DATA/screenshot/04.png" />
-
-<br />
-
-
-
-<img src="DATA/screenshot/05.png" />
-
-<br />
-
-
-<img src="DATA/screenshot/06.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/07.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/08.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/09.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/10.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/11.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/12.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/13.png" />
-
-<br />
-
-
-<br />
-
-
-<img src="DATA/screenshot/14.png" />
-
-<br />
-
-<br />
-
-
-<img src="DATA/screenshot/15.png" />
-
-<br />
-
-
-<br />
-
-
-<img src="DATA/screenshot/16.png" />
+<img src="DATA/screenshot/01.png" width="400"/>
+<img src="DATA/screenshot/02.png" width="400"/>
+<img src="DATA/screenshot/03.png" width="400"/>
+<img src="DATA/screenshot/04.png" width="400"/>
+<img src="DATA/screenshot/05.png" width="400"/>
+<img src="DATA/screenshot/06.png" width="400"/>
+<img src="DATA/screenshot/07.png" width="400"/>
+<img src="DATA/screenshot/08.png" width="400"/>
+<img src="DATA/screenshot/09.png" width="400"/>
+<img src="DATA/screenshot/10.png" width="400"/>
+<img src="DATA/screenshot/11.png" width="400"/>
+<img src="DATA/screenshot/12.png" width="400"/>
+<img src="DATA/screenshot/13.png" width="400"/>
+<img src="DATA/screenshot/14.png" width="400"/>
+<img src="DATA/screenshot/15.png" width="400"/>
+<img src="DATA/screenshot/16.png" width="400"/>
 
 <br />
 
@@ -224,19 +144,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 	Install Ganache and start the local blockchain
 ```
-$ cd truffle
-$ npm install -g truffle
-$ truffle compile
-$ truffle migrate
-$ truffle migrate — network development
-$ truffle console --network development
+  $ cd truffle
+  $ npm install -g truffle
+  $ truffle compile
+  $ truffle migrate
+  $ truffle migrate — network development
+  $ truffle console --network development
 ```
 
 ## Installing Angular and other Libraries
 
 ```
-$ cd HitayaApp
-$ npm update
+  $ cd HitayaApp
+  $ npm update
 ```
 	
 <!-- 	Go insisde HitayaApp folder and run `ng serve -o` -->

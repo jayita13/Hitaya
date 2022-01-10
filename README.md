@@ -219,12 +219,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md). -->
+
+## Installing Truffle Suite for Local Smart contract deployment 
+
+	Install Ganache and start the local blockchain
+```
+$ cd truffle
+$ npm install -g truffle
+$ truffle compile
+$ truffle migrate
+$ truffle migrate — network development
+$ truffle console --network development
+```
+
 ## Installing Angular and other Libraries
 
 ```
 $ cd HitayaApp
 $ npm update
-$ ng serve -o
 ```
 	
 <!-- 	Go insisde HitayaApp folder and run `ng serve -o` -->

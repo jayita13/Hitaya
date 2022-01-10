@@ -45,8 +45,8 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 <p align="center">
-	<img src="DATA/screenshot/01.png" width="600"/>
-	<img src="DATA/screenshot/02.png" width="600"/>
+	<img src="DATA/screenshot/01.png" width="500"/>
+	<img src="DATA/screenshot/02.png" width="500"/>
 	<img src="DATA/screenshot/03.png" width="400"/>
 	<img src="DATA/screenshot/04.png" width="400"/>
 	<img src="DATA/screenshot/05.png" width="400"/>

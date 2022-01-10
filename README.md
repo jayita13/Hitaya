@@ -190,7 +190,7 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 - Run the app
 
 ```sh
-$ python Hitaya/ML Components/ocr.py
+$ python Hitaya/ML Components/app.py
 ```
 
 # Angular

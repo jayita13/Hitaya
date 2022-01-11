@@ -1,7 +1,7 @@
 <h1 align="center">HITAYA</h1>
 <p><strong>Employee Welfare DApp –</strong> Hitaya is derived from a Sanskrit word which means Welfare.
 	
-Hitaya DApp primary focus is to enable users belonging to an organization to transfer tokens or (HAT Tokens) which will be widely accepted in the organization as a form of coupons/currency in organization canteen, gyms or malls, or users can transfer this tokens among its peers or swap it with other tokens or currency, save contacts in blockchain, and view income/expenditure in a dashboard.
+<strong>Hitaya DApp –</strong>primary focus is to enable users belonging to an organization to transfer tokens or (HAT Tokens) which will be widely accepted in the organization as a form of coupons/currency in organization canteen, gyms or malls, or users can transfer this tokens among its peers or swap it with other tokens or currency, save contacts in blockchain, and view income/expenditure in a dashboard.
 	
 <strong>Dapp Admin –</strong>can change the Employee Administrator, Mint Token, Burn Tokens, Transfer Tokens or can view Transaction Details , or User Details.
 

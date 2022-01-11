@@ -65,6 +65,17 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 <br />
 
 
+# HITAYA FINANCE SCREENSHOTS
+
+<br />
+<p align="center">
+	<img src="DATA/screenshot/17.png" width="400"/>
+	<img src="DATA/screenshot/18.png" width="400"/>
+	<img src="DATA/screenshot/19.png" width="400"/>
+</p>
+<br />
+
+
 <h1>Project Requirements</h1>
 
 <h4>Languages</h4>

@@ -69,9 +69,17 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 <br />
 <p align="center">
-	<img src="DATA/screenshot/17.png" width="400"/>
-	<img src="DATA/screenshot/18.png" width="400"/>
 	<img src="DATA/screenshot/19.png" width="400"/>
+	<img src="DATA/screenshot/18.png" width="400"/>
+	<img src="DATA/screenshot/17.png" width="400"/>
+</p>
+<br />
+
+# HITAYA HEALTHCARE SCREENSHOTS
+
+<br />
+<p align="center">
+	<img src="DATA/Health.PNG" width="600"/>
 </p>
 <br />
 

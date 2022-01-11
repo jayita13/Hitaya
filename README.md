@@ -90,6 +90,15 @@ Hitaya Finance can be used to get soft loans from other peers/colleague/friends 
 
 # HITAYA HEALTHCARE SCREENSHOTS
 
+Employee can do monthly health diagnosis, doctor appointment using Advance AI/ML HealthCare ML Models.
+
+<h3>How Hitaya HealthCare works ?</h3>
+<ul>
+  <li>A user can perform initial Diagnosis based on their reports.</li>
+  <li>A User can book doctor Appointment.</li>
+  <li>All Health Data will be stored in blockchain thus ensuring security.</li>
+</ul>
+
 <br />
 <p align="center">
 	<img src="DATA/Health.PNG" width="600"/>

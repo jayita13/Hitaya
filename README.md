@@ -28,9 +28,6 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
 <br />
 <br />
 
-<h1>THEME: DApp Employee Welfare</h1>
-
-
 
 # HITAYA WORKING SAMPLE
 
@@ -44,7 +41,7 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 </p>
 
 
-# HITAYA APPLICATION SCREENSHOTS
+# HITAYA WALLET APPLICATION SCREENSHOTS
 
 <br />
 <p align="center">
@@ -69,6 +66,19 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 
 
 # HITAYA FINANCE SCREENSHOTS
+
+Hitaya Finance can be used to get soft loans from other peers/colleague/friends belonging to the same organization.
+
+
+<h3>How Hitaya Finance works ?</h3>
+<ul>
+  <li>A user can ask for loan (HAT Tokens) from his colleague/friend within an organization at a fixed interest rate.</li>
+  <li>The Colleague can accept/reject/negotiate the interest rate and the timeline of the loan repayment.</li>
+  <li>If both parties agree a loan is sanctioned from the smart contract.</li>
+  <li>And the loan repayment is done by the deducting the amount from monthly salary of the employee after calculating the Monthly payment from the Time, and Interest Rate of loan Repayment.</li>
+  <li>All benefit from the agreement as the loan taker can get a lower interest rate on loan, than been charged by the traditional banking System.</li>
+  <li>And the loan giver can earn a higher interest on their money, than saving it in the traditional banks systems.</li>
+</ul>
 
 <br />
 <p align="center">

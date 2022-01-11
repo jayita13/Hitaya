@@ -5,7 +5,7 @@
 	
 <strong>Dapp Admin </strong>can change the Employee Administrator, Mint Token, Burn Tokens, Transfer Tokens or can view Transaction Details , or User Details.
 
-<strong>Employee Admin </strong>Can add new employee to the blockchain via samrtContract and view all Employee details stored in blockchain.
+<strong>Employee Admin </strong>Can add new employee to the blockchain via samrt contracts and view all Employee details stored in blockchain.
 
 Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens among Employees. </p> 
 
@@ -90,7 +90,7 @@ Hitaya Finance can be used to get soft loans from other peers/colleague/friends 
 
 # HITAYA HEALTHCARE SCREENSHOTS
 
-Employee can do monthly health diagnosis, doctor appointment using Advance AI/ML HealthCare ML Models.
+Employees can do monthly health diagnoses, doctor appointments using Advance AI/ML HealthCare ML Models.
 
 <h3>How Hitaya HealthCare works ?</h3>
 <ul>

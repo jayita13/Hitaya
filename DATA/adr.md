@@ -17,7 +17,7 @@
 | Performance | <ul><li>Response Time (RT) </li></ul> | <ul><li>Order Updated API ≤ 300 ms</li></ul> |
 | Scalability | <ul><li>Servers </li></ul> | <ul><li>Runs on 8 App Servers - API</li><li>Runs on 4 Service Servers - Event Consumers </li></ul> |
 | Data Retention & Archiving Plan | <ul><li>Retention Plan </li> <li>Data Archival Plan </li></ul> | <ul><li>Events in Kafka  - 7 days.</li><li>Transaction Status in Couchbase - 4 days.</li><li>2 years in transaction DB and additional 5 years in archive</li><li>Archive job to move data monthly</li></ul> |
-| Auditability | <ul><li>Logging </li></ul> | <ul><li>Trip postings will be tracked in OrderAuditHistory Table in XPOMaster.</li></ul> |
+| Auditability | <ul><li>Logging </li></ul> | <ul><li>NA</li></ul> |
 | Observability | <ul><li>Monitoring </li></ul> | <ul><li>All requests will be logged to Kibana.</li></ul> |
 | Security | <ul><li>Authentication</li><li>Authorization</li><li>Data at Rest</li><li>Data at Motion</li></ul> | <ul><li>Thinktecure</li><li>FO Roles & Permissions</li><li>No need of DB encryption</li><li>Use HTTPS</li></ul> |
 | Availability & Disaster Recovery | <ul><li>Availability </li><li>Disaster Recovery </li></ul> | <ul><li>24X7 except the planned outage</li><li>Part of Brokerage DR Strategy</li></ul>  |

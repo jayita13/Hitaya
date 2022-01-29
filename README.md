@@ -206,6 +206,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   Angular Packages used :
  
   $ npm install chart.js
+  $ npm install ngx-bootstrap@6.2.0
+  $ npm install bootstrap@4.6.0 
+  $ npm install font-awesome   
   $ npm install jquery
   $ npm install bootstrap font-awesome
   $ npm install bootstrap@next

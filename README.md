@@ -31,7 +31,7 @@ Dapp Users can use tokens during a purchase of items or to transfer HAT Tokens a
 
 # HITAYA WORKING SAMPLE
 
-For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=MOR_yGGBq1Y">here.</a> 
+For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=GK5Udf3ikRg">here.</a> 
 
 
 <p align="center">

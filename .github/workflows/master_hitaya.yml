@@ -23,6 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd HitayaApp
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -31,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./HitayaApp
+          path: .
 
   deploy:
     runs-on: ubuntu-latest

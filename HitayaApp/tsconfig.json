@@ -2,12 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "crypto": [
-        "../../node_modules/crypto-js"
-      ]
-    },
+    "baseUrl": "./",    
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

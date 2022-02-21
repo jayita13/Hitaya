@@ -66,6 +66,7 @@
     "fs": false,
     "path": false,
     "os": false,
-    "child_process": false
+    "child_process": false,
+    "crypto": false    
   }
 }

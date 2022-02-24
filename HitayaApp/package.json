@@ -67,6 +67,9 @@
     "path": false,
     "os": false,
     "child_process": false,
-    "crypto": false    
+    "crypto": false,
+    "http": false,
+    "https": false,
+    "stream": false
   }
 }

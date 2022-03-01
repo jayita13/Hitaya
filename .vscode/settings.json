@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": "HitayaApp",
+    "appService.defaultWebAppToDeploy": "/subscriptions/66891545-5f2f-4a23-ae99-6b8b4d72e1b8/resourceGroups/Hitaya/providers/Microsoft.Web/sites/hitaya"
+}
